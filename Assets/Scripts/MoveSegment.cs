@@ -108,9 +108,9 @@ public class MoveSegment : MonoBehaviour
 
     public void ZoomBack()
     { 
-        directionalArrows.SetActive(false);
         if (vcam.m_Lens.FieldOfView >= originalPosition)
             vcam.m_Lens.FieldOfView -= (zoomInSpeed * Time.deltaTime);
+        directionalArrows.SetActive(false);
     }
     public void ZoomOut()
     {
