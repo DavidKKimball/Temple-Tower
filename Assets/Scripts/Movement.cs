@@ -112,7 +112,6 @@ public class Movement : MonoBehaviour
                 rb.drag = 2f;
             else
                 rb.drag = 0.2f;
-
             if (isDead)
                 SceneManager.LoadScene("DeathScene");
             else if (isWhipping && isGrounded && !isLocked && !justJumped  && !isRolling && !playedOnce)
