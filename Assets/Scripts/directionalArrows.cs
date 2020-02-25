@@ -6,15 +6,18 @@ public class directionalArrows : MonoBehaviour
 {
     private Animator anim;
     public Movement movement;
+    public GameObject miles;
     public GameObject cameraFollowObject;
     public Transform originalPosition;
     public float speed;
+    public bool cameraMove = true;
     public MoveSegment moveSegment;
 
     // Start is called before the first frame update
     void Start()
     {
-        movement = GameObject.Find("MilesNewWorking").GetComponent<Movement>();
+        miles = GameObject.Find("MilesNewWorking");
+        movement = miles.GetComponent<Movement>();
         anim = GetComponent<Animator>();
         originalPosition = cameraFollowObject.transform;
     }
@@ -22,25 +25,27 @@ public class directionalArrows : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("a") || Input.GetAxis("Horizontal") < 0)
+        CameraLimiter();
+
+        if ((Input.GetKey("a") || Input.GetAxis("Horizontal") < 0) && cameraMove)
         {
             anim.Play("LeftArrowSelect");
             cameraFollowObject.transform.position += Vector3.left * speed * Time.deltaTime;
         }
 
-        if (Input.GetKey("d") || Input.GetAxis("Horizontal") > 0)
+        if ((Input.GetKey("d") || Input.GetAxis("Horizontal") > 0) && cameraMove)
         {
             anim.Play("RightArrowSelect");
             cameraFollowObject.transform.position += Vector3.right * speed * Time.deltaTime;
         }
 
-        if (Input.GetKey("w") || Input.GetAxis("Vertical") > 0)
+        if ((Input.GetKey("w") || Input.GetAxis("Vertical") > 0) && cameraMove)
         {
             anim.Play("UpArrowSelect");
             cameraFollowObject.transform.position += Vector3.up * speed * Time.deltaTime;
         }
 
-        if (Input.GetKey("s") || Input.GetAxis("Vertical") < 0)
+        if ((Input.GetKey("s") || Input.GetAxis("Vertical") < 0) && cameraMove)
         {
             anim.Play("DownArrowSelect");
             cameraFollowObject.transform.position += Vector3.down * speed * Time.deltaTime;
@@ -71,5 +76,15 @@ public class directionalArrows : MonoBehaviour
     {
         cameraFollowObject.transform.localPosition = new Vector3 (0, 0, 0);
         gameObject.SetActive(false);
+    }
+
+    public void CameraLimiter()
+    {
+        if (Vector3.Distance(cameraFollowObject.transform.position, miles.transform.position) >= 30)
+        {
+            cameraMove = false;
+        }
+        else
+            cameraMove = true;
     }
 }
