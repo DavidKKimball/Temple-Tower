@@ -12,6 +12,7 @@ public class MoveSegment : MonoBehaviour
     private segmentManagerLevelOne scriptManager;
     public GameObject mechanism;
     public CinemachineVirtualCamera vcam;
+    public GameObject setPieceCamera;
     public Transform player;
     public GameObject Movement;
     public Movement movementScript;
@@ -85,7 +86,7 @@ public class MoveSegment : MonoBehaviour
         if (isMoving)
         {
             ZoomBack();
-            SegmentMover();   
+            StartCoroutine(MoveSegmentDelay());   
         }
     }
 
@@ -135,17 +136,7 @@ public class MoveSegment : MonoBehaviour
 
     private void SegmentMover()
     {
-        if (level.transform.position != target.position && isMoving)
-        {
-            level.transform.position = Vector3.MoveTowards(level.transform.position, target.position, movingSpeed * Time.deltaTime);
-
-            if (level.transform.position.x == target.position.x)
-            {
-                target.transform.position = new Vector3(level.transform.position.x + distance, level.transform.position.y, level.transform.position.z);
-                isMoving = false;
-                IdleAnim();
-            }
-        }
+        //nothing
     }
 
     public void IdleAnim()
@@ -154,8 +145,8 @@ public class MoveSegment : MonoBehaviour
         Rockslide.Stop();
     }
 
-    public void MoveAnim()
-    {
+public void MoveAnim()
+{
         if(isLeft)
         {
             anim.Play("FloorMechanismTurnLeft");
@@ -175,28 +166,54 @@ public class MoveSegment : MonoBehaviour
         {
             moveNumber = 4;
         }
+        Debug.Log(moveNumber);
         switch (moveNumber)
             {
             case 4:
-                waterfallAssets.SetActive(false);           
+                scriptManager.enableGearsNoWater();
+                waterfallAssets.SetActive(false); 
+                StartCoroutine(setPieceMover());          
                 break;
             case 3:
-                scriptManager.disableGears();
+                //scriptManager.disableGears();
+                scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(true);                
                 break;
             case 2:
                 scriptManager.enableGears();
                 waterfallAssets.SetActive(false);
+                StartCoroutine(setPieceMover());
                 //turn off waterfall stream
                 break;
             case 1:
                 scriptManager.disableGears();
+                //scriptManager.disableGearsAndGearBox();
+                waterfallAssets.SetActive(false);
+                break;
+            case 0:
+                //scriptManager.disableGears();
+                scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
                 break;
             default:
                 
                 break;
             }
+}
+    IEnumerator MoveSegmentDelay()
+    {
+        yield return new WaitForSeconds(1f);
+            if (level.transform.position != target.position && isMoving)
+        {
+            level.transform.position = Vector3.MoveTowards(level.transform.position, target.position, movingSpeed * Time.deltaTime);
+
+            if (level.transform.position.x == target.position.x)
+            {
+                target.transform.position = new Vector3(level.transform.position.x + distance, level.transform.position.y, level.transform.position.z);
+                isMoving = false;
+                IdleAnim();
+            }
+        }
     }
     IEnumerator ZoomOutRepeater()
     {
@@ -210,6 +227,13 @@ public class MoveSegment : MonoBehaviour
         } 
         yield return new WaitForSeconds(0.01f);
         StartCoroutine(ZoomOutRepeater());
+    }
+    IEnumerator setPieceMover()
+    {
+        yield return new WaitForSeconds(4f);
+        setPieceCamera.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        setPieceCamera.SetActive(false);
     }
 
 }
