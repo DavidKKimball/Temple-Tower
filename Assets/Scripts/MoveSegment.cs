@@ -230,9 +230,9 @@ public void MoveAnim()
     }
     IEnumerator setPieceMover()
     {
-        yield return new WaitForSeconds(4f);
-        setPieceCamera.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+        setPieceCamera.SetActive(true);        
+        yield return new WaitForSeconds(8f);
         setPieceCamera.SetActive(false);
     }
 
