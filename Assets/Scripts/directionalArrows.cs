@@ -10,7 +10,7 @@ public class directionalArrows : MonoBehaviour
     public GameObject cameraFollowObject;
     public Transform originalPosition;
     public float speed;
-    public bool cameraMove = true;
+    //public bool cameraMove = true;
     public MoveSegment moveSegment;
 
     // Start is called before the first frame update
@@ -25,30 +25,28 @@ public class directionalArrows : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraLimiter();
-
-        if ((Input.GetKey("a") || Input.GetAxis("Horizontal") < 0) && cameraMove)
+        if ((Input.GetKey("a") || Input.GetAxis("Horizontal") < 0) /*&& cameraMove*/)
         {
-            anim.Play("LeftArrowSelect");
-            cameraFollowObject.transform.position += Vector3.left * speed * Time.deltaTime;
+            cameraFollowObject.transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+            CameraLimiter();
         }
 
-        if ((Input.GetKey("d") || Input.GetAxis("Horizontal") > 0) && cameraMove)
+        if ((Input.GetKey("d") || Input.GetAxis("Horizontal") > 0) /*&& cameraMove*/)
         {
-            anim.Play("RightArrowSelect");
-            cameraFollowObject.transform.position += Vector3.right * speed * Time.deltaTime;
+            cameraFollowObject.transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
+            CameraLimiter();
         }
 
-        if ((Input.GetKey("w") || Input.GetAxis("Vertical") > 0) && cameraMove)
+        if ((Input.GetKey("w") || Input.GetAxis("Vertical") > 0) /*&& cameraMove*/)
         {
-            anim.Play("UpArrowSelect");
-            cameraFollowObject.transform.position += Vector3.up * speed * Time.deltaTime;
+            cameraFollowObject.transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
+            CameraLimiter();
         }
 
-        if ((Input.GetKey("s") || Input.GetAxis("Vertical") < 0) && cameraMove)
+        if ((Input.GetKey("s") || Input.GetAxis("Vertical") < 0) /*&& cameraMove*/)
         {
-            anim.Play("DownArrowSelect");
-            cameraFollowObject.transform.position += Vector3.down * speed * Time.deltaTime;
+            cameraFollowObject.transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
+            CameraLimiter();
         }
 
         if (Input.GetKey("q") || Input.GetButtonDown("Fire1"))
@@ -80,11 +78,7 @@ public class directionalArrows : MonoBehaviour
 
     public void CameraLimiter()
     {
-        if (Vector3.Distance(cameraFollowObject.transform.position, miles.transform.position) >= 30)
-        {
-            cameraMove = false;
-        }
-        else
-            cameraMove = true;
+        cameraFollowObject.transform.localPosition = new Vector2(Mathf.Clamp(cameraFollowObject.transform.localPosition.x, -200, 200),
+        Mathf.Clamp(cameraFollowObject.transform.localPosition.y, -50, 50));
     }
 }
