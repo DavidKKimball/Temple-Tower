@@ -34,6 +34,7 @@ public class MoveSegment : MonoBehaviour
     public bool isMoving = false;
     public bool isLeft = false;
     public bool playedOnce = false;
+    public int previousState;
 
     public Transform leftPoint;
     public Transform rightPoint;
@@ -157,7 +158,7 @@ public void MoveAnim()
             anim.Play("FloorMechanismTurnRight");
             moveNumber++;
         }
-        Rockslide.Play();
+        Rockslide.Play();        
         if (moveNumber > 4)
         {
             moveNumber = 0;
@@ -166,34 +167,47 @@ public void MoveAnim()
         {
             moveNumber = 4;
         }
-        Debug.Log(moveNumber);
+        Debug.Log("previous state is " + previousState);
+        Debug.Log("movement number is " + moveNumber);
         switch (moveNumber)
             {
             case 4:
                 scriptManager.enableGearsNoWater();
                 waterfallAssets.SetActive(false); 
-                StartCoroutine(setPieceMover());          
+                StartCoroutine(setPieceMover());
+                previousState = moveNumber;          
                 break;
             case 3:
                 //scriptManager.disableGears();
-                scriptManager.disableGearsAndGearBox();
-                waterfallAssets.SetActive(true);                
+                if (previousState == 4)
+                {
+                    scriptManager.disableGearsAndGearBox();
+                }
+                else
+                {
+                    scriptManager.disableGears();
+                }
+                waterfallAssets.SetActive(true);
+                previousState = moveNumber;               
                 break;
             case 2:
                 scriptManager.enableGears();
                 waterfallAssets.SetActive(false);
                 StartCoroutine(setPieceMover());
+                previousState = moveNumber;
                 //turn off waterfall stream
                 break;
             case 1:
                 scriptManager.disableGears();
                 //scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
+                previousState = moveNumber;
                 break;
             case 0:
                 //scriptManager.disableGears();
                 scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
+                previousState = moveNumber;
                 break;
             default:
                 

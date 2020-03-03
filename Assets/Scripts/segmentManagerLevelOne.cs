@@ -28,8 +28,8 @@ public class segmentManagerLevelOne : MonoBehaviour
     public void enableGears()
     {
         anim.Play("GearsWindUp");
-        waterfall.SetActive(true);
         platformTrigger.SetActive(true);
+        StartCoroutine(waterFallDelay());
     }
     public void disableGears()
     {
@@ -48,5 +48,10 @@ public class segmentManagerLevelOne : MonoBehaviour
         anim.Play("GearsWindDown");
         anim2.Play("gearBoxLevelOneRaiseUp");
         platformTrigger.SetActive(false);
+    }
+    IEnumerator waterFallDelay()
+    {
+        yield return new WaitForSeconds(7.35f);
+        waterfall.SetActive(true);
     }
 }
