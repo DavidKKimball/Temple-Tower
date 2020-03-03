@@ -51,7 +51,7 @@ public class segmentManagerLevelOne : MonoBehaviour
     }
     IEnumerator waterFallDelay()
     {
-        yield return new WaitForSeconds(7.35f);
+        yield return new WaitForSeconds(7.4f);
         waterfall.SetActive(true);
     }
 }
