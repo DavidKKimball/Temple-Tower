@@ -620,7 +620,7 @@ public class Movement : MonoBehaviour
 
     IEnumerator HealthDelay()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.75f);
         stayStill = false;
         isHealing = false;
     }

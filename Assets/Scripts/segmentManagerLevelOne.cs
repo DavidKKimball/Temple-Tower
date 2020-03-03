@@ -10,7 +10,7 @@ public class segmentManagerLevelOne : MonoBehaviour
     private GameObject gearBox;
     public GameObject waterfall;
     public GameObject platformTrigger;
-    public GameObject setPieceTarget;
+    //public GameObject setPieceTarget;
     // Start is called before the first frame update
     void Start()
     {
