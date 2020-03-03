@@ -36,6 +36,7 @@ public class Movement : MonoBehaviour
     public bool notMoving = true;
     public bool isWhipping = false;
     public bool isLocked;
+    public bool stayStill;
     public GameObject bloodSpawn;
     public GameObject[] MilesSprites;
     public SpriteRenderer whip;
@@ -143,6 +144,8 @@ public class Movement : MonoBehaviour
                 if (MilesFrontWalk && !facingFront)
                     TurnOffFrontWalk();
                 
+            if (!stayStill)
+            {
                 if(!facingFront)
                 {
                     transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, Input.GetAxis("Vertical") * speed * Time.deltaTime);
@@ -319,6 +322,7 @@ public class Movement : MonoBehaviour
                     }
                 }
             }
+        }
 
         }
         // coins
@@ -609,13 +613,15 @@ public class Movement : MonoBehaviour
     public void MilesDrinkHealth()
     {
             isHealing = true;
+            stayStill = true;
             anim.Play("MilesDrinkHealth");
             StartCoroutine(HealthDelay());
     }
 
     IEnumerator HealthDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
+        stayStill = false;
         isHealing = false;
     }
     IEnumerator MilesHeroLandingDelay()
