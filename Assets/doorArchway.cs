@@ -27,6 +27,7 @@ public class doorArchway : MonoBehaviour
             shake.triggerShakeMedium();
             animGears.Play("DoorMechanismTurn");
             playedOnce = true;
+            rubble.Play();
             highlight.SetActive(false);
         }
     }
