@@ -93,8 +93,8 @@ public class Qte : MonoBehaviour
 
             if (isSafe == true)
             {
-                //Destroy(puma);
-                puma.gameObject.transform.position = new Vector3(0, -500,0);
+                Destroy(puma);
+                //puma.gameObject.transform.position = new Vector3(0, -500,0);
                 Instantiate(sleepingPuma, miles.transform.position, Quaternion.identity);
             }
             else if (isSafe == false)
@@ -113,15 +113,16 @@ public class Qte : MonoBehaviour
         switch (buttonNumber)
         {
             case 0:
-                if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("w"))
+                if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("s"))
                 {
+                    Debug.Log("pressed");
                     barHealth += addValue;
                     buttonPresses++;
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 1:
-                if (Input.GetButtonDown("Fire5") || Input.GetKeyDown("a"))
+                if (Input.GetButtonDown("Fire5") || Input.GetKeyDown("d"))
                 {
                     barHealth += addValue;
                     buttonPresses++;
@@ -129,7 +130,7 @@ public class Qte : MonoBehaviour
                 }
                 break;
             case 2:
-                if (Input.GetButtonDown("Fire3") || Input.GetKeyDown("s"))
+                if (Input.GetButtonDown("Fire3") || Input.GetKeyDown("a"))
                 {
                     barHealth += addValue;
                     buttonPresses++;
@@ -137,7 +138,7 @@ public class Qte : MonoBehaviour
                 }
                 break;
             case 3:
-                if (Input.GetButtonDown("Fire6") || Input.GetKeyDown("d"))
+                if (Input.GetButtonDown("Fire6") || Input.GetKeyDown("w"))
                 {
                     barHealth += addValue;
                     buttonPresses++;
@@ -149,10 +150,6 @@ public class Qte : MonoBehaviour
         }
     }
 
-    void ChangeButton()
-    {
-
-    }
     IEnumerator SpeedUpQTE()
     {
         anim.speed = 1.6f;

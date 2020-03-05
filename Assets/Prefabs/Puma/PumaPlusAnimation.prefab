@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634db8e5b91fa0a4e8708dbaaa91b64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 2
+  lookRadius: 4
   speed: 2
   lockPos: 0
   puma: {fileID: 1652617351030853373}
@@ -423,6 +423,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   pumaGrowl: {fileID: 147600846}
+  startingPosition: {fileID: 0}
   playerTarget: {fileID: 0}
   waypointTarget: {fileID: 0}
   dustCloud: {fileID: 4296547570853336377, guid: 7b1e06b35065cc74ab1394e41f493250,
@@ -457,10 +458,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1652617351229248745}
     m_Modifications:
-    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_Name
-      value: BlobShadowProjector
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.86
@@ -516,6 +513,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_Name
+      value: BlobShadowProjector
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_IgnoreLayers.m_Bits
