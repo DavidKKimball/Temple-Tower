@@ -250,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652617351229248746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1652617351608770097}
@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 1652617351836127366}
   - component: {fileID: 1652617351836127367}
   - component: {fileID: 1652617351836127368}
-  - component: {fileID: 1652617351836127369}
   m_Layer: 0
   m_Name: PumaPlusAnimation
   m_TagString: puma
@@ -415,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634db8e5b91fa0a4e8708dbaaa91b64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 2
+  lookRadius: 4
   speed: 2
   lockPos: 0
   puma: {fileID: 1652617351030853373}
@@ -423,33 +422,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   pumaGrowl: {fileID: 147600846}
+  startingPosition: {fileID: 0}
   playerTarget: {fileID: 0}
   waypointTarget: {fileID: 0}
   dustCloud: {fileID: 4296547570853336377, guid: 7b1e06b35065cc74ab1394e41f493250,
     type: 3}
   transition: {fileID: 0}
---- !u!195 &1652617351836127369
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652617351836127370}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 3.9799998
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1652617351092183604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -505,21 +483,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
+    - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_FarClipPlane
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_IgnoreLayers.m_Bits
-      value: 4608
+      propertyPath: m_AspectRatio
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_Orthographic
@@ -530,12 +500,8 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_FarClipPlane
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_AspectRatio
-      value: 2.6
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 4608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}

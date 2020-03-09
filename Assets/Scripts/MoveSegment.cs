@@ -142,7 +142,7 @@ public class MoveSegment : MonoBehaviour
 
     public void IdleAnim()
     {
-        anim.Play("FloorMechanismIdle");
+        //anim.Play("newFloorMechanismLevelOneConfigurationanimIdle");
         Rockslide.Stop();
     }
 
@@ -150,12 +150,12 @@ public void MoveAnim()
 {
         if(isLeft)
         {
-            anim.Play("FloorMechanismTurnLeft");
+            anim.Play("newFloorMechanismLevelOneConfigurationanimLeft");
             moveNumber--;
         }
         if(!isLeft)
         {
-            anim.Play("FloorMechanismTurnRight");
+            anim.Play("newFloorMechanismLevelOneConfigurationanim");
             moveNumber++;
         }
         Rockslide.Play();        
