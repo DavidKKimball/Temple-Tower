@@ -93,8 +93,8 @@ public class Qte : MonoBehaviour
 
             if (isSafe == true)
             {
-                Destroy(puma);
-                //puma.gameObject.transform.position = new Vector3(0, -500,0);
+                //Destroy(puma); destroying the puma makes his audio growl disapear which is used in an audioSource array to turn off all sound at the end of the level. If its destroyed mid-game, the tally screen script fails because the audioSource in one of the array slots is missing.
+                puma.gameObject.transform.position = new Vector3(0, -500,0);
                 Instantiate(sleepingPuma, miles.transform.position, Quaternion.identity);
             }
             else if (isSafe == false)
