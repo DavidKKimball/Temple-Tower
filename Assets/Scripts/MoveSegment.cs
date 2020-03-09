@@ -216,7 +216,7 @@ public void MoveAnim()
 }
     IEnumerator MoveSegmentDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
             if (level.transform.position != target.position && isMoving)
         {
             level.transform.position = Vector3.MoveTowards(level.transform.position, target.position, movingSpeed * Time.deltaTime);
