@@ -7,7 +7,7 @@ public class PotteryController : MonoBehaviour
     private Animator anim;
     private AudioSource audioData;
     private bool isReady = true;
-    public float potteryDelayTime = 0.2f;
+    public float potteryDelayTime = 0.3f;
     public AudioClip[] audioClipArray;
     public bool isCollided;
     public bool isWhipped;
@@ -34,7 +34,7 @@ public class PotteryController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Whip" && isReady == true)
         {
-            audioData.PlayOneShot(audioData.clip); 
+        isReady = false;
         switch (potteryType)
         {
         case 4:
@@ -57,20 +57,27 @@ public class PotteryController : MonoBehaviour
         {
             isWhipped = true;
         }
-            isReady = false;
-            if(maxCoins > coinCount)
-            {
-                isCollided = true;
-                coinCount++;
-            }
-            StartCoroutine(PotterySoundDelay());
+        isReady = false;
+        if(maxCoins > coinCount)
+        {
+            isCollided = true;
+            coinCount++;
+        }
+        else
+        {
+            isCollided = false;
+        }
+        StartCoroutine(PotterySoundDelay());
         }
     }
 
     IEnumerator PotterySoundDelay()
     {
+        //isReady = false;
+        audioData.PlayOneShot(audioData.clip); 
         yield return new WaitForSeconds(potteryDelayTime);
         isReady = true;
+        isWhipped = false;
     }
 } 
 

@@ -35,6 +35,11 @@ public class coinSpawner : MonoBehaviour
             Rigidbody clone = Instantiate(coin[coinType], spawnPoint.transform.position, spawnPoint.transform.rotation);
             clone.AddRelativeForce(Vector3.left * spawnForce);
             coinCount++;
+            if (coinCount >= maxCoins)
+            {
+                PotteryController.isCollided = false;
+                PotteryController.isWhipped = false;
+            }
         }
     }
 }
