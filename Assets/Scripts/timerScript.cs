@@ -12,6 +12,7 @@
      public static float timer = 0;
      public float guiTime; 
      public bool reloaded;
+     public float waitTime;
      
      void Start()
      {
@@ -25,8 +26,9 @@
      void Update () {
          
          guiTime = timer + (Time.timeSinceLevelLoad + startTime);
-         if (guiTime > 0)
+         if (guiTime >= 0)
          {
+             guiTime = guiTime - (waitTime / 100f);
              int minutes = (int)(guiTime / 60);
              int seconds  = (int)(guiTime % 60);
              int fraction = (int)((guiTime * 100) % 100);

@@ -617,6 +617,13 @@ public class Movement : MonoBehaviour
             anim.Play("MilesDrinkHealth");
             StartCoroutine(HealthDelay());
     }
+    public void playAnim(string animName)
+    {
+        //anim.StopPlayback();
+        anim.Play(animName);
+        //Debug.Log(animName);
+        //Debug.Log("it fired");
+    }
 
     IEnumerator HealthDelay()
     {

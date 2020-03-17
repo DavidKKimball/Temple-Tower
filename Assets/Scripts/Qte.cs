@@ -36,9 +36,12 @@ public class Qte : MonoBehaviour
     public CinemachineVirtualCamera zoomer;
     public GameObject animHolder;
     public Animator anim;
+    private AudioSource audioData;
+    public AudioClip[] audioClipArray;
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         miles = GameObject.Find("MilesNewWorking");
         cameraFollow = GameObject.Find("CameraFollowsThisObject");
         playerHealth = GameObject.Find("RedHealth");
@@ -110,6 +113,7 @@ public class Qte : MonoBehaviour
 
     void ButtonMash(int buttonNumber)
     {
+    audioData.clip=audioClipArray[Random.Range(0,audioClipArray.Length)];
         switch (buttonNumber)
         {
             case 0:
@@ -118,6 +122,7 @@ public class Qte : MonoBehaviour
                     Debug.Log("pressed");
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
@@ -126,6 +131,7 @@ public class Qte : MonoBehaviour
                 {
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
@@ -134,6 +140,7 @@ public class Qte : MonoBehaviour
                 {
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
@@ -142,6 +149,7 @@ public class Qte : MonoBehaviour
                 {
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
@@ -152,9 +160,10 @@ public class Qte : MonoBehaviour
 
     IEnumerator SpeedUpQTE()
     {
-        anim.speed = 1.6f;
+        //anim.speed = 1.6f;
+        anim.Play("WrestlingPhaseOnePunch");
         yield return new WaitForSeconds(0.07f);
-        anim.speed = 1.0f;
+        //anim.speed = 1.0f;
     }
     IEnumerator QteEnd()
     {
