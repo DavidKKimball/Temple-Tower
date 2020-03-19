@@ -197,7 +197,7 @@ public class voiceOverManagerLevelOne : MonoBehaviour
     }
     IEnumerator HealthTalk()
     {
-        yield return new WaitForSeconds(3.75f);
+        yield return new WaitForSeconds(3.76f);
         voiceOverDialogue.text = "Miles: Looks like there's some mustache tonic! How fortunate! I can use that if I need to heal myself";
         audioData.clip=audioClipArray[4];
         audioData.PlayOneShot(audioData.clip); 
@@ -224,7 +224,7 @@ public class voiceOverManagerLevelOne : MonoBehaviour
                 movementScript.stayStill = true;
                 movementScript.isHealing = true;
                 //movementScript.playAnim(animName);
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(3.3f);
                 audioData.clip=audioClipArray[6];//not sure
                 audioData.PlayOneShot(audioData.clip);
                 voiceOverDialogue.text = "Miles: Although, I'm not sure how I'm going to get out of here.";

@@ -87,6 +87,7 @@ public class MoveSegment : MonoBehaviour
 
         if (isMoving)
         {
+            cameraFollowObject.transform.localPosition = new Vector3(0,0,0);
             ZoomBack();
             StartCoroutine(MoveSegmentDelay());   
         }
