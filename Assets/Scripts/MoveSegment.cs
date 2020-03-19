@@ -68,7 +68,6 @@ public class MoveSegment : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3"))
             {
                 arrowScript.ResetAndDestroy();
-                cameraFollowObject.transform.position = player.position;
                 isMoving = true;
                 isLocked = false;
                 isLeft = true;
@@ -97,8 +96,8 @@ public class MoveSegment : MonoBehaviour
     {
         if (other.gameObject.tag == "Whip" && !isLocked && !isMoving)
         {
-            movementScript.isLocked = true;
-            isLocked = true;
+                movementScript.isLocked = true;
+                isLocked = true;
         }
     }
 

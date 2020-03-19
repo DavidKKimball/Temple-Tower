@@ -17,6 +17,8 @@ public class voiceOverManagerLevelOne : MonoBehaviour
     public GameObject disableWhip2;
     public GameObject disableWhip3;
     public GameObject disableWhip4;
+    private Collider highLightChecker;
+    public GameObject highLightCheckerHolder;
     //private GameObject regularCamera;
     private Movement movementScript;
     private Animator animPlayer;
@@ -46,6 +48,7 @@ public class voiceOverManagerLevelOne : MonoBehaviour
         animTransitionController = animatorHolder.GetComponent<Animator>();
         voiceOverDialogue = textHolder.GetComponent<TMP_Text>();
         audioData = GetComponent<AudioSource>();
+        highLightChecker = highLightCheckerHolder.GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -112,7 +115,7 @@ public class voiceOverManagerLevelOne : MonoBehaviour
                 animTransitionController.Play("LetterboxVoiceOverFadeIn");
                 hudAnim.Play("HUDSlideOutForVoiceOver"); 
                 levelMusic.musicVolume = 0.25f;
-                waterfallAudio.volume = 0.25f;
+                waterfallAudio.volume = 0.15f;
                 vcam4.gameObject.SetActive(true);
                 voiceOverDialogue.text = "Miles: A Puma! I've fought a few of these in my day! They'll only slow me down!";
             // animPlayer.Play("ShortNarrowVaseWobble");
@@ -242,7 +245,8 @@ public class voiceOverManagerLevelOne : MonoBehaviour
                 disableWhip3.SetActive(true);
                 disableWhip4.SetActive(true);
                 hudAnim.Play("HUDSlideInForVoiceOver");
-                movementScript.playAnim("MilesPutsAwayPhone");  
+                movementScript.playAnim("MilesPutsAwayPhone");
+                highLightChecker.enabled = true;  
                 VolumeReset();
     }
     public void VolumeReset()
