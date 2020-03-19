@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ScoreTally : MonoBehaviour
 {
+    public GameObject firstObject;
     public int taskIncrementer = 0;
     public Movement movement;
     public timerScript timerScript;
@@ -42,6 +44,7 @@ public class ScoreTally : MonoBehaviour
 
         if (gameObject.GetComponent<Canvas>().enabled == true)
         {
+            GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstObject, null);
             switch (taskIncrementer)
             {
                 case 0:
