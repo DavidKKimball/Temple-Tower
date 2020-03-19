@@ -253,4 +253,17 @@ public class voiceOverManagerLevelOne : MonoBehaviour
     {
         levelMusic.musicVolume = 0.85f;
     }
+    public void audioOneShot(int number)
+    {
+        levelMusic.musicVolume = 0.25f;
+        StartCoroutine(DelayedVolumeReset(number));
+    }
+    IEnumerator DelayedVolumeReset(int number)
+    {
+        yield return new WaitForSeconds(1.3f);
+        audioData.clip=audioClipArray[number];
+        audioData.PlayOneShot(audioData.clip);
+        yield return new WaitForSeconds(1.3f);
+        levelMusic.musicVolume = 0.85f;
+    }
 }
