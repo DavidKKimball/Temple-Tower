@@ -19,6 +19,7 @@ public class MoveSegment : MonoBehaviour
     public GameObject level;
     public GameObject directionalArrows;
     public GameObject waterfallAssets;
+    public GameObject cameraFollowObject;
 
     public ParticleSystem Rockslide;
     public directionalArrows arrowScript;
@@ -67,6 +68,7 @@ public class MoveSegment : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3"))
             {
                 arrowScript.ResetAndDestroy();
+                cameraFollowObject.transform.position = player.position;
                 isMoving = true;
                 isLocked = false;
                 isLeft = true;

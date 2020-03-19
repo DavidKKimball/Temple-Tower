@@ -5,7 +5,7 @@ using UnityEngine;
 public class VolumeChanger : MonoBehaviour
 {
     public AudioSource audioSrc;
-    private float musicVolume = 1f;
+    public float musicVolume = 8.5f;
 
     void Start()
     {

@@ -34,6 +34,7 @@ public class musicManager : MonoBehaviour
    {
         yield return new WaitForSeconds(4);
         audioData.clip=audioClipArray[1];
+        audioData.loop = true;
         audioData.PlayOneShot(audioData.clip); 
         Time.timeScale = 0;
    }
