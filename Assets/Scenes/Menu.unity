@@ -148,7 +148,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: aad26275be71cc44db0f3540518ce0a2,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 177dc6bc10b69574c977f70be47b70dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd28754707219f94ca5776de8b8a326c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1344,6 +1344,7 @@ MonoBehaviour:
   hoverAudio: {fileID: 8300000, guid: 377e214cd30c7764182133658ecb650f, type: 3}
   backwardAudio: {fileID: 8300000, guid: c35f1244c2e7a1641ad58b9fd8f80a51, type: 3}
   forwardAudio: {fileID: 8300000, guid: 59e6ee00a3b81944997738e19892e8ad, type: 3}
+  pauseMenu: {fileID: 0}
   pressedOnce: 0
 --- !u!82 &583668507
 AudioSource:
@@ -1599,6 +1600,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43, type: 3}
@@ -3902,17 +3918,17 @@ PrefabInstance:
     - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.06
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.98
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8635861822959496157, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
         type: 3}
