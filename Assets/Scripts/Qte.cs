@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Qte : MonoBehaviour
 {
     public Image qteBar;
+    public ParticleSystem system;
     public GameObject[] buttonSpawn;
     public GameObject pumaSpawn;
     public int addValue;
@@ -24,7 +25,6 @@ public class Qte : MonoBehaviour
     private float barHealth;
     private int buttonNumber;
     //private Vector3 pumaCords;
-
     public GameObject playerHealth;
     public GameObject[] buttonPrefabs;
     public GameObject vcam;
@@ -119,37 +119,46 @@ public class Qte : MonoBehaviour
             case 0:
                 if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("s"))
                 {
+                    //system.Stop();
                     Debug.Log("pressed");
                     barHealth += addValue;
                     buttonPresses++;
                     audioData.PlayOneShot(audioData.clip);
+                    //system.Play();
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 1:
                 if (Input.GetButtonDown("Fire5") || Input.GetKeyDown("d"))
                 {
+                    //system.Stop();
                     barHealth += addValue;
                     buttonPresses++;
                     audioData.PlayOneShot(audioData.clip);
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 2:
                 if (Input.GetButtonDown("Fire3") || Input.GetKeyDown("a"))
                 {
+                    //system.Stop();
                     barHealth += addValue;
                     buttonPresses++;
                     audioData.PlayOneShot(audioData.clip);
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 3:
                 if (Input.GetButtonDown("Fire6") || Input.GetKeyDown("w"))
                 {
+                    //system.Stop();
                     barHealth += addValue;
                     buttonPresses++;
                     audioData.PlayOneShot(audioData.clip);
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
@@ -193,5 +202,11 @@ public class Qte : MonoBehaviour
     { 
         if (zoomer.m_Lens.FieldOfView <= originalPosition)
             zoomer.m_Lens.FieldOfView += (zoomInSpeed * Time.deltaTime);
+    }
+    IEnumerator particleReplay()
+    {
+        system.Play();
+        yield return new WaitForSeconds(0.3f);
+        system.Stop();
     }
 }
