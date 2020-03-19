@@ -19,7 +19,7 @@ public class ScoreTally : MonoBehaviour
     public TMP_Text bonus;
 
     public TMP_Text timerText;
-    private int currentTimer = 0;
+    private float currentTimer = 0;
     private float scoreScubract;
 
     public TMP_Text overallScoretext;
@@ -47,7 +47,7 @@ public class ScoreTally : MonoBehaviour
                 case 0:
                     if (currentScore < movement.score)
                     {
-                        currentScore += 5;
+                        currentScore += 15;
                         if (currentScore >= movement.score)
                             currentScore = movement.score;
                         ScoreDisplay(currentScore, scoreText);
@@ -61,7 +61,7 @@ public class ScoreTally : MonoBehaviour
                 case 1:
                     if (currentScoreMid < currentScore)
                     {
-                        currentScoreMid += 10;
+                        currentScoreMid += 20;
                         if (currentScoreMid > currentScore)
                             currentScoreMid = currentScore;
                         ScoreDisplay(currentScoreMid, scoreMid);
@@ -85,7 +85,7 @@ public class ScoreTally : MonoBehaviour
                 case 3:
                     if (currentTimer < timerScript.guiTime)
                     {
-                        currentTimer += 5;
+                        currentTimer += 15;
                         if (currentTimer > timerScript.guiTime)
                             currentTimer = Mathf.RoundToInt(timerScript.guiTime) + 1;
                         ScoreDisplay(currentTimer, timerText);
@@ -99,7 +99,7 @@ public class ScoreTally : MonoBehaviour
                 case 4:
                     if (overallScore < scoreScubract)
                     {
-                        overallScore += 15;
+                        overallScore += 75;
                         if (overallScore > scoreScubract)
                             overallScore = scoreScubract;
                         ScoreDisplay(overallScore, overallScoretext);

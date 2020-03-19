@@ -33,7 +33,7 @@ public class SettingsMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") != 0 && pressedOnce == false)
+        /*if (Input.GetAxis("Vertical") != 0 && pressedOnce == false)
         {
             myFX.PlayOneShot(hoverFx);
             pressedOnce = true;
@@ -42,7 +42,7 @@ public class SettingsMenu : MonoBehaviour
             pressedOnce = false;
 
         if (Input.GetButtonDown("Fire1"))
-            myFX.PlayOneShot(clickForwardFx);
+            myFX.PlayOneShot(clickForwardFx);*/
     }
 
 
