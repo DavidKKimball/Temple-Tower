@@ -100,10 +100,10 @@ ScriptedImporter:
     spriteID: 2d9e6ed5d6c62494aa7a419e87369005
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -177.21967, y: 85.24011, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: -46.389923, y: -158.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -522,10 +522,10 @@ ScriptedImporter:
     spriteID: a655998923d6da44b9250ebf442de234
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -147.21967, y: 115.24011, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: -16.389923, y: -128.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -914,10 +914,10 @@ ScriptedImporter:
     spriteID: a3cbe20c9cb11f448877e62255f7c378
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -52.219666, y: 252.24014, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 78.61008, y: 8.22052, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -1524,10 +1524,10 @@ ScriptedImporter:
     spriteID: 00e64058e7157cd4fa4ebfaa50ba232e
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -108.219666, y: 201.24011, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 22.610077, y: -42.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -2071,10 +2071,10 @@ ScriptedImporter:
     spriteID: 5d6d7f59a634b9044b1bb72ced281d56
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -12.219666, y: 221.24011, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 118.61008, y: -22.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -2627,10 +2627,10 @@ ScriptedImporter:
     spriteID: 464186c1047c6af43891ca26f2972857
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: 74.780334, y: 186.24011, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 205.61008, y: -57.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -3306,10 +3306,10 @@ ScriptedImporter:
     spriteID: ddbc0a20680282a4a93ec3518aa0c507
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: 194.78033, y: 72.24014, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 325.6101, y: -171.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -4071,11 +4071,21 @@ ScriptedImporter:
     spriteID: fc58f1e3e1e34394ba0fe36c8f83d7d0
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: 80.780334, y: 131.24014, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 211.61008, y: -112.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
+    - name: bone_1
+      position: {x: 117.53024, y: 104.78009, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9369337, w: 0.34950712}
+      length: 58.357143
+      parentId: -1
+    - name: bone_2
+      position: {x: 58.357117, y: 0.000026858237, z: 0}
+      rotation: {x: 0, y: 0, z: -0.06498639, w: 0.9978862}
+      length: 70.80449
+      parentId: 1
     spriteOutline: []
     vertices:
     - position: {x: 258.985, y: 1.0910034}
@@ -4150,41 +4160,41 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 249.781, y: 111.520996}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.8698638
+        weight1: 0.13013619
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 216.267, y: 113.644}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.67895055
+        weight1: 0.32104945
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 183.966, y: 120.579}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.6094812
+        weight1: 0.39051878
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 153.24, y: 131.83301}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.8828417
+        weight1: 0.11715829
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4194,18 +4204,18 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 100.343, y: 171.007}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.5184635
+        weight1: 0.4815365
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
+        boneIndex0: 1
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 75.499, y: 191}
@@ -4214,7 +4224,7 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 2
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4224,7 +4234,7 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 2
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4234,7 +4244,7 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 2
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4244,38 +4254,38 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 2
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 0, y: 146.423}
       boneWeight:
-        weight0: 1
+        weight0: 0.99999994
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 2
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 10.649994, y: 115.912}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.733195
+        weight1: 0.26680496
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
+        boneIndex0: 2
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 27.839005, y: 87.431}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.66426945
+        weight1: 0.3357306
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
+        boneIndex0: 1
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 48.426003, y: 61.462006}
@@ -4284,58 +4294,58 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 68.874, y: 35.546}
       boneWeight:
-        weight0: 1
+        weight0: 0.99999994
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 81.995, y: 24.251999}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.8842612
+        weight1: 0.11573882
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 118.443, y: 12.570999}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.6961744
+        weight1: 0.30382562
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 149.767, y: 2}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.5470921
+        weight1: 0.45290792
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 183.624, y: 1}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.81976086
+        weight1: 0.18023914
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 217.482, y: 0}
@@ -4364,13 +4374,13 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 264.8247, y: 40.15186}
       boneWeight:
-        weight0: 1
+        weight0: 0.99999994
         weight1: 0
         weight2: 0
         weight3: 0
@@ -4380,41 +4390,41 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 67.3616, y: 125.359375}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.82112503
+        weight1: 0.178875
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
+        boneIndex0: 1
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 199.36473, y: 59.414978}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.73158336
+        weight1: 0.26841664
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 140.69629, y: 36.814865}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.6142448
+        weight1: 0.3857552
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 154.9463, y: 97.50085}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.76928145
+        weight1: 0.23071857
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4424,7 +4434,7 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4434,7 +4444,7 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4480,12 +4490,12 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 37.94444, y: 133.50389}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.7945632
+        weight1: 0.20543683
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
+        boneIndex0: 2
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 98.028984, y: 135.64565}
@@ -4494,38 +4504,38 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 204.79912, y: 29.277836}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.8983684
+        weight1: 0.10163158
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 172.33334, y: 31.700935}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.6552721
+        weight1: 0.34472787
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 189.4242, y: 89.89879}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.53190696
+        weight1: 0.46809304
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 236.88564, y: 25.428415}
@@ -4540,71 +4550,71 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 224.33522, y: 84.72612}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.7882942
+        weight1: 0.2117058
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 69.84445, y: 155.89671}
       boneWeight:
-        weight0: 1
+        weight0: 0.99999994
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 2
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 89.50551, y: 102.80383}
       boneWeight:
-        weight0: 1
+        weight0: 0.99999994
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 55.389015, y: 97.1189}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.8050378
+        weight1: 0.19496225
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
+        boneIndex0: 1
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 107.031006, y: 46.849487}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.84410834
+        weight1: 0.15589164
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 136.57632, y: 69.22686}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.77802885
+        weight1: 0.22197115
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 167.04805, y: 64.081055}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.5313149
+        weight1: 0.4686851
         weight2: 0
         weight3: 0
-        boneIndex0: 0
+        boneIndex0: 1
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
@@ -4656,61 +4666,61 @@ ScriptedImporter:
     spriteID: 511df482812a584419b81162726fdde1
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: 94.780334, y: -9.759857, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
-      parentId: -1
     - name: bone_2
-      position: {x: 28.630249, y: 99.01959, z: 0}
-      rotation: {x: 0, y: 0, z: 0.6860316, w: 0.72757185}
-      length: 50.06632
+      position: {x: 87.43036, y: 1.9999084, z: 0}
+      rotation: {x: 0, y: 0, z: 0.91223997, w: 0.40965626}
+      length: 70.80449
       parentId: -1
     - name: bone_3
-      position: {x: 50.066307, y: -0.000010371712, z: 0}
-      rotation: {x: 0, y: 0, z: -0.13575032, w: 0.99074316}
-      length: 49.74149
-      parentId: 1
+      position: {x: 70.80449, y: 0.000008876148, z: 0}
+      rotation: {x: 0, y: 0, z: -0.254037, w: 0.9671945}
+      length: 55.646786
+      parentId: 0
     - name: bone_4
-      position: {x: 49.741474, y: -0.0000021623564, z: 0}
-      rotation: {x: 0, y: 0, z: -0.20568232, w: 0.97861886}
-      length: 52.013824
-      parentId: 2
+      position: {x: 55.64679, y: -0.000009969957, z: 0}
+      rotation: {x: 0, y: 0, z: -0.1382382, w: 0.990399}
+      length: 45.66462
+      parentId: 1
     - name: bone_5
-      position: {x: 52.013916, y: -0.000002728073, z: 0}
-      rotation: {x: 0, y: 0, z: -0.33005765, w: 0.9439608}
-      length: 58.00438
-      parentId: 3
+      position: {x: 45.66462, y: 0.0000121313315, z: 0}
+      rotation: {x: 0, y: 0, z: -0.18011227, w: 0.9836461}
+      length: 71.04818
+      parentId: 2
     - name: bone_6
-      position: {x: 58.00438, y: 0.0000829672, z: 0}
-      rotation: {x: 0, y: 0, z: -0.32642636, w: 0.9452227}
-      length: 26.985565
-      parentId: 4
+      position: {x: 71.048164, y: -0.000004133177, z: 0}
+      rotation: {x: 0, y: 0, z: -0.30145827, w: 0.9534794}
+      length: 57.9858
+      parentId: 3
     - name: bone_7
-      position: {x: 26.985594, y: -0.000039474842, z: 0}
-      rotation: {x: 0, y: 0, z: -0.33249635, w: 0.94310457}
-      length: 31.664713
+      position: {x: 57.985924, y: 0.000024580826, z: 0}
+      rotation: {x: 0, y: 0, z: -0.42187235, w: 0.90665525}
+      length: 53.0015
+      parentId: 4
+    - name: bone_8
+      position: {x: 53.001514, y: -0.000089917754, z: 0}
+      rotation: {x: 0, y: 0, z: -0.4016396, w: 0.9157978}
+      length: 33.585518
       parentId: 5
     spriteOutline: []
     vertices:
     - position: {x: 23.221, y: 0.49699402}
       boneWeight:
-        weight0: 0.99999994
-        weight1: 0
+        weight0: 0.97041565
+        weight1: 0.029584346
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 24.060997, y: 0.8939972}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.9710205
+        weight1: 0.028979477
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 51.939, y: 11.470001}
@@ -4725,38 +4735,38 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 78.378, y: 25.091003}
       boneWeight:
-        weight0: 0.99999994
-        weight1: 0
+        weight0: 0.98222977
+        weight1: 0.017770182
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 92, y: 32.36}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.93419045
+        weight1: 0.06580954
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 98.514, y: 42.459}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.9059938
+        weight1: 0.09400619
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 81.809, y: 67.336}
       boneWeight:
-        weight0: 0.76337004
-        weight1: 0.23662993
+        weight0: 0.553934
+        weight1: 0.44606596
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -4765,88 +4775,88 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 71.526, y: 84.811005}
       boneWeight:
-        weight0: 0.5732822
-        weight1: 0.42671782
-        weight2: 0
+        weight0: 0.7693102
+        weight1: 0.14425227
+        weight2: 0.08643753
         weight3: 0
         boneIndex0: 1
         boneIndex1: 0
-        boneIndex2: 0
+        boneIndex2: 2
         boneIndex3: 0
     - position: {x: 64.631, y: 109.78299}
       boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 62.992996, y: 134.259}
-      boneWeight:
-        weight0: 0.6779666
-        weight1: 0.32203346
+        weight0: 0.5171605
+        weight1: 0.48283947
         weight2: 0
         weight3: 0
         boneIndex0: 1
         boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
-    - position: {x: 69.063, y: 152.78601}
+    - position: {x: 62.992996, y: 134.259}
       boneWeight:
-        weight0: 0.7825158
-        weight1: 0.21748416
-        weight2: 0
+        weight0: 0.7617919
+        weight1: 0.15550375
+        weight2: 0.082704365
         weight3: 0
         boneIndex0: 2
-        boneIndex1: 1
+        boneIndex1: 3
+        boneIndex2: 1
+        boneIndex3: 0
+    - position: {x: 69.063, y: 152.78601}
+      boneWeight:
+        weight0: 0.6410745
+        weight1: 0.35892546
+        weight2: 0
+        weight3: 0
+        boneIndex0: 3
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 77.461, y: 172.643}
       boneWeight:
-        weight0: 0.560289
-        weight1: 0.43971103
-        weight2: 0
-        weight3: 0
-        boneIndex0: 2
-        boneIndex1: 3
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 92.894, y: 196.15399}
-      boneWeight:
-        weight0: 0.7681306
-        weight1: 0.23186938
-        weight2: 0
+        weight0: 0.8594672
+        weight1: 0.085742965
+        weight2: 0.054789796
         weight3: 0
         boneIndex0: 3
         boneIndex1: 4
-        boneIndex2: 0
+        boneIndex2: 2
         boneIndex3: 0
-    - position: {x: 113.352, y: 214.81}
+    - position: {x: 92.894, y: 196.15399}
       boneWeight:
-        weight0: 0.8775571
-        weight1: 0.12244292
-        weight2: 0
+        weight0: 0.5344738
+        weight1: 0.4107261
+        weight2: 0.05480013
         weight3: 0
         boneIndex0: 4
         boneIndex1: 3
-        boneIndex2: 0
+        boneIndex2: 5
+        boneIndex3: 0
+    - position: {x: 113.352, y: 214.81}
+      boneWeight:
+        weight0: 0.5505174
+        weight1: 0.420991
+        weight2: 0.028491639
+        weight3: 0
+        boneIndex0: 4
+        boneIndex1: 5
+        boneIndex2: 3
         boneIndex3: 0
     - position: {x: 135.398, y: 221.60101}
       boneWeight:
-        weight0: 0.4924085
-        weight1: 0.38871065
-        weight2: 0.11888084
+        weight0: 0.7584459
+        weight1: 0.19671543
+        weight2: 0.04483863
         weight3: 0
         boneIndex0: 5
-        boneIndex1: 4
-        boneIndex2: 6
+        boneIndex1: 6
+        boneIndex2: 4
         boneIndex3: 0
     - position: {x: 145.911, y: 200.35101}
       boneWeight:
-        weight0: 0.78800344
-        weight1: 0.2119966
+        weight0: 0.9045472
+        weight1: 0.09545275
         weight2: 0
         weight3: 0
         boneIndex0: 6
@@ -4925,8 +4935,8 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 190.157, y: 237.05301}
       boneWeight:
-        weight0: 0.8614396
-        weight1: 0.1385604
+        weight0: 0.9246902
+        weight1: 0.075309835
         weight2: 0
         weight3: 0
         boneIndex0: 6
@@ -4935,8 +4945,8 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 171.50299, y: 256.099}
       boneWeight:
-        weight0: 0.8738217
-        weight1: 0.12617831
+        weight0: 0.6323166
+        weight1: 0.3676834
         weight2: 0
         weight3: 0
         boneIndex0: 5
@@ -4945,15 +4955,25 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 137.979, y: 260.602}
       boneWeight:
-        weight0: 0.85173553
-        weight1: 0.1482644
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 5
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 107.759, y: 261.746}
+      boneWeight:
+        weight0: 0.68509793
+        weight1: 0.31490207
         weight2: 0
         weight3: 0
         boneIndex0: 4
         boneIndex1: 5
         boneIndex2: 0
         boneIndex3: 0
-    - position: {x: 107.759, y: 261.746}
+    - position: {x: 78.897, y: 256.976}
       boneWeight:
         weight0: 1
         weight1: 0
@@ -4961,26 +4981,16 @@ ScriptedImporter:
         weight3: 0
         boneIndex0: 4
         boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 78.897, y: 256.976}
-      boneWeight:
-        weight0: 0.7741203
-        weight1: 0.22587973
-        weight2: 0
-        weight3: 0
-        boneIndex0: 4
-        boneIndex1: 3
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 55.574, y: 239.574}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.9267878
+        weight1: 0.07321222
         weight2: 0
         weight3: 0
-        boneIndex0: 3
-        boneIndex1: 0
+        boneIndex0: 4
+        boneIndex1: 3
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 34.837997, y: 218.53299}
@@ -4999,104 +5009,104 @@ ScriptedImporter:
         weight1: 0
         weight2: 0
         weight3: 0
-        boneIndex0: 2
+        boneIndex0: 3
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 13.234001, y: 166.69202}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.77543277
+        weight1: 0.22456723
         weight2: 0
         weight3: 0
-        boneIndex0: 2
-        boneIndex1: 0
+        boneIndex0: 3
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 5, y: 145.298}
       boneWeight:
-        weight0: 0.8194804
-        weight1: 0.18051955
+        weight0: 0.9653584
+        weight1: 0.03464172
+        weight2: 0
+        weight3: 0
+        boneIndex0: 2
+        boneIndex1: 3
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 6.2870026, y: 117.563995}
+      boneWeight:
+        weight0: 0.83955455
+        weight1: 0.16044548
+        weight2: 0
+        weight3: 0
+        boneIndex0: 2
+        boneIndex1: 1
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0.99500275, y: 102.84601}
+      boneWeight:
+        weight0: 0.58482546
+        weight1: 0.41517466
         weight2: 0
         weight3: 0
         boneIndex0: 1
         boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
-    - position: {x: 6.2870026, y: 117.563995}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0.99500275, y: 102.84601}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
     - position: {x: 1.8069992, y: 82.966}
       boneWeight:
-        weight0: 0.8226983
-        weight1: 0.17730178
+        weight0: 0.9384704
+        weight1: 0.06152958
         weight2: 0
         weight3: 0
         boneIndex0: 1
-        boneIndex1: 0
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 2.5350037, y: 59.824005}
       boneWeight:
-        weight0: 0.5458096
-        weight1: 0.45419037
+        weight0: 0.8858918
+        weight1: 0.11410819
         weight2: 0
         weight3: 0
-        boneIndex0: 0
-        boneIndex1: 1
+        boneIndex0: 1
+        boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 1.8040009, y: 38.334}
       boneWeight:
-        weight0: 0.81698626
-        weight1: 0.18301372
+        weight0: 0.5095187
+        weight1: 0.49048135
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 9.914001, y: 14.287994}
+      boneWeight:
+        weight0: 0.8794845
+        weight1: 0.12051551
         weight2: 0
         weight3: 0
         boneIndex0: 0
         boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
-    - position: {x: 9.914001, y: 14.287994}
-      boneWeight:
-        weight0: 0.99999994
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
     - position: {x: 17.415, y: 0}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.9687515
+        weight1: 0.031248504
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 36.359917, y: 68.55377}
       boneWeight:
-        weight0: 0.5135417
-        weight1: 0.48645824
+        weight0: 1
+        weight1: 0
         weight2: 0
         weight3: 0
         boneIndex0: 1
@@ -5105,45 +5115,15 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 33.937134, y: 127.01874}
       boneWeight:
-        weight0: 0.99999994
-        weight1: 0
+        weight0: 0.98053855
+        weight1: 0.019461533
         weight2: 0
         weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
+        boneIndex0: 2
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 47.85932, y: 185.65515}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 2
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 92.36502, y: 232.02286}
-      boneWeight:
-        weight0: 0.8955103
-        weight1: 0.10448966
-        weight2: 0
-        weight3: 0
-        boneIndex0: 4
-        boneIndex1: 3
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 39.36012, y: 156.54517}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 2
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 66.85635, y: 210.12006}
       boneWeight:
         weight0: 1
         weight1: 0
@@ -5153,20 +5133,50 @@ ScriptedImporter:
         boneIndex1: 0
         boneIndex2: 0
         boneIndex3: 0
+    - position: {x: 92.36502, y: 232.02286}
+      boneWeight:
+        weight0: 0.9513202
+        weight1: 0.048679765
+        weight2: 0
+        weight3: 0
+        boneIndex0: 4
+        boneIndex1: 5
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 39.36012, y: 156.54517}
+      boneWeight:
+        weight0: 0.75845397
+        weight1: 0.241546
+        weight2: 0
+        weight3: 0
+        boneIndex0: 3
+        boneIndex1: 2
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 66.85635, y: 210.12006}
+      boneWeight:
+        weight0: 0.65234166
+        weight1: 0.34765837
+        weight2: 0
+        weight3: 0
+        boneIndex0: 3
+        boneIndex1: 4
+        boneIndex2: 0
+        boneIndex3: 0
     - position: {x: 31.909115, y: 36.76938}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.82913387
+        weight1: 0.17086616
         weight2: 0
         weight3: 0
         boneIndex0: 0
-        boneIndex1: 0
+        boneIndex1: 1
         boneIndex2: 0
         boneIndex3: 0
     - position: {x: 59.72544, y: 48.406357}
       boneWeight:
-        weight0: 0.89418125
-        weight1: 0.10581873
+        weight0: 0.8334247
+        weight1: 0.16657534
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -5175,16 +5185,16 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 35.08155, y: 96.531494}
       boneWeight:
-        weight0: 1
-        weight1: 0
+        weight0: 0.9628255
+        weight1: 0.037174545
         weight2: 0
         weight3: 0
         boneIndex0: 1
-        boneIndex1: 0
+        boneIndex1: 2
         boneIndex2: 0
         boneIndex3: 0
     spritePhysicsOutline: []
-    indices: 270000002600000001000000070000002f00000028000000040000002f000000050000002f00000007000000060000000a0000002a0000000b0000002a0000002d0000000b00000006000000050000002f00000004000000030000002f0000001400000012000000110000001500000011000000100000001300000012000000140000001400000011000000150000002900000008000000300000000c0000002d0000002b0000000d0000000c0000002b0000001a0000002b0000001b0000002b0000001c0000001b0000000d0000002b0000001a0000001a0000000e0000000d0000002d0000001c0000002b0000000f000000160000001000000017000000160000000f0000001a000000190000000e000000180000000e000000190000000e00000018000000170000000b0000002d0000000c0000002c0000001f0000002a000000090000002c0000000a0000001d0000002d0000002a0000002e000000260000002500000025000000240000002e0000002400000023000000280000000100000000000000270000002e00000002000000010000002f000000020000002e0000002e00000024000000280000003000000008000000070000002800000023000000300000002e000000280000002f0000003000000007000000280000002f000000030000000200000001000000260000002e000000220000003000000023000000220000002100000030000000210000002900000030000000200000002900000021000000200000001f0000002c0000001f0000001e0000002a00000029000000200000002c0000002c00000009000000290000000800000029000000090000000a0000002c0000002a0000002d0000001d0000001c0000002a0000001e0000001d000000170000000f0000000e000000100000001600000015000000
+    indices: 2700000026000000010000002400000023000000280000000100000000000000270000002e00000002000000010000002f000000020000002e0000002e00000024000000280000003000000008000000070000002800000023000000300000002e000000280000002f0000003000000007000000280000002f00000003000000020000002e000000260000002500000025000000240000002e00000001000000260000002e000000210000002900000030000000200000002900000021000000200000001f0000002c0000001f0000001e0000002a00000029000000200000002c0000002c00000009000000290000000800000029000000090000000a0000002c0000002a0000002d0000001d0000001c0000002a0000001e0000001d0000002200000030000000230000002200000021000000300000001d0000002d0000002a000000090000002c0000000a0000002c0000001f0000002a000000040000002f000000050000002f00000007000000060000000a0000002a0000000b0000002a0000002d0000000b00000006000000050000002f00000004000000030000002f000000140000001200000011000000150000001100000010000000130000001200000014000000140000001100000015000000290000000800000030000000070000002f000000280000000c0000002d0000002b0000001a0000002b0000001b0000002b0000001c0000001b0000000d0000002b0000001a0000001a0000000e0000000d0000002d0000001c0000002b0000000f000000160000001000000017000000160000000f0000001a000000190000000e000000180000000e000000190000000e00000018000000170000000b0000002d0000000c0000000d0000000c0000002b000000170000000f0000000e000000100000001600000015000000
     edges:
     - {x: 1, y: 0}
     - {x: 2, y: 1}
@@ -5243,10 +5253,10 @@ ScriptedImporter:
     spriteID: 61526a67e5511d94b8047d4003a86d6a
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -221.21967, y: 132.24014, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: -90.38992, y: -111.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -5891,10 +5901,10 @@ ScriptedImporter:
     spriteID: 906403e5cfb5ef846865bbc5c19cf9be
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -218.21967, y: 139.24011, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: -87.38992, y: -104.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -6459,10 +6469,10 @@ ScriptedImporter:
     spriteID: 407ec55bf47e7f0459ec64c2925ac233
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -171.21967, y: 48.240112, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: -40.389923, y: -195.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -7015,10 +7025,10 @@ ScriptedImporter:
     spriteID: b119da85737819d469a103429dab2d32
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: -18.219666, y: 36.240112, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 112.61008, y: -207.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -7860,10 +7870,10 @@ ScriptedImporter:
     spriteID: ce2ad50cea2367648ad59eef062cbfcd
     internalID: 0
     spriteBone:
-    - name: bone_1
-      position: {x: 21.780334, y: 30.240143, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+    - name: root
+      position: {x: 152.61008, y: -213.77948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
       parentId: -1
     spriteOutline: []
     vertices:
@@ -8623,46 +8633,51 @@ ScriptedImporter:
     mosaicPosition: {x: 335, y: 106}
   characterData:
     bones:
+    - name: root
+      position: {x: 457.61008, y: 256.22052, z: 0}
+      rotation: {x: 0, y: 0, z: 0.69874066, w: 0.71537507}
+      length: 124.98432
+      parentId: -1
     - name: bone_1
-      position: {x: 326.78033, y: 500.24014, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91778976, w: 0.3970667}
-      length: 66.556915
+      position: {x: 363.53024, y: 473.7801, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9369337, w: 0.34950712}
+      length: 58.357147
       parentId: -1
     - name: bone_2
-      position: {x: 64.14817, y: -1.9105257, z: 0}
-      rotation: {x: 0, y: 0, z: -0.21786915, w: 0.9759781}
-      length: 50.06632
-      parentId: 7
-    - name: bone_3
-      position: {x: 50.06633, y: -0.0000038848284, z: 0}
-      rotation: {x: 0, y: 0, z: -0.13575031, w: 0.9907431}
-      length: 49.741497
+      position: {x: 58.357124, y: 0.000013333163, z: 0}
+      rotation: {x: 0, y: 0, z: -0.06498636, w: 0.9978862}
+      length: 70.80449
       parentId: 1
-    - name: bone_4
-      position: {x: 49.741478, y: 0.000012725008, z: 0}
-      rotation: {x: 0, y: 0, z: -0.20568235, w: 0.9786188}
-      length: 52.013824
+    - name: bone_3
+      position: {x: 70.804504, y: -0.00000011937664, z: 0}
+      rotation: {x: 0, y: 0, z: -0.25403702, w: 0.9671945}
+      length: 55.64679
       parentId: 2
-    - name: bone_5
-      position: {x: 52.013885, y: -0.0000033471297, z: 0}
-      rotation: {x: 0, y: 0, z: -0.3300576, w: 0.94396085}
-      length: 58.004387
+    - name: bone_4
+      position: {x: 55.64679, y: 0.000008208808, z: 0}
+      rotation: {x: 0, y: 0, z: -0.13823816, w: 0.990399}
+      length: 45.664623
       parentId: 3
-    - name: bone_6
-      position: {x: 58.00439, y: 0.000039916522, z: 0}
-      rotation: {x: 0, y: 0, z: -0.32642636, w: 0.9452227}
-      length: 26.985565
+    - name: bone_5
+      position: {x: 45.6646, y: 0.00000719037, z: 0}
+      rotation: {x: 0, y: 0, z: -0.18011233, w: 0.98364604}
+      length: 71.04818
       parentId: 4
-    - name: bone_7
-      position: {x: 26.985567, y: 0.000004975148, z: 0}
-      rotation: {x: 0, y: 0, z: -0.33249643, w: 0.94310457}
-      length: 31.664717
+    - name: bone_6
+      position: {x: 71.04821, y: 0.0000027564747, z: 0}
+      rotation: {x: 0, y: 0, z: -0.3014582, w: 0.9534794}
+      length: 57.98581
       parentId: 5
+    - name: bone_7
+      position: {x: 57.985878, y: 0.0000011286975, z: 0}
+      rotation: {x: 0, y: 0, z: -0.42187238, w: 0.90665525}
+      length: 53.00151
+      parentId: 6
     - name: bone_8
-      position: {x: 65.55042, y: -1.0713613, z: 0}
-      rotation: {x: 0, y: 0, z: -0.18574163, w: 0.98259866}
-      length: 63.32939
-      parentId: 0
+      position: {x: 53.001534, y: -0.000021835787, z: 0}
+      rotation: {x: 0, y: 0, z: -0.4016396, w: 0.9157979}
+      length: 33.58552
+      parentId: 7
     parts:
     - spritePosition:
         x: 504
@@ -8719,14 +8734,14 @@ ScriptedImporter:
         width: 323
         height: 191
       spriteId: fc58f1e3e1e34394ba0fe36c8f83d7d0
-      bones: 00000000
+      bones: 000000000100000002000000
     - spritePosition:
         x: 232
         y: 510
         width: 209
         height: 262
       spriteId: 511df482812a584419b81162726fdde1
-      bones: 00000000010000000200000003000000040000000500000006000000
+      bones: 02000000030000000400000005000000060000000700000008000000
     - spritePosition:
         x: 548
         y: 368
@@ -8764,22 +8779,24 @@ ScriptedImporter:
       bones: 00000000
     dimension: {x: 0, y: 0}
   boneGOs:
-  - go: {fileID: 1161608618096277478, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: 7647257229977245182, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 0
-  - go: {fileID: 5251692257454246911, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: 1161608618096277478, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 1
-  - go: {fileID: 6302307603794193107, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: -8675154487796207694, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 2
-  - go: {fileID: 8831094202932805632, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: 4410285995367906418, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 3
-  - go: {fileID: -6617678893206436275, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: -7608342345908792009, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 4
-  - go: {fileID: 2936728139475293038, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: -716810787833992638, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 5
-  - go: {fileID: -4136821722830513368, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: 7103703586589595285, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 6
-  - go: {fileID: -8904417862793602934, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+  - go: {fileID: -1474771565570903360, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
     index: 7
+  - go: {fileID: 7328020833453287928, guid: e0c6ffba6e376ec48b9abf1f40f82c5d, type: 3}
+    index: 8
   generateGOHierarchy: 0
   textureAssetName: Scorpions
   prefabAssetName: Scorpions_GO
