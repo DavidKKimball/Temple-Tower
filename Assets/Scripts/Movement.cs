@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.IO;
 
 public class Movement : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        LoadPlayerScore();
         Time.timeScale = 1;
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody>();
@@ -680,5 +682,23 @@ public class Movement : MonoBehaviour
 
         isWhipping = false;
         playedOnce = false;
+    }
+
+    // as if this script isnt bloated enough lets add in some save functionality
+    public void SavePlayer()
+    {
+        SaveScript.SavePlayer(this);
+    }
+
+    public void LoadPlayerScore()
+    {
+        string path = Application.persistentDataPath + "/player.snootysobyouare";
+        if (File.Exists(path))
+        {
+            PlayerData data = SaveScript.LoadPlayer();
+            score = data.score;
+        }
+        else
+            score = 0;
     }
 }

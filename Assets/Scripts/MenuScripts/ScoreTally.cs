@@ -7,30 +7,34 @@ using UnityEngine.EventSystems;
 
 public class ScoreTally : MonoBehaviour
 {
+    public Canvas canvas;
+    public Button nextButton;
     public GameObject firstObject;
     public int taskIncrementer = 0;
     public Movement movement;
     public timerScript timerScript;
 
     public TMP_Text scoreText;
-    private float currentScore = 0;
+    private int currentScore = 0;
 
     public TMP_Text scoreMid;
-    private float currentScoreMid = 0;
+    private int currentScoreMid = 0;
 
     public TMP_Text bonus;
 
     public TMP_Text timerText;
-    private float currentTimer = 0;
-    private float scoreScubract;
+    private int currentTimer = 0;
+    private int scoreScubract;
 
     public TMP_Text overallScoretext;
-    private float overallScore = 0;
+    private int overallScore = 0;
     public treasureCounter treasureCounter;
+    public GameObject gameSavedText;
 
 
     private void Start()
     {
+        canvas = gameObject.GetComponent<Canvas>();
         movement = GameObject.Find("MilesNewWorking").GetComponent<Movement>();
         treasureCounter = GameObject.Find("Treasure").GetComponent<treasureCounter>();
     }
@@ -50,7 +54,7 @@ public class ScoreTally : MonoBehaviour
                 case 0:
                     if (currentScore < movement.score)
                     {
-                        currentScore += 15;
+                        currentScore += 25;
                         if (currentScore >= movement.score)
                             currentScore = movement.score;
                         ScoreDisplay(currentScore, scoreText);
@@ -64,7 +68,7 @@ public class ScoreTally : MonoBehaviour
                 case 1:
                     if (currentScoreMid < currentScore)
                     {
-                        currentScoreMid += 20;
+                        currentScoreMid += 45;
                         if (currentScoreMid > currentScore)
                             currentScoreMid = currentScore;
                         ScoreDisplay(currentScoreMid, scoreMid);
@@ -88,7 +92,7 @@ public class ScoreTally : MonoBehaviour
                 case 3:
                     if (currentTimer < timerScript.guiTime)
                     {
-                        currentTimer += 15;
+                        currentTimer += 35;
                         if (currentTimer > timerScript.guiTime)
                             currentTimer = Mathf.RoundToInt(timerScript.guiTime) + 1;
                         ScoreDisplay(currentTimer, timerText);
@@ -102,14 +106,24 @@ public class ScoreTally : MonoBehaviour
                 case 4:
                     if (overallScore < scoreScubract)
                     {
-                        overallScore += 75;
+                        overallScore += 85;
                         if (overallScore > scoreScubract)
                             overallScore = scoreScubract;
                         ScoreDisplay(overallScore, overallScoretext);
                     }
+                    else
+                    {
+                        taskIncrementer++;
+                    }
+                    break;
+                case 5:
+                    movement.score = overallScore;
+                    movement.SavePlayer();
+                    nextButton.GetComponent<Button>().interactable = true;
+                    gameSavedText.GetComponent<TextMeshProUGUI>().enabled = true;
                     break;
             }
-        } 
+        }
     }
 
     void ScoreDisplay(float currentInt, TMP_Text currentText)

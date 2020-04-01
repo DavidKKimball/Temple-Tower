@@ -8,17 +8,17 @@ public class MainMenuSoundFX : MonoBehaviour
     public AudioClip hoverAudio;
     public AudioClip backwardAudio;
     public AudioClip forwardAudio;
-    public GameObject pauseMenu;
+    //public GameObject pauseMenu;
     public bool pressedOnce = false;
 
     private void Start()
     {
-        pauseMenu = GameObject.Find("Pause Menu");
+        // = GameObject.Find("Pause Menu");
     }
 
     void Update()
     {
-        if (pauseMenu.gameObject.activeInHierarchy == true)
+        /*if (pauseMenu.gameObject.activeInHierarchy == true)
         {
             if (Input.GetAxis("Vertical") != 0 && pressedOnce == false)
             {
@@ -30,7 +30,7 @@ public class MainMenuSoundFX : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
                 myFx.PlayOneShot(forwardAudio);
-        }
+        }*/
     }
 
     public void HoverSound()

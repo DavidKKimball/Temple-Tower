@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: 181aab0e8c590824b847a26c0232feff
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: fd4aeae5cebd5ad4083ccbb822acd167
   - enabled: 0
@@ -26,16 +29,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/DeathScene.unity
-    guid: 181aab0e8c590824b847a26c0232feff
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/CoreyBoulderRun.unity
-    guid: bd51bd95930ccff4890c2dcab07e7d4d
-  - enabled: 1
     path: Assets/Scenes/levelOneSprint3.unity
     guid: 8cca4b82afe2d524f98f95bef3f0bf7b
+  - enabled: 1
+    path: Assets/Scenes/CoreyBoulderRun.unity
+    guid: bd51bd95930ccff4890c2dcab07e7d4d
   m_configObjects: {}
