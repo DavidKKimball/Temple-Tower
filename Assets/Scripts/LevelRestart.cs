@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelRestart : MonoBehaviour
 {
+    public string levelName;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("CoreyBoulderRun");
+            SceneManager.LoadScene(levelName);
         }
     }
 }

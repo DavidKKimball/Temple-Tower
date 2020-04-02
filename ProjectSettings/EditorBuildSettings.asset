@@ -19,10 +19,13 @@ EditorBuildSettings:
     guid: 7ab9aa7c444cac54e90b8567797d1df3
   - enabled: 1
     path: Assets/Scenes/levelTwoSprint4.unity
-    guid: bd51bd95930ccff4890c2dcab07e7d4d
+    guid: ea8bd6997def70d44a04762b7ad0cced
   - enabled: 1
     path: Assets/Scenes/levelThreeSprint4.unity
     guid: e25af0b97e49e5041b59cab74e7de11f
+  - enabled: 1
+    path: Assets/Scenes/levelFourSprint4.unity
+    guid: aa07e891bde8daf4889fd60fa1cb4ed1
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
