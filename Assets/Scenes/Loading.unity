@@ -506,7 +506,7 @@ RectTransform:
   m_GameObject: {fileID: 161119982}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4694538, y: 5.8465557, z: 1.1887}
+  m_LocalScale: {x: 4.515147, y: 8.146644, z: 1.5469741}
   m_Children: []
   m_Father: {fileID: 360940809}
   m_RootOrder: 1
@@ -966,7 +966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6423b6c43339c4fba30ab673414bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 719499004}
+  newGameCanvas: {fileID: 0}
+  loadGameCanvas: {fileID: 0}
+  menuManager: {fileID: 0}
   credits: {fileID: 544842328}
   firstObject: {fileID: 731157789}
 --- !u!114 &343602692
@@ -1301,6 +1303,7 @@ GameObject:
   - component: {fileID: 360940807}
   - component: {fileID: 360940806}
   - component: {fileID: 360940805}
+  - component: {fileID: 360940810}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1356,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1412,6 +1415,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &360940810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360940804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4fd9b61d5c07c945aebc0baeb22bf19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: levelOneSprint3
 --- !u!1 &544842328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1706,6 @@ MonoBehaviour:
   hoverAudio: {fileID: 8300000, guid: 377e214cd30c7764182133658ecb650f, type: 3}
   backwardAudio: {fileID: 8300000, guid: c35f1244c2e7a1641ad58b9fd8f80a51, type: 3}
   forwardAudio: {fileID: 8300000, guid: 59e6ee00a3b81944997738e19892e8ad, type: 3}
-  pauseMenu: {fileID: 0}
   pressedOnce: 0
 --- !u!82 &583668507
 AudioSource:
@@ -1905,7 +1920,7 @@ RectTransform:
   m_GameObject: {fileID: 635971867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2007, y: 1.2007, z: 1.2007}
   m_Children:
   - {fileID: 1014736610}
   - {fileID: 1420417812}
@@ -1914,7 +1929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.9959736, y: -1.6057}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &678101705
@@ -2333,7 +2348,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa8043d696cb264489fddf86b86611b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 719499004}
+  newGameCanvas: {fileID: 0}
+  loadGameCanvas: {fileID: 0}
+  newGameButton: {fileID: 0}
+  loadGameButton: {fileID: 0}
+  menuManager: {fileID: 0}
   credits: {fileID: 544842328}
   firstObject: {fileID: 344221580}
 --- !u!114 &731157792
@@ -4204,7 +4223,7 @@ RectTransform:
   m_GameObject: {fileID: 1696377884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2007, y: 1.2007, z: 1.2007}
   m_Children:
   - {fileID: 1949605775}
   - {fileID: 845254512}
@@ -4215,7 +4234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -66}
+  m_AnchoredPosition: {x: -8, y: -80.853}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696377886

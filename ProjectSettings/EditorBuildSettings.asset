@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: 8a494701cfeab3e4fb1e37c1606dd36d
   - enabled: 1
+    path: Assets/Scenes/MainMenuIntro.unity
+    guid: da8469ffbd4455a44a9ca32be4ad17fb
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: fd4aeae5cebd5ad4083ccbb822acd167
   - enabled: 1
+    path: Assets/Scenes/Loading2.unity
+    guid: 6152a57ab0dd88e4e9480ed0d46614d9
+  - enabled: 1
     path: Assets/Scenes/levelOneSprint3.unity
     guid: 8cca4b82afe2d524f98f95bef3f0bf7b
+  - enabled: 1
+    path: Assets/Scenes/Loading3.unity
+    guid: ab1236a69989d8f46858d67babbd0f01
   - enabled: 1
     path: Assets/Scenes/Backup/CoreyBoulderRun.unity
     guid: bd51bd95930ccff4890c2dcab07e7d4d

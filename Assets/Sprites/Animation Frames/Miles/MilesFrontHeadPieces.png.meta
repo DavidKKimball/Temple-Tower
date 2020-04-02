@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: c70cf8d31407fc24cb6c3d4e7b91caf8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7701222514261284136
+    second: MilesFrontHeadPieces_0
+  - first:
+      213: 5400167375081477960
+    second: MilesFrontHeadPieces_1
+  - first:
+      213: -7559079532077158415
+    second: MilesFrontHeadPieces_2
+  - first:
+      213: -4480583514157092387
+    second: MilesFrontHeadPieces_3
+  - first:
+      213: 687990017319711115
+    second: MilesFrontHeadPieces_4
+  - first:
+      213: 2265396279187453681
+    second: MilesFrontHeadPieces_5
+  - first:
+      213: 2577707162099292469
+    second: MilesFrontHeadPieces_6
+  - first:
+      213: -1856407070733215508
+    second: MilesFrontHeadPieces_7
+  - first:
+      213: 9065927813244883607
+    second: MilesFrontHeadPieces_8
+  - first:
+      213: -212500319196751456
+    second: MilesFrontHeadPieces_9
+  - first:
+      213: 7903782765647190757
+    second: MilesFrontHeadPieces_10
+  - first:
+      213: 5960616689285665063
+    second: MilesFrontHeadPieces_11
+  - first:
+      213: -2234225447925273136
+    second: MilesFrontHeadPieces_12
+  - first:
+      213: -619379521475183243
+    second: MilesFrontHeadPieces_13
+  - first:
+      213: 492307356025189031
+    second: MilesFrontHeadPieces_14
+  - first:
+      213: 2032443206995396800
+    second: MilesFrontHeadPieces_15
+  - first:
+      213: -594307227348600729
+    second: MilesFrontHeadPieces_16
+  - first:
+      213: 4431664595477718423
+    second: MilesFrontHeadPieces_17
+  - first:
+      213: -1236308120298839272
+    second: MilesFrontHeadPieces_18
+  - first:
+      213: -4441810263037680813
+    second: MilesFrontHeadPieces_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_0
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 922
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529f5e7b436be6646a67713214f77442
+      internalID: 7701222514261284136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_1
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 922
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c052d728ade2194f9e7afe91ea70d8c
+      internalID: 5400167375081477960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 852
+        width: 112
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c83cd37b385cb4cb53fccdc57f59b5
+      internalID: -7559079532077158415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_3
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 852
+        width: 111
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d01579ff045084cb70180610c5ff2a
+      internalID: -4480583514157092387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 706
+        width: 83
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039e1711feeee5b489fc36744524c0fb
+      internalID: 687990017319711115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_5
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 678
+        width: 72
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9edad59ddca3148b14d1e9eafa71d6
+      internalID: 2265396279187453681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 485
+        width: 222
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e6a14376629b642b8a14c48cd7e0b0
+      internalID: 2577707162099292469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_7
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 534
+        width: 55
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b55b3e05bc2b6e4fa3263afc0c925af
+      internalID: -1856407070733215508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_8
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 520
+        width: 82
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b4b9abf79446946a16ef8175b2ea55
+      internalID: 9065927813244883607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_9
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 448
+        width: 106
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72679d00c7d71c74e8d7f7828060b77c
+      internalID: -212500319196751456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_10
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 381
+        width: 297
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a9a1eef30a5a6489eb4539a74a82ab
+      internalID: 7903782765647190757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_11
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 396
+        width: 93
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86da2ef28aad244d809e9534764006f
+      internalID: 5960616689285665063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 109
+        width: 172
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4597f203605e2ac44aa4beacff34554b
+      internalID: -2234225447925273136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 305
+        width: 104
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95064229f39d9b40aea049ba6d6be19
+      internalID: -619379521475183243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_14
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 295
+        width: 85
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5798f12486313498bfdf62847cea86
+      internalID: 492307356025189031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_15
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 137
+        width: 105
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae39a2c64b6edb946be83e52439f7096
+      internalID: 2032443206995396800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_16
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 174
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198efcf7ce4cf8946b7c3a707c9b91ef
+      internalID: -594307227348600729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_17
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 166
+        width: 72
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ad4df5a2828ff43840e5788b733404
+      internalID: 4431664595477718423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_18
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 38
+        width: 10
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bfde8f82d1a1e46bb4155743fdccb9
+      internalID: -1236308120298839272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MilesFrontHeadPieces_19
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 38
+        width: 11
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddb0a3cb0200c94f93ec810c653f811
+      internalID: -4441810263037680813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b144a580cc4b12c4cbead609e599b260
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
