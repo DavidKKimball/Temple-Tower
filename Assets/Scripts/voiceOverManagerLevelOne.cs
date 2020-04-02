@@ -13,6 +13,7 @@ public class voiceOverManagerLevelOne : MonoBehaviour
     public CinemachineVirtualCamera vcam2;
     public CinemachineVirtualCamera vcam3;
     public CinemachineVirtualCamera vcam4;
+    public CinemachineVirtualCamera vcam5;
     public GameObject disableWhip1;
     public GameObject disableWhip2;
     public GameObject disableWhip3;
@@ -60,6 +61,21 @@ public class voiceOverManagerLevelOne : MonoBehaviour
     {
     switch (voiceOverType)
             {
+            case 5:
+            //miles sees puma go round
+                animName = "MilesIdle";
+                levelMusic.musicVolume = 0.25f;
+                audioData.clip=audioClipArray[12];//dead guy spiel
+                audioData.PlayOneShot(audioData.clip);
+                animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                hudAnim.Play("HUDSlideOutForVoiceOver");                ;                
+                voiceOverDialogue.text = "Well that's a strange looking statue.";
+                movementScript.playAnim(animName);
+                movementScript.stayStill = true;
+                movementScript.isHealing = true;
+                vcam5.gameObject.SetActive(true);//turn on health vcam
+                StartCoroutine(NormalVoiceOverReset(2.2f));
+                break;
             case 4:
             //miles sees the dead guy
                // animPlayer.Play("TallVaseWobble");
@@ -252,6 +268,16 @@ public class voiceOverManagerLevelOne : MonoBehaviour
     public void VolumeReset()
     {
         levelMusic.musicVolume = 0.85f;
+    }
+    IEnumerator NormalVoiceOverReset(float number)
+    {
+        yield return new WaitForSeconds(number);
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");
+        vcam5.gameObject.SetActive(false);
     }
     public void audioOneShot(int number)
     {
