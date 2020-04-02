@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: 8a494701cfeab3e4fb1e37c1606dd36d
   - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: 181aab0e8c590824b847a26c0232feff
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: fd4aeae5cebd5ad4083ccbb822acd167
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Backup/CoreyBoulderRun.unity
     guid: bd51bd95930ccff4890c2dcab07e7d4d
-  - enabled: 1
-    path: Assets/Scenes/DeathScene.unity
-    guid: 181aab0e8c590824b847a26c0232feff
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

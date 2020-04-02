@@ -2189,7 +2189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6423b6c43339c4fba30ab673414bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 719499004}
+  newGameCanvas: {fileID: 0}
+  loadGameCanvas: {fileID: 0}
+  menuManager: {fileID: 0}
   credits: {fileID: 544842328}
   firstObject: {fileID: 731157789}
 --- !u!114 &343602692
@@ -3724,7 +3726,6 @@ MonoBehaviour:
   hoverAudio: {fileID: 8300000, guid: 377e214cd30c7764182133658ecb650f, type: 3}
   backwardAudio: {fileID: 8300000, guid: c35f1244c2e7a1641ad58b9fd8f80a51, type: 3}
   forwardAudio: {fileID: 8300000, guid: 59e6ee00a3b81944997738e19892e8ad, type: 3}
-  pauseMenu: {fileID: 0}
   pressedOnce: 0
 --- !u!82 &583668507
 AudioSource:
@@ -4941,7 +4942,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5047,7 +5048,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa8043d696cb264489fddf86b86611b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 719499004}
+  newGameCanvas: {fileID: 0}
+  loadGameCanvas: {fileID: 0}
+  newGameButton: {fileID: 0}
+  loadGameButton: {fileID: 0}
+  menuManager: {fileID: 0}
   credits: {fileID: 544842328}
   firstObject: {fileID: 344221580}
 --- !u!114 &731157792
@@ -10491,7 +10496,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '2: Antonio Pinero-Cresp......................'
+  m_text: '2: Antonio Pinero-Crespo.....................'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82c6447c3096f1b4ca7b9eb05dc04ad7, type: 2}
   m_sharedMaterial: {fileID: 6293997984760194679, guid: 82c6447c3096f1b4ca7b9eb05dc04ad7,
@@ -13915,6 +13920,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 8635861822959496157, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -13949,21 +13969,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipX
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228314883736159743, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8228314883736159737, guid: a8cefe4f7fe9cf644b97d7fa8e4f4d43,
         type: 3}
