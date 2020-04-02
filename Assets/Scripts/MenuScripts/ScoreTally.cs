@@ -48,7 +48,6 @@ public class ScoreTally : MonoBehaviour
 
         if (gameObject.GetComponent<Canvas>().enabled == true)
         {
-            GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstObject, null);
             switch (taskIncrementer)
             {
                 case 0:
@@ -119,6 +118,7 @@ public class ScoreTally : MonoBehaviour
                 case 5:
                     movement.score = overallScore;
                     movement.SavePlayer();
+                    GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstObject, null);
                     nextButton.GetComponent<Button>().interactable = true;
                     gameSavedText.GetComponent<TextMeshProUGUI>().enabled = true;
                     break;
