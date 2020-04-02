@@ -7,6 +7,6 @@ public class deathToMenu : MonoBehaviour
 {
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuPostIntro");
     }
 }
