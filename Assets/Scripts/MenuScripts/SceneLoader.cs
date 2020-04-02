@@ -9,6 +9,6 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     public void RunGame()
     {
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene("sprintBuildintolevelonesafetybuild2");
     }
 }

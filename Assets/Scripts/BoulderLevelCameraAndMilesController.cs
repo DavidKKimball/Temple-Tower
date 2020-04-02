@@ -34,11 +34,4 @@ public void SwitchViews()
             anim.Play("FrontToSide");
         }
     }
-public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "player")
-        {
-            SwitchViews();
-        }
-    }
 }

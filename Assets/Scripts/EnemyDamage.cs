@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyDamage : MonoBehaviour
 {
     public int damage;
-    //public Movement movement;
+    public Movement movement;
     public float hurtDelayTime = 0.05f;
     public bool iFrames = false;
     public RedHealthBar healthBar;
@@ -14,16 +14,16 @@ public class EnemyDamage : MonoBehaviour
 
     void Start()
     {
-        //movement = GameObject.Find("MilesNewWorking").GetComponent<Movement>();
+        movement = GameObject.Find("MilesNewWorking").GetComponent<Movement>();
         healthBar = GameObject.Find("RedHealth").GetComponent<RedHealthBar>();
         milesScript = GameObject.Find("MilesNewWorking").GetComponent<Movement>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !movement.isRolling && !iFrames)
         {
             healthBar.AdjustCurrentHealth(damage);
-            
+            iFrames = true;
             StartCoroutine(HurtDelay());
             StartCoroutine(DamageDelay());
             //Debug.Log("You took damage");
@@ -39,9 +39,7 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator DamageDelay()
     {
-        yield return new WaitForSeconds(0.02f);
-        //iFrames = true;
-        yield return new WaitForSeconds(0.04f);
-        //iFrames = false;
+        yield return new WaitForSeconds(3);
+        iFrames = false;
     }
 }

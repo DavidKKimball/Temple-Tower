@@ -19,7 +19,6 @@ public class MoveSegment : MonoBehaviour
     public GameObject level;
     public GameObject directionalArrows;
     public GameObject waterfallAssets;
-    public GameObject cameraFollowObject;
 
     public ParticleSystem Rockslide;
     public directionalArrows arrowScript;
@@ -35,7 +34,6 @@ public class MoveSegment : MonoBehaviour
     public bool isMoving = false;
     public bool isLeft = false;
     public bool playedOnce = false;
-    public int previousState;
 
     public Transform leftPoint;
     public Transform rightPoint;
@@ -87,7 +85,6 @@ public class MoveSegment : MonoBehaviour
 
         if (isMoving)
         {
-            cameraFollowObject.transform.localPosition = new Vector3(0,0,0);
             ZoomBack();
             StartCoroutine(MoveSegmentDelay());   
         }
@@ -97,8 +94,8 @@ public class MoveSegment : MonoBehaviour
     {
         if (other.gameObject.tag == "Whip" && !isLocked && !isMoving)
         {
-                movementScript.isLocked = true;
-                isLocked = true;
+            movementScript.isLocked = true;
+            isLocked = true;
         }
     }
 
@@ -144,7 +141,7 @@ public class MoveSegment : MonoBehaviour
 
     public void IdleAnim()
     {
-        //anim.Play("newFloorMechanismLevelOneConfigurationanimIdle");
+        anim.Play("FloorMechanismIdle");
         Rockslide.Stop();
     }
 
@@ -152,15 +149,15 @@ public void MoveAnim()
 {
         if(isLeft)
         {
-            anim.Play("newFloorMechanismLevelOneConfigurationanimLeft");
+            anim.Play("FloorMechanismTurnLeft");
             moveNumber--;
         }
         if(!isLeft)
         {
-            anim.Play("newFloorMechanismLevelOneConfigurationanim");
+            anim.Play("FloorMechanismTurnRight");
             moveNumber++;
         }
-        Rockslide.Play();        
+        Rockslide.Play();
         if (moveNumber > 4)
         {
             moveNumber = 0;
@@ -169,47 +166,34 @@ public void MoveAnim()
         {
             moveNumber = 4;
         }
-        Debug.Log("previous state is " + previousState);
-        Debug.Log("movement number is " + moveNumber);
+        Debug.Log(moveNumber);
         switch (moveNumber)
             {
             case 4:
                 scriptManager.enableGearsNoWater();
                 waterfallAssets.SetActive(false); 
-                StartCoroutine(setPieceMover());
-                previousState = moveNumber;          
+                StartCoroutine(setPieceMover());          
                 break;
             case 3:
                 //scriptManager.disableGears();
-                if (previousState == 4)
-                {
-                    scriptManager.disableGearsAndGearBox();
-                }
-                else
-                {
-                    scriptManager.disableGears();
-                }
-                waterfallAssets.SetActive(true);
-                previousState = moveNumber;               
+                scriptManager.disableGearsAndGearBox();
+                waterfallAssets.SetActive(true);                
                 break;
             case 2:
                 scriptManager.enableGears();
                 waterfallAssets.SetActive(false);
                 StartCoroutine(setPieceMover());
-                previousState = moveNumber;
                 //turn off waterfall stream
                 break;
             case 1:
                 scriptManager.disableGears();
                 //scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
-                previousState = moveNumber;
                 break;
             case 0:
                 //scriptManager.disableGears();
                 scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
-                previousState = moveNumber;
                 break;
             default:
                 
@@ -218,7 +202,7 @@ public void MoveAnim()
 }
     IEnumerator MoveSegmentDelay()
     {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(1f);
             if (level.transform.position != target.position && isMoving)
         {
             level.transform.position = Vector3.MoveTowards(level.transform.position, target.position, movingSpeed * Time.deltaTime);

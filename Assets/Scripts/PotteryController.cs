@@ -7,10 +7,9 @@ public class PotteryController : MonoBehaviour
     private Animator anim;
     private AudioSource audioData;
     private bool isReady = true;
-    public float potteryDelayTime = 0.3f;
+    public float potteryDelayTime = 0.2f;
     public AudioClip[] audioClipArray;
     public bool isCollided;
-    public bool isWhipped;
 
     [Header("ShortNarrow = 2, ShortVaseAndLid = 1")]
     [Header("Vase type is: TallVase = 4, Medium = 3")]
@@ -32,9 +31,9 @@ public class PotteryController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Whip" && isReady == true)
+        if (other.gameObject.tag == "Player" && isReady == true)
         {
-        isReady = false;
+            audioData.PlayOneShot(audioData.clip); 
         switch (potteryType)
         {
         case 4:
@@ -53,31 +52,20 @@ public class PotteryController : MonoBehaviour
             print ("No Vase Type Selected");
             break;
         }
-        if (other.gameObject.tag == "Whip")
-        {
-            isWhipped = true;
-        }
-        isReady = false;
-        if(maxCoins > coinCount)
-        {
-            isCollided = true;
-            coinCount++;
-        }
-        else
-        {
-            isCollided = false;
-        }
-        StartCoroutine(PotterySoundDelay());
+            isReady = false;
+            if(maxCoins > coinCount)
+            {
+                isCollided = true;
+                coinCount++;
+            }
+            StartCoroutine(PotterySoundDelay());
         }
     }
 
     IEnumerator PotterySoundDelay()
     {
-        //isReady = false;
-        audioData.PlayOneShot(audioData.clip); 
         yield return new WaitForSeconds(potteryDelayTime);
         isReady = true;
-        isWhipped = false;
     }
 } 
 

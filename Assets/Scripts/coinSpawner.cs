@@ -22,24 +22,13 @@ public class coinSpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PotteryController.isCollided == true && PotteryController.isWhipped == false && coinCount < maxCoins)
+        if (PotteryController.isCollided == true && coinCount < maxCoins)
         {
             PotteryController.isCollided = false;            
             Rigidbody clone = Instantiate(coin[coinType], spawnPoint.transform.position, spawnPoint.transform.rotation);
             clone.AddRelativeForce(Vector3.left * spawnForce);
             PotteryController.isCollided = false;
             coinCount++;
-        }
-        else if (PotteryController.isWhipped == true && coinCount < maxCoins)
-        {            
-            Rigidbody clone = Instantiate(coin[coinType], spawnPoint.transform.position, spawnPoint.transform.rotation);
-            clone.AddRelativeForce(Vector3.left * spawnForce);
-            coinCount++;
-            if (coinCount >= maxCoins)
-            {
-                PotteryController.isCollided = false;
-                PotteryController.isWhipped = false;
-            }
         }
     }
 }

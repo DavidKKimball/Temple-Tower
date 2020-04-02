@@ -19,7 +19,7 @@ public class resultsScreen : MonoBehaviour
     public void Start()
         {
             scriptHolderForCamera = GameObject.Find("ColliderToMechanism");
-            //cameraUnlock = scriptHolderForCamera.GetComponent<MoveSegment>();
+            cameraUnlock = scriptHolderForCamera.GetComponent<MoveSegment>();
             //milesCameraMasterAnimator = GameObject.Find("MilesAndCameraController");
             //cameraMain = GameObject.FindGameObjectWithTag("MainCamera");
         }
