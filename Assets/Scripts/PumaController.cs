@@ -23,9 +23,18 @@ public class PumaController : MonoBehaviour {
     private int current = 0;
     private float Wpradius = 1;
 
+    public bool isBoss;
+
+    public int pumaHealth;
+
     private void Start()
     {
         startingPosition = gameObject.transform;
+
+        if (isBoss)
+            pumaHealth = 3;
+        else
+            pumaHealth = 1;
     }
 
     // Update is called once per frame

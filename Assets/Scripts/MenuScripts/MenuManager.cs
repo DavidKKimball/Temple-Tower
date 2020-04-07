@@ -13,7 +13,9 @@ public class MenuManager : MonoBehaviour
     public GameObject loadGameButton;
     public GameObject yesButton;
     public GameObject backButton;
+    public GameObject controlBackButton;
     public bool newGame;
+    public GameObject controlCanvas;
     public GameObject areYouSureCanvas;
     public GameObject noSaveDataCanvas;
     // Start is called before the first frame update
@@ -43,6 +45,16 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(newGameButton);
             newGame = true;
         }
+    }
+
+    public void ControlsButton()
+    {
+        loadGameCanvas.GetComponent<Canvas>().enabled = false;
+        newGameCanvas.GetComponent<Canvas>().enabled = false;
+        controlCanvas.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlBackButton);
     }
 
     public void AreYouSure()

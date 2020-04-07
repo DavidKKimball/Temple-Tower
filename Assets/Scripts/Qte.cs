@@ -38,6 +38,7 @@ public class Qte : MonoBehaviour
     public Animator anim;
     private AudioSource audioData;
     public AudioClip[] audioClipArray;
+    public PumaController pumaController;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class Qte : MonoBehaviour
         zoomer =  vcam.GetComponent<CinemachineVirtualCamera>();        
         pumaName = miles.GetComponent<Movement>().pumaName;
         puma = GameObject.Find(pumaName);
+        pumaController = puma.GetComponent<PumaController>();
         vcam.GetComponent<CinemachineVirtualCamera>().Follow = gameObject.transform;
         StartCoroutine(ButtonSpawnDelay());
         originalPosition = zoomer.m_Lens.FieldOfView;
@@ -96,9 +98,15 @@ public class Qte : MonoBehaviour
 
             if (isSafe == true)
             {
-                //Destroy(puma); destroying the puma makes his audio growl disapear which is used in an audioSource array to turn off all sound at the end of the level. If its destroyed mid-game, the tally screen script fails because the audioSource in one of the array slots is missing.
-                puma.gameObject.transform.position = new Vector3(0, -500,0);
-                Instantiate(sleepingPuma, miles.transform.position, Quaternion.identity);
+                pumaController.pumaHealth--;
+                if (pumaController.pumaHealth <= 0)
+                {
+                    //Destroy(puma); destroying the puma makes his audio growl disapear which is used in an audioSource array to turn off all sound at the end of the level. If its destroyed mid-game, the tally screen script fails because the audioSource in one of the array slots is missing.
+                    puma.gameObject.transform.position = new Vector3(0, -500,0);
+                    Instantiate(sleepingPuma, miles.transform.position, Quaternion.identity);
+                }
+                else
+                    puma.transform.position = pumaSpawn.transform.position;
             }
             else if (isSafe == false)
             {

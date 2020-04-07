@@ -103,7 +103,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuPostIntro");
     }
 
     public void ClickForwardSound()
