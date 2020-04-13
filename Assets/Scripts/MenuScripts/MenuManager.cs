@@ -83,4 +83,13 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(backButton);
         }
     }
+
+    public void BackorNo()
+    {
+        areYouSureCanvas.GetComponent<Canvas>().enabled = false;
+        noSaveDataCanvas.GetComponent<Canvas>().enabled = false;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(loadGameButton);
+    }
 }
