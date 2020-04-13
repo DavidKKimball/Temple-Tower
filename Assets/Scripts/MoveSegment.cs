@@ -35,6 +35,7 @@ public class MoveSegment : MonoBehaviour
     public bool isMoving = false;
     public bool isLeft = false;
     public bool playedOnce = false;
+    public bool levelOne = false;
     public int previousState;
 
     public Transform leftPoint;
@@ -150,6 +151,8 @@ public class MoveSegment : MonoBehaviour
 
 public void MoveAnim()
 {
+    if (levelOne)
+    {
         if(isLeft)
         {
             anim.Play("newFloorMechanismLevelOneConfigurationanimLeft");
@@ -215,6 +218,7 @@ public void MoveAnim()
                 
                 break;
             }
+    }
 }
     IEnumerator MoveSegmentDelay()
     {
