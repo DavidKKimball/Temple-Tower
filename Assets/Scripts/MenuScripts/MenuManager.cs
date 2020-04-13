@@ -73,7 +73,7 @@ public class MenuManager : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("MenuPostIntro");
         }
         else
         {
