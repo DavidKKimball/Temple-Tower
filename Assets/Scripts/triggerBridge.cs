@@ -8,12 +8,16 @@ public class triggerBridge : MonoBehaviour
     private int playedOnce = 0;
     public Transform cameraReset;
     public ParticleSystem rubbleSmoke;
+    public GameObject playerScriptHolder;
+    private Movement script;
     private AudioSource audioFile;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>(); 
         audioFile = GetComponent<AudioSource>();
+        playerScriptHolder = GameObject.Find("MilesNewWorking");
+        script = playerScriptHolder.GetComponent<Movement>();
     }
 
 
@@ -27,6 +31,7 @@ public class triggerBridge : MonoBehaviour
             playedOnce += 1;
             //Debug.Log("Played");
             rubbleSmoke.Play();
+            script.stayStill = false;
         }
     }
 }

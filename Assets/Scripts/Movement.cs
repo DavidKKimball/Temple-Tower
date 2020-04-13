@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.IO;
 
 public class Movement : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class Movement : MonoBehaviour
     public bool notMoving = true;
     public bool isWhipping = false;
     public bool isLocked;
+    public bool stayStill;
     public GameObject bloodSpawn;
     public GameObject[] MilesSprites;
     public SpriteRenderer whip;
@@ -72,6 +74,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        LoadPlayerScore();
         Time.timeScale = 1;
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody>();
@@ -143,6 +146,8 @@ public class Movement : MonoBehaviour
                 if (MilesFrontWalk && !facingFront)
                     TurnOffFrontWalk();
                 
+            if (!stayStill)
+            {
                 if(!facingFront)
                 {
                     transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, Input.GetAxis("Vertical") * speed * Time.deltaTime);
@@ -319,6 +324,7 @@ public class Movement : MonoBehaviour
                     }
                 }
             }
+        }
 
         }
         // coins
@@ -609,13 +615,22 @@ public class Movement : MonoBehaviour
     public void MilesDrinkHealth()
     {
             isHealing = true;
+            stayStill = true;
             anim.Play("MilesDrinkHealth");
             StartCoroutine(HealthDelay());
+    }
+    public void playAnim(string animName)
+    {
+        //anim.StopPlayback();
+        anim.Play(animName);
+        //Debug.Log(animName);
+        //Debug.Log("it fired");
     }
 
     IEnumerator HealthDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.75f);
+        stayStill = false;
         isHealing = false;
     }
     IEnumerator MilesHeroLandingDelay()
@@ -667,5 +682,23 @@ public class Movement : MonoBehaviour
 
         isWhipping = false;
         playedOnce = false;
+    }
+
+    // as if this script isnt bloated enough lets add in some save functionality
+    public void SavePlayer()
+    {
+        SaveScript.SavePlayer(this);
+    }
+
+    public void LoadPlayerScore()
+    {
+        string path = Application.persistentDataPath + "/player.snootysobyouare";
+        if (File.Exists(path))
+        {
+            PlayerData data = SaveScript.LoadPlayer();
+            score = data.score;
+        }
+        else
+            score = 0;
     }
 }

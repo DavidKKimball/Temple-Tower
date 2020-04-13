@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Qte : MonoBehaviour
 {
     public Image qteBar;
+    public ParticleSystem system;
     public GameObject[] buttonSpawn;
     public GameObject pumaSpawn;
     public int addValue;
@@ -24,7 +25,6 @@ public class Qte : MonoBehaviour
     private float barHealth;
     private int buttonNumber;
     //private Vector3 pumaCords;
-
     public GameObject playerHealth;
     public GameObject[] buttonPrefabs;
     public GameObject vcam;
@@ -36,9 +36,12 @@ public class Qte : MonoBehaviour
     public CinemachineVirtualCamera zoomer;
     public GameObject animHolder;
     public Animator anim;
+    private AudioSource audioData;
+    public AudioClip[] audioClipArray;
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         miles = GameObject.Find("MilesNewWorking");
         cameraFollow = GameObject.Find("CameraFollowsThisObject");
         playerHealth = GameObject.Find("RedHealth");
@@ -93,7 +96,7 @@ public class Qte : MonoBehaviour
 
             if (isSafe == true)
             {
-                //Destroy(puma);
+                //Destroy(puma); destroying the puma makes his audio growl disapear which is used in an audioSource array to turn off all sound at the end of the level. If its destroyed mid-game, the tally screen script fails because the audioSource in one of the array slots is missing.
                 puma.gameObject.transform.position = new Vector3(0, -500,0);
                 Instantiate(sleepingPuma, miles.transform.position, Quaternion.identity);
             }
@@ -110,37 +113,52 @@ public class Qte : MonoBehaviour
 
     void ButtonMash(int buttonNumber)
     {
+    audioData.clip=audioClipArray[Random.Range(0,audioClipArray.Length)];
         switch (buttonNumber)
         {
             case 0:
-                if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("w"))
+                if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("s"))
                 {
+                    //system.Stop();
+                    Debug.Log("pressed");
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
+                    //system.Play();
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 1:
-                if (Input.GetButtonDown("Fire5") || Input.GetKeyDown("a"))
+                if (Input.GetButtonDown("Fire5") || Input.GetKeyDown("d"))
                 {
+                    //system.Stop();
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 2:
-                if (Input.GetButtonDown("Fire3") || Input.GetKeyDown("s"))
+                if (Input.GetButtonDown("Fire3") || Input.GetKeyDown("a"))
                 {
+                    //system.Stop();
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
             case 3:
-                if (Input.GetButtonDown("Fire6") || Input.GetKeyDown("d"))
+                if (Input.GetButtonDown("Fire6") || Input.GetKeyDown("w"))
                 {
+                    //system.Stop();
                     barHealth += addValue;
                     buttonPresses++;
+                    audioData.PlayOneShot(audioData.clip);
+                    StartCoroutine(particleReplay());
                     StartCoroutine(SpeedUpQTE());
                 }
                 break;
@@ -149,15 +167,12 @@ public class Qte : MonoBehaviour
         }
     }
 
-    void ChangeButton()
-    {
-
-    }
     IEnumerator SpeedUpQTE()
     {
-        anim.speed = 1.6f;
+        //anim.speed = 1.6f;
+        anim.Play("WrestlingPhaseOnePunch");
         yield return new WaitForSeconds(0.07f);
-        anim.speed = 1.0f;
+        //anim.speed = 1.0f;
     }
     IEnumerator QteEnd()
     {
@@ -187,5 +202,11 @@ public class Qte : MonoBehaviour
     { 
         if (zoomer.m_Lens.FieldOfView <= originalPosition)
             zoomer.m_Lens.FieldOfView += (zoomInSpeed * Time.deltaTime);
+    }
+    IEnumerator particleReplay()
+    {
+        system.Play();
+        yield return new WaitForSeconds(0.3f);
+        system.Stop();
     }
 }

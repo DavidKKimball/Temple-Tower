@@ -9,12 +9,18 @@ public class treasureCounter : MonoBehaviour
     public TextMeshProUGUI treasureTextMesh;
     private Animator anim;
     public int treasureCollectedAmount = 0;
+    public bool triggerVoiceOver;
+    public int voiceOverNumber;
+    private voiceOverManagerLevelOne voice;
+    private GameObject voiceHolder;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         objects = GameObject.FindGameObjectsWithTag("Treasure");
         treasureTextMesh  = treasureTextMesh.gameObject.GetComponent<TextMeshProUGUI>();
+        voiceHolder = GameObject.Find("Voice Over Manager");
+        voice = voiceHolder.GetComponent<voiceOverManagerLevelOne>();
     }
 
     // Update is called once per frame
@@ -26,6 +32,18 @@ public class treasureCounter : MonoBehaviour
 
     public void collectTreasure()
     {
+        if (triggerVoiceOver)
+        {
+            if (treasureCollectedAmount == 1)
+            {
+                voice.audioOneShot(voiceOverNumber);
+                voiceOverNumber++;
+            }
+            if (treasureCollectedAmount == 4)
+            {
+                voice.audioOneShot(voiceOverNumber);
+            }
+        }
         anim.Play("TreasureHudSlideIn");
         StartCoroutine(treasureDelay());
     }
