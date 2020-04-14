@@ -2754,6 +2754,7 @@ GameObject:
   - component: {fileID: 6492020606045135225}
   - component: {fileID: 6492020606045135231}
   - component: {fileID: 6492020606045135230}
+  - component: {fileID: 1069933293896022149}
   m_Layer: 0
   m_Name: MilesAndCameraController 1
   m_TagString: Untagged
@@ -2810,6 +2811,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchCount: 0
+--- !u!114 &1069933293896022149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492020606045135224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b7762578ff64f4083e5d76e594157b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6492020606180692990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,6 +3056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSrc: {fileID: 0}
+  musicVolume: 8.5
 --- !u!114 &6492020606314772359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8447,6 +8461,7 @@ MonoBehaviour:
   notMoving: 1
   isWhipping: 0
   isLocked: 0
+  stayStill: 0
   bloodSpawn: {fileID: 975117570761338277, guid: 55c588736dc704b4b88dc4c0527d5b0d,
     type: 3}
   MilesSprites:
@@ -8504,7 +8519,9 @@ MonoBehaviour:
   resultsObject: {fileID: 0}
   musicMan: {fileID: 6492020606314772359}
   hud: {fileID: 0}
+  endGameTarget: {fileID: 0}
   transitionPanel: {fileID: 0}
+  vcam: {fileID: 0}
 --- !u!82 &6492020604718684361
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13843,11 +13860,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6946572789146855914, guid: aae20e02c6b12aa4d95c75a6f2b6a778,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9e487d88caca5a0419b7dc665cd82500, type: 2}
     - target: {fileID: 5445622958170893860, guid: aae20e02c6b12aa4d95c75a6f2b6a778,
         type: 3}
       propertyPath: m_Enabled
@@ -13858,17 +13870,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 6946572789146855914, guid: aae20e02c6b12aa4d95c75a6f2b6a778,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e487d88caca5a0419b7dc665cd82500, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae20e02c6b12aa4d95c75a6f2b6a778, type: 3}
---- !u!95 &8780173113730576650 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6946572789146855914, guid: aae20e02c6b12aa4d95c75a6f2b6a778,
-    type: 3}
-  m_PrefabInstance: {fileID: 1855025412764506336}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &349720503091192997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2117865248790510661, guid: aae20e02c6b12aa4d95c75a6f2b6a778,
+    type: 3}
+  m_PrefabInstance: {fileID: 1855025412764506336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8780173113730576650 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6946572789146855914, guid: aae20e02c6b12aa4d95c75a6f2b6a778,
     type: 3}
   m_PrefabInstance: {fileID: 1855025412764506336}
   m_PrefabAsset: {fileID: 0}

@@ -1503,6 +1503,7 @@ GameObject:
   - component: {fileID: 3649637254303298753}
   - component: {fileID: 2807127493187781965}
   - component: {fileID: 4942236549308470536}
+  - component: {fileID: 5788523217376683732}
   - component: {fileID: 1633993603}
   m_Layer: 9
   m_Name: MilesNewWorking
@@ -1599,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frontMiles: {fileID: 8282198063654987823}
+  backMiles: {fileID: 0}
   whipAnim: {fileID: 2576405010950085216}
   audioClipArray:
   - {fileID: 8300000, guid: 571de3bc2b5a27b428842e7c1291fa75, type: 3}
@@ -1629,10 +1631,12 @@ MonoBehaviour:
   isGrounded: 0
   isBackTurned: 0
   isRolling: 0
+  isHealing: 0
   justJumped: 0
   notMoving: 1
   isWhipping: 0
   isLocked: 0
+  stayStill: 0
   bloodSpawn: {fileID: 975117570761338277, guid: 55c588736dc704b4b88dc4c0527d5b0d,
     type: 3}
   MilesSprites:
@@ -1647,6 +1651,7 @@ MonoBehaviour:
   - {fileID: 8282198065097646604}
   whip: {fileID: 7652319217019336249}
   MilesFrontWalk: {fileID: 8282198064768390218}
+  MilesBackWalk: {fileID: 0}
   score: 0
   facingFront: 0
   scoreText: {fileID: 0}
@@ -1686,6 +1691,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackOut: {fileID: 0}
+  resultsObject: {fileID: 0}
+  musicMan: {fileID: 0}
+  hud: {fileID: 0}
+  endGameTarget: {fileID: 0}
+  transitionPanel: {fileID: 0}
+  vcam: {fileID: 0}
+--- !u!114 &5788523217376683732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4448722513834930301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b7762578ff64f4083e5d76e594157b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1633993603
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3093,6 +3116,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6785743340015459050}
     m_Modifications:
+    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_Name
+      value: BlobShadowProjector
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3148,10 +3175,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalScale.z
       value: 6.2500033
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_Name
-      value: BlobShadowProjector
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_IgnoreLayers.m_Bits
