@@ -19,6 +19,8 @@ public class MoveSegment : MonoBehaviour
     public GameObject level;
     public GameObject directionalArrows;
     public GameObject waterfallAssets;
+    public segmentManagerLevelFive scriptManager5;
+    public FallSpikeTrapController trapController;
     public GameObject cameraFollowObject;
 
     public ParticleSystem Rockslide;
@@ -36,6 +38,7 @@ public class MoveSegment : MonoBehaviour
     public bool isLeft = false;
     public bool playedOnce = false;
     public bool levelOne = false;
+    public bool levelFive = false;
     public int previousState;
 
     public Transform leftPoint;
@@ -51,7 +54,14 @@ public class MoveSegment : MonoBehaviour
         movementScript = Movement.GetComponent<Movement>();
         arrowScript = directionalArrows.GetComponent<directionalArrows>();
         levelManager = GameObject.Find("SegmentManager");
-        scriptManager = levelManager.GetComponent<segmentManagerLevelOne>();
+        if(levelOne)
+        {
+            scriptManager = levelManager.GetComponent<segmentManagerLevelOne>();
+        }
+        if(levelFive)
+        {
+            scriptManager5 = levelManager.GetComponent<segmentManagerLevelFive>();  
+        }
         originalPosition = vcam.m_Lens.FieldOfView;
         zoomInPosition = originalPosition + zoomInLength;
         zoomOutPosition = originalPosition + zoomOutLength;
@@ -151,8 +161,6 @@ public class MoveSegment : MonoBehaviour
 
 public void MoveAnim()
 {
-    if (levelOne)
-    {
         if(isLeft)
         {
             anim.Play("newFloorMechanismLevelOneConfigurationanimLeft");
@@ -174,6 +182,8 @@ public void MoveAnim()
         }
         Debug.Log("previous state is " + previousState);
         Debug.Log("movement number is " + moveNumber);
+        if (levelOne)
+        {
         switch (moveNumber)
             {
             case 4:
@@ -218,6 +228,67 @@ public void MoveAnim()
                 
                 break;
             }
+            if (levelFive)
+            {
+            switch (moveNumber)
+                {
+                case 4:
+                //scriptManager5.switchTriggersBack();
+                //trapController.level5 = true;
+                //waterfallAssets = GameObject.Find("TriggerColliderFallingTrap");
+                //waterfallAssets.SetActive(true);
+                    //scriptManager.enableGearsNoWater();
+                    //waterfallAssets.SetActive(false); 
+                    //StartCoroutine(setPieceMover());
+                    previousState = moveNumber;          
+                    break;
+                case 3:
+                    //scriptManager5.switchTriggersBack();
+                    //waterfallAssets.SetActive(false);
+                    //scriptManager.disableGears();
+                    /*if (previousState == 4)
+                    {
+                        scriptManager.disableGearsAndGearBox();
+                    }
+                    else
+                    {
+                        scriptManager.disableGears();
+                    }
+                    */ //waterfallAssets.SetActive(true);
+                    previousState = moveNumber;               
+                    break;
+                case 2:
+                    trapController.switchThis();
+                    //scriptManager5.switchTriggers();
+                    //waterfallAssets.SetActive(false);
+                    //scriptManager.enableGears();
+                    //waterfallAssets.SetActive(false);
+                    //StartCoroutine(setPieceMover());
+                    Debug.Log("Should be working");
+                    previousState = moveNumber;
+                    //turn off waterfall stream
+                    break;
+                case 1:
+                    //scriptManager5.switchTriggersBack();
+                    //waterfallAssets.SetActive(false);
+                    //scriptManager.disableGears();
+                    //scriptManager.disableGearsAndGearBox();
+                    //waterfallAssets.SetActive(false);
+                    previousState = moveNumber;
+                    break;
+                case 0:
+                    //scriptManager5.switchTriggersBack();
+                    //waterfallAssets.SetActive(false);
+                    //scriptManager.disableGears();
+                    //scriptManager.disableGearsAndGearBox();
+                    //waterfallAssets.SetActive(false);
+                    previousState = moveNumber;
+                    break;
+                default:
+                    
+                    break;
+                }     
+        } 
     }
 }
     IEnumerator MoveSegmentDelay()

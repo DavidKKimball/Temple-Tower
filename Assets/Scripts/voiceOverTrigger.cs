@@ -6,15 +6,24 @@ public class voiceOverTrigger : MonoBehaviour
 {
     private GameObject voiceOverManager;
     private voiceOverManagerLevelOne managerLevelOne;
+    private voiceOverManagerLevelFive managerLevelFive;
     public int voiceOverType;
     //private bool alreadyPlayed = false;
     public float manualDistance;
     private GameObject player;
+    public int levelNumber;
     // Start is called before the first frame update
     void Start()
     {
         voiceOverManager = GameObject.Find("Voice Over Manager");
-        managerLevelOne = voiceOverManager.GetComponent<voiceOverManagerLevelOne>();
+        if (levelNumber== 1)
+        {
+            managerLevelOne = voiceOverManager.GetComponent<voiceOverManagerLevelOne>();
+        }
+        if(levelNumber == 5)
+        {
+             managerLevelFive = voiceOverManager.GetComponent<voiceOverManagerLevelFive>();
+        }
         player = GameObject.Find("MilesNewWorking");
     }
 
@@ -28,7 +37,15 @@ public class voiceOverTrigger : MonoBehaviour
     float playerDistance = Vector3.Distance(gameObject.transform.position, player.transform.position);
         if (playerDistance < manualDistance)
         {
-            managerLevelOne.TriggerVoiceOver(voiceOverType);
+            if (levelNumber == 1)
+            {
+                managerLevelOne.TriggerVoiceOver(voiceOverType);
+            }
+            if (levelNumber == 5)
+            {
+                managerLevelFive.TriggerVoiceOver(voiceOverType);
+            }
+
             Destroy(this);
         }
     }

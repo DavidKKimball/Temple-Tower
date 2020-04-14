@@ -5,8 +5,174 @@ using TMPro;
 using Cinemachine;
 
 public class voiceOverManagerLevelFive : MonoBehaviour
-{/*
+{
     private GameObject scriptHolder;
+    public Animator hudAnim;
+    public CinemachineVirtualCamera vcam;
+    public CinemachineVirtualCamera vcam2;
+    public CinemachineVirtualCamera vcam3;
+    private Movement movementScript;
+    private Animator animPlayer;
+    private GameObject animatorHolder;
+    public Animator animTransitionController;
+    private GameObject textHolder;
+    public TMP_Text voiceOverDialogue;
+    public VolumeChanger levelMusic;
+    private AudioSource audioData;
+    public string animName;
+    public AudioClip[] audioClipArray;
+
+       void Start()
+    {
+        //vcam = GameObject.Find("CM vcam4");
+        //regularCamera = GameObject.Find("CM vcam1");
+        textHolder = GameObject.Find("VoiceOverText");
+        animatorHolder = GameObject.Find("Transition Controller");
+        scriptHolder = GameObject.Find("MilesNewWorking");
+        movementScript = scriptHolder.GetComponent<Movement>();
+        animPlayer = scriptHolder.GetComponent<Animator>();
+        animTransitionController = animatorHolder.GetComponent<Animator>();
+        voiceOverDialogue = textHolder.GetComponent<TMP_Text>();
+        audioData = GetComponent<AudioSource>();
+    }
+    void Update()
+    {
+
+    }
+public void TriggerVoiceOver(int voiceOverType)
+    {
+    switch (voiceOverType)
+            {
+            case 5:
+            //miles sees puma go round
+                //animName = "MilesIdle";
+                //levelMusic.musicVolume = 0.25f;
+                //audioData.clip=audioClipArray[12];//dead guy spiel
+                //audioData.PlayOneShot(audioData.clip);
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver");                ;                
+                //voiceOverDialogue.text = "Well that's a strange looking statue.";
+                //movementScript.playAnim(animName);
+               //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //vcam5.gameObject.SetActive(true);//turn on health vcam
+                //StartCoroutine(NormalVoiceOverReset(2.2f));
+                break;
+            case 4:
+            //miles sees the dead guy
+               // animPlayer.Play("TallVaseWobble");
+                //animName = "MilesIdle";
+                //levelMusic.musicVolume = 0.25f;
+                //turnOffWalkieTalkieWhileTalking.enabled = false;
+                //animPlayer.Play("MilesDrinkHealth");
+                //audioData.clip=audioClipArray[3];//dead guy spiel
+                //audioData.PlayOneShot(audioData.clip);
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver");                
+                //freezeDuration = 6f;                
+                //voiceOverDialogue.text = "Miles: Drat! I thought I'd be the first explorer down here!";
+                //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //animPlayer.Play("MilesLookUp");
+                //movementScript.playAnim(animName);
+                //vcam.gameObject.SetActive(true);
+                //regularCamera.SetActive(false);
+                //walkieTalkie.SetActive(false);
+                //fireSecondCoroutine = true;
+                //vcam3.gameObject.SetActive(true);//turn on health vcam
+                //StartCoroutine(HealthTalk());
+                break;
+            case 3:
+            //miles picks up the phone
+                //animName = "MilesAnswersPhone";
+                //levelMusic.musicVolume = 0.25f;
+                //turnOffWalkieTalkieWhileTalking.enabled = false;
+                //animPlayer.Play("MilesDrinkHealth");
+                //audioData.clip=audioClipArray[1];
+                //audioData.PlayOneShot(audioData.clip);
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver");                
+                //freezeDuration = 6f;                
+                //voiceOverDialogue.text = "Miles: Shelly! Can you hear me? It's Miles. I'm Alright";
+                //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //animPlayer.Play("MilesLookUp");
+                //movementScript.playAnim(animName);
+                //vcam.gameObject.SetActive(true);
+                //regularCamera.SetActive(false);
+                //walkieTalkie.SetActive(false);
+                //fireSecondCoroutine = true;
+                //StartCoroutine(FreezeReset());
+                //StartCoroutine(phoneConvoDelay());
+                break;
+            case 2:
+            //miles sees the puma
+                //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //movementScript.playAnim("MilesIdle");
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver"); 
+                //levelMusic.musicVolume = 0.25f;
+                //waterfallAudio.volume = 0.15f;
+                //vcam4.gameObject.SetActive(true);
+                //voiceOverDialogue.text = "Miles: A Puma! I've fought a few of these in my day! They'll only slow me down!";
+            // animPlayer.Play("ShortNarrowVaseWobble");
+                //StartCoroutine(PumaReset());
+                break;
+            case 1:
+            //miles first walks into the level
+                audioData.clip=audioClipArray[0];
+                movementScript.stayStill = true;
+                movementScript.isHealing = true;
+                animPlayer.Play("MilesAnswersPhone");
+                animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                hudAnim.Play("HUDSlideOutForVoiceOver");
+                levelMusic.musicVolume = 0.25f;
+                audioData.PlayOneShot(audioData.clip);
+                voiceOverDialogue.text = "Shelly: Miles did you feel that?... Are you alright?... Watch out for the falling rocks down there.";
+                StartCoroutine(phoneConvoLevelStart());
+                
+                //animName = "MilesLookUp";
+                //levelMusic.musicVolume = 0.25f;
+                //turnOffWalkieTalkieWhileTalking.enabled = false;
+                //animPlayer.Play("MilesDrinkHealth");
+                //audioData.clip=audioClipArray[0];
+                //audioData.PlayOneShot(audioData.clip);
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver");                
+                //freezeDuration = 3.2f;                
+                //voiceOverDialogue.text = "Miles: I can't reach that from here, I'll have to find another way";
+                //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //animPlayer.Play("MilesLookUp");
+                //movementScript.playAnim(animName);
+                //vcam.gameObject.SetActive(true);
+                //regularCamera.SetActive(false);
+                //StartCoroutine(FreezeReset());
+                break;
+            default:
+                print ("");
+                break;
+        }        
+    IEnumerator phoneConvoLevelStart()
+    {
+
+        //yield return new WaitForSeconds(3.3f);
+        //voiceOverDialogue.text = "Shelly: Oh thank goodness! I thought you were dead!";
+        //audioData.clip=audioClipArray[2];
+        //audioData.PlayOneShot(audioData.clip); 
+        yield return new WaitForSeconds(6f);
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");
+        movementScript.playAnim("MilesPutsAwayPhone");
+        //vcam5.gameObject.SetActive(false);
+
+    }
+    /*
+
     public Animator hudAnim;
     public Animator turnOffWalkieTalkieWhileTalking;
     public CinemachineVirtualCamera vcam;
@@ -292,4 +458,5 @@ public class voiceOverManagerLevelFive : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         levelMusic.musicVolume = 0.85f;
     }*/
+    }
 }

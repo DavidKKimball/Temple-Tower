@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class segmentManagerLevelFive : MonoBehaviour
 {
+    public GameObject triggerOld;
+    public GameObject triggerNew;
     //private Animator anim;
     //private GameObject gears;
     //private Animator anim2;
@@ -54,4 +56,14 @@ public class segmentManagerLevelFive : MonoBehaviour
         yield return new WaitForSeconds(7.4f);
         waterfall.SetActive(true);
     }*/
+    public void switchTriggers()
+    {
+        triggerOld.SetActive(false);
+        triggerNew.SetActive(true);
+    }
+    public void switchTriggersBack()
+    {
+        triggerOld.SetActive(true);
+        triggerNew.SetActive(false);
+    }
 }
