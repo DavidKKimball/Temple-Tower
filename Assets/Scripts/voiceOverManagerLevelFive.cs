@@ -11,6 +11,7 @@ public class voiceOverManagerLevelFive : MonoBehaviour
     public CinemachineVirtualCamera vcam;
     public CinemachineVirtualCamera vcam2;
     public CinemachineVirtualCamera vcam3;
+    public CinemachineVirtualCamera vcam4;
     private Movement movementScript;
     private Animator animPlayer;
     private GameObject animatorHolder;
@@ -62,6 +63,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 break;
             case 4:
             //miles sees the dead guy
+                StartCoroutine(deadExplorer());
                // animPlayer.Play("TallVaseWobble");
                 //animName = "MilesIdle";
                 //levelMusic.musicVolume = 0.25f;
@@ -189,6 +191,7 @@ public void TriggerVoiceOver(int voiceOverType)
         yield return new WaitForSeconds(1f);
         movementScript.stayStill = true;
         movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Looks like I'm making progress.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
@@ -208,6 +211,7 @@ public void TriggerVoiceOver(int voiceOverType)
         yield return new WaitForSeconds(1f);
         movementScript.stayStill = true;
         movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Aha! It's finally open! I hope this leads back to the Ultimate Artifact.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
@@ -219,6 +223,25 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.isHealing = false;
         hudAnim.Play("HUDSlideInForVoiceOver");  
         vcam3.gameObject.SetActive(false);   
+    }
+    IEnumerator deadExplorer()
+    {
+        vcam4.gameObject.SetActive(true); 
+        yield return new WaitForSeconds(1f);
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
+        voiceOverDialogue.text = "Miles: Really?! Another explorer beat me down here?! I can't stand this!.";
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
+        yield return new WaitForSeconds(3.4f); 
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        vcam4.gameObject.SetActive(false);   
     }
     /*
 

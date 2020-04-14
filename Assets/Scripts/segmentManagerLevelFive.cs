@@ -39,7 +39,7 @@ public class segmentManagerLevelFive : MonoBehaviour
         if (gearCounter == 4 && playedOnceSet2 == false)
         {
             playedOnceSet2 = true;
-            secondSetOpen();
+            StartCoroutine(secondSetOpen());
         }
     }
     /*
@@ -92,8 +92,8 @@ public class segmentManagerLevelFive : MonoBehaviour
     }
    IEnumerator secondSetOpen()
     {
-        //triggerDoorsLevelFive.TriggerVoiceOver(2);
-        yield return new WaitForSeconds(1.5f);  
+        triggerDoorsLevelFive.TriggerVoiceOver(3);
+        yield return new WaitForSeconds(1f);  
         doorGears.Play("doorOpenSecondSet");
         playedOnceSet2 = true;   
         Debug.Log("second");   
@@ -101,5 +101,6 @@ public class segmentManagerLevelFive : MonoBehaviour
     public void gearCounterAdder()
     {
         gearCounter++;
+        Debug.Log(gearCounter);
     }
 }
