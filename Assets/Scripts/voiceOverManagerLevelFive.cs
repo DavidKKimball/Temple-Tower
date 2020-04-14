@@ -20,7 +20,9 @@ public class voiceOverManagerLevelFive : MonoBehaviour
     public VolumeChanger levelMusic;
     private AudioSource audioData;
     public string animName;
+    public boulderSpawner boulderEffector;
     public AudioClip[] audioClipArray;
+    
 
        void Start()
     {
@@ -106,7 +108,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 //StartCoroutine(phoneConvoDelay());
                 break;
             case 2:
-            //miles sees the puma
+            //beginning rumble
                 //movementScript.stayStill = true;
                 //movementScript.isHealing = true;
                 //movementScript.playAnim("MilesIdle");
@@ -120,18 +122,8 @@ public void TriggerVoiceOver(int voiceOverType)
                 //StartCoroutine(PumaReset());
                 break;
             case 1:
-            //miles first walks into the level
-                audioData.clip=audioClipArray[0];
-                movementScript.stayStill = true;
-                movementScript.isHealing = true;
-                animPlayer.Play("MilesAnswersPhone");
-                animTransitionController.Play("LetterboxVoiceOverFadeIn");
-                hudAnim.Play("HUDSlideOutForVoiceOver");
-                levelMusic.musicVolume = 0.25f;
-                audioData.PlayOneShot(audioData.clip);
-                voiceOverDialogue.text = "Shelly: Miles did you feel that?... Are you alright?... Watch out for the falling rocks down there.";
-                StartCoroutine(phoneConvoLevelStart());
-                
+            //miles gets a call from shelly
+                StartCoroutine(boulderRumbleLevelStart());
                 //animName = "MilesLookUp";
                 //levelMusic.musicVolume = 0.25f;
                 //turnOffWalkieTalkieWhileTalking.enabled = false;
@@ -161,7 +153,7 @@ public void TriggerVoiceOver(int voiceOverType)
         //voiceOverDialogue.text = "Shelly: Oh thank goodness! I thought you were dead!";
         //audioData.clip=audioClipArray[2];
         //audioData.PlayOneShot(audioData.clip); 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(6.4f);
         levelMusic.musicVolume = 0.85f;
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
@@ -170,6 +162,22 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.playAnim("MilesPutsAwayPhone");
         //vcam5.gameObject.SetActive(false);
 
+    }
+    IEnumerator boulderRumbleLevelStart()
+    {
+        boulderEffector.GetComponent<boulderSpawner>().spawnBoulderSoundRumbleOnly();
+        Debug.Log("it fired");
+        yield return new WaitForSeconds(2.3f);
+        audioData.clip=audioClipArray[0];
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesAnswersPhone");
+        animTransitionController.Play("LetterboxVoiceOverFadeIn");
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
+        voiceOverDialogue.text = "Shelly: Miles did you feel that?... Are you alright?... Watch out for the falling rocks down there.";
+        StartCoroutine(phoneConvoLevelStart());
     }
     /*
 

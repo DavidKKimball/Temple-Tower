@@ -83,4 +83,11 @@ public class boulderSpawner : MonoBehaviour
             spawnBoulderRelay(); //turn on alwaysOn bool for automatic generation of boulders.
         }        
     }
+    public void spawnBoulderSoundRumbleOnly()
+    {
+        cameraShake.GetComponent<cameraShake>().triggerShakeSmall();
+        rockFall.Play();
+        rockslide.Play();
+        //yield return new WaitForSeconds(1.5f);
+    }
 }

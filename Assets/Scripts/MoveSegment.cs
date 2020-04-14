@@ -182,8 +182,8 @@ public void MoveAnim()
         }
         Debug.Log("previous state is " + previousState);
         Debug.Log("movement number is " + moveNumber);
-        if (levelOne)
-        {
+if(levelOne == true)
+{
         switch (moveNumber)
             {
             case 4:
@@ -211,24 +211,28 @@ public void MoveAnim()
                 StartCoroutine(setPieceMover());
                 previousState = moveNumber;
                 //turn off waterfall stream
+                Debug.Log("2");
                 break;
             case 1:
                 scriptManager.disableGears();
                 //scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
                 previousState = moveNumber;
+                Debug.Log("1");
                 break;
             case 0:
                 //scriptManager.disableGears();
                 scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
                 previousState = moveNumber;
+                Debug.Log("0");
                 break;
             default:
                 
                 break;
             }
-            if (levelFive)
+}
+            else if (levelFive == true)
             {
             switch (moveNumber)
                 {
@@ -240,6 +244,7 @@ public void MoveAnim()
                     //scriptManager.enableGearsNoWater();
                     //waterfallAssets.SetActive(false); 
                     //StartCoroutine(setPieceMover());
+                    Debug.Log("Should be working4");
                     previousState = moveNumber;          
                     break;
                 case 3:
@@ -255,6 +260,7 @@ public void MoveAnim()
                         scriptManager.disableGears();
                     }
                     */ //waterfallAssets.SetActive(true);
+                    Debug.Log("Should be working3");
                     previousState = moveNumber;               
                     break;
                 case 2:
@@ -264,7 +270,7 @@ public void MoveAnim()
                     //scriptManager.enableGears();
                     //waterfallAssets.SetActive(false);
                     //StartCoroutine(setPieceMover());
-                    Debug.Log("Should be working");
+                    Debug.Log("Should be working2");
                     previousState = moveNumber;
                     //turn off waterfall stream
                     break;
@@ -274,6 +280,7 @@ public void MoveAnim()
                     //scriptManager.disableGears();
                     //scriptManager.disableGearsAndGearBox();
                     //waterfallAssets.SetActive(false);
+                    Debug.Log("Should be working1");
                     previousState = moveNumber;
                     break;
                 case 0:
@@ -282,13 +289,13 @@ public void MoveAnim()
                     //scriptManager.disableGears();
                     //scriptManager.disableGearsAndGearBox();
                     //waterfallAssets.SetActive(false);
+                    Debug.Log("Should be working0");
                     previousState = moveNumber;
                     break;
                 default:
                     
                     break;
-                }     
-        } 
+                }      
     }
 }
     IEnumerator MoveSegmentDelay()
