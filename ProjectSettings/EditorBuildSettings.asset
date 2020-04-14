@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levelFourSprint4.unity
     guid: aa07e891bde8daf4889fd60fa1cb4ed1
+  - enabled: 1
+    path: Assets/Scenes/levelFiveSprint4.unity
+    guid: 7e8432b90c597f244962890d7bf41b33
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
