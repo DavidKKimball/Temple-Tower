@@ -6,6 +6,12 @@ public class segmentManagerLevelFive : MonoBehaviour
 {
     public GameObject triggerOld;
     public GameObject triggerNew;
+    public ParticleSystem rockslide;
+    public int gearCounter;
+    public Animator doorGears;
+    public bool playedOnce = false;
+    public bool playedOnceSet2 = false;
+    public voiceOverManagerLevelFive triggerDoorsLevelFive;
     //private Animator anim;
     //private GameObject gears;
     //private Animator anim2;
@@ -22,11 +28,21 @@ public class segmentManagerLevelFive : MonoBehaviour
         anim2 = gearBox.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    */
     void Update()
     {
-        
+        if (gearCounter == 2 && playedOnce == false)
+        {
+            playedOnce = true;
+            StartCoroutine(firstSetOpen());
+        }
+        if (gearCounter == 4 && playedOnceSet2 == false)
+        {
+            playedOnceSet2 = true;
+            secondSetOpen();
+        }
     }
+    /*
     public void enableGears()
     {
         anim.Play("GearsWindUp");
@@ -65,5 +81,25 @@ public class segmentManagerLevelFive : MonoBehaviour
     {
         triggerOld.SetActive(true);
         triggerNew.SetActive(false);
+    }
+    IEnumerator firstSetOpen()
+    {
+        triggerDoorsLevelFive.TriggerVoiceOver(2);
+        yield return new WaitForSeconds(1.5f);
+        doorGears.Play("doorOpenFirstSet");
+        playedOnce = true;
+        Debug.Log("first");
+    }
+   IEnumerator secondSetOpen()
+    {
+        //triggerDoorsLevelFive.TriggerVoiceOver(2);
+        yield return new WaitForSeconds(1.5f);  
+        doorGears.Play("doorOpenSecondSet");
+        playedOnceSet2 = true;   
+        Debug.Log("second");   
+    }
+    public void gearCounterAdder()
+    {
+        gearCounter++;
     }
 }

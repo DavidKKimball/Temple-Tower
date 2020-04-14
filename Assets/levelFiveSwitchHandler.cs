@@ -10,6 +10,7 @@ public class levelFiveSwitchHandler : MonoBehaviour
     private bool playedOnce = false;
     public GameObject highlight;
     public bool isShut = false;
+    public segmentManagerLevelFive triggerDoorGears;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class levelFiveSwitchHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Whip" && playedOnce == false)
         {
+            triggerDoorGears.gearCounterAdder();
             isShut = true;
             shake.triggerShakeMedium();
             animGears.Play("newFloorMechanismLevelOneConfigurationanim");

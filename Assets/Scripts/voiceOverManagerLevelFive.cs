@@ -86,6 +86,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 break;
             case 3:
             //miles picks up the phone
+                StartCoroutine(doorsSecondSetOpen());
                 //animName = "MilesAnswersPhone";
                 //levelMusic.musicVolume = 0.25f;
                 //turnOffWalkieTalkieWhileTalking.enabled = false;
@@ -108,7 +109,9 @@ public void TriggerVoiceOver(int voiceOverType)
                 //StartCoroutine(phoneConvoDelay());
                 break;
             case 2:
-            //beginning rumble
+            //doors first set opens
+            Debug.Log("case 2");
+                StartCoroutine(doorsFirstSetOpen());
                 //movementScript.stayStill = true;
                 //movementScript.isHealing = true;
                 //movementScript.playAnim("MilesIdle");
@@ -178,6 +181,44 @@ public void TriggerVoiceOver(int voiceOverType)
         audioData.PlayOneShot(audioData.clip);
         voiceOverDialogue.text = "Shelly: Miles did you feel that?... Are you alright?... Watch out for the falling rocks down there.";
         StartCoroutine(phoneConvoLevelStart());
+    }
+
+    IEnumerator doorsFirstSetOpen()
+    {
+        vcam3.gameObject.SetActive(true); 
+        yield return new WaitForSeconds(1f);
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        voiceOverDialogue.text = "Miles: Looks like I'm making progress.";
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
+        yield return new WaitForSeconds(5.4f); 
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        vcam3.gameObject.SetActive(false);   
+    }
+
+    IEnumerator doorsSecondSetOpen()
+    {
+        vcam3.gameObject.SetActive(true); 
+        yield return new WaitForSeconds(1f);
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        voiceOverDialogue.text = "Miles: Aha! It's finally open! I hope this leads back to the Ultimate Artifact.";
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
+        yield return new WaitForSeconds(5.4f); 
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        vcam3.gameObject.SetActive(false);   
     }
     /*
 
