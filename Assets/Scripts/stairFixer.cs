@@ -9,11 +9,13 @@ public class stairFixer : MonoBehaviour
     public Collider player;
     private GameObject playerMaster;
     private Movement scriptHolder;
+    private Animator anim;
 
     void Awake()
     {
         playerMaster = GameObject.Find("MilesNewWorking");
         scriptHolder = playerMaster.GetComponent<Movement>();
+        anim = playerMaster.GetComponent<Animator>();
     }
     void Update()
     {
@@ -31,10 +33,12 @@ public class stairFixer : MonoBehaviour
             if (scriptHolder.isRolling == false || scriptHolder.isJumping == false || scriptHolder.justJumped== false )
             {
                 scriptHolder.speed = 2.0f;
+                anim.speed = 0.7f;
             }
             else if (scriptHolder.isRolling == true || scriptHolder.isJumping == true || scriptHolder.justJumped == true)
             {
                 scriptHolder.speed = 7.4f;
+                anim.speed = 1.0f;
             }
         }
     }
@@ -44,6 +48,7 @@ public class stairFixer : MonoBehaviour
         {
             player.material = originalPhys;
             scriptHolder.speed = 3.7f;
+            anim.speed = 1.0f;
         }
     }
 }
