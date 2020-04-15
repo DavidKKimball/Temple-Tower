@@ -10,7 +10,13 @@ public class segmentManagerLevelFive : MonoBehaviour
     public int gearCounter;
     public Animator doorGears;
     public bool playedOnce = false;
+    public bool playedOnce0 = false;
+    public bool playedOnce3 = false;
     public bool playedOnceSet2 = false;
+    public Animator gear1;
+    public Animator gear2;
+    public Animator gear3;
+    public Animator gear4;
     public voiceOverManagerLevelFive triggerDoorsLevelFive;
     //private Animator anim;
     //private GameObject gears;
@@ -31,14 +37,26 @@ public class segmentManagerLevelFive : MonoBehaviour
     */
     void Update()
     {
+        if (gearCounter == 1 && playedOnce0 == false)
+        {
+            playedOnce0 = true;
+            gear1.Play("gearsLevelFiveTurningOn");
+        }
         if (gearCounter == 2 && playedOnce == false)
         {
             playedOnce = true;
+            gear2.Play("gearsLevelFiveTurningOn");
             StartCoroutine(firstSetOpen());
+        }
+        if (gearCounter == 3 && playedOnce3 == false)
+        {
+            playedOnce3 = true;
+            gear3.Play("gearsLevelFiveTurningOn");
         }
         if (gearCounter == 4 && playedOnceSet2 == false)
         {
             playedOnceSet2 = true;
+            gear4.Play("gearsLevelFiveTurningOn");
             StartCoroutine(secondSetOpen());
         }
     }
