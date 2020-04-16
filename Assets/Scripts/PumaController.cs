@@ -8,7 +8,10 @@ public class PumaController : MonoBehaviour {
     public float lookRadius;
     public float speed;
     public float lockPos = 0;
-    public SpriteRenderer puma;
+    public Transform puma;
+
+    public GameObject spriteLeft;
+    public GameObject spriteRight;
     public Transform[] waypoints;
     public AudioSource pumaGrowl;
     public Transform startingPosition;
@@ -60,6 +63,7 @@ public class PumaController : MonoBehaviour {
         {
             current++;
             SpriteFlip();
+            FaceWaypoint();
             if (current >= waypoints.Length)
             {
                 current = 0;
@@ -92,22 +96,33 @@ public class PumaController : MonoBehaviour {
     {
         Vector3 direction = (waypointTarget.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z + 90));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        puma.transform.rotation = Quaternion.Slerp(puma.transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
     void FacePlayer()
     {
         Vector3 direction = (playerTarget.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z + 90));
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 30f);
+        puma.transform.rotation = Quaternion.Lerp(puma.transform.rotation, lookRotation, Time.deltaTime * 30f);
     }
 
     void SpriteFlip()
     {
-        if (puma.GetComponent<SpriteRenderer>().flipX == true) //changed to target sprite renderer in grandchildren, allows more control later on animation wise
+        /*if (puma.GetComponent<SpriteRenderer>().flipX == true) //changed to target sprite renderer in grandchildren, allows more control later on animation wise
             puma.GetComponent<SpriteRenderer>().flipX = false;
         else if (puma.GetComponent<SpriteRenderer>().flipX == false)
-            puma.GetComponent<SpriteRenderer>().flipX = true;
+            puma.GetComponent<SpriteRenderer>().flipX = true;*/
+
+        if (spriteLeft.activeSelf)
+        {
+            spriteRight.SetActive(true);
+            spriteLeft.SetActive(false);
+        }
+        else if (spriteRight.activeSelf)
+        {
+            spriteLeft.SetActive(true);
+            spriteRight.SetActive(false);
+        }
     }
 }
 
