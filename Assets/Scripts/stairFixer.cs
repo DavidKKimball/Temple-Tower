@@ -30,14 +30,15 @@ public class stairFixer : MonoBehaviour
         {
             //Debug.Log("hit");
             player.material = stairPhys;
-            if (scriptHolder.isRolling == false || scriptHolder.isJumping == false || scriptHolder.justJumped== false )
+            if (scriptHolder.isRolling == false || scriptHolder.isJumping == false || scriptHolder.justJumped == false || scriptHolder.isStairs == false)
             {
                 scriptHolder.speed = 2.0f;
                 anim.speed = 0.7f;
             }
-            else if (scriptHolder.isRolling == true || scriptHolder.isJumping == true || scriptHolder.justJumped == true)
+            
+            if (scriptHolder.isRolling == true || scriptHolder.isJumping == true || scriptHolder.justJumped == true || scriptHolder.isStairs == true)
             {
-                scriptHolder.speed = 7.4f;
+                scriptHolder.speed = 5f;
                 anim.speed = 1.0f;
             }
         }
