@@ -103,6 +103,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void Quit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Preload");
     }
 

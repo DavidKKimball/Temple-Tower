@@ -13,7 +13,7 @@ public class LoadScript : MonoBehaviour
         if (data != null)
             SceneManager.LoadScene(data.level + 1);
         else
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
     }
 
     public void LoadPlayerLevelFromCheckpoint()
