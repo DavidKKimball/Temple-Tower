@@ -18,6 +18,9 @@ public class Movement : MonoBehaviour
     public cameraShake shake;
     float defaultScale; 
     public float distanceGround;
+    public float originalPosition;
+    public float newPosition;
+    public bool isStairs;
     public float speed;
     public float rollSpeed;
     public float rollLength;
@@ -98,16 +101,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetKeyDown("l"))
-        {
-            Debug.Log(treasureCollected[0]);
-            Debug.Log(treasureCollected[1]);
-            Debug.Log(treasureCollected[2]);
-            Debug.Log(treasureCollected[3]);
-            Debug.Log(treasureCollected[4]);
-            Debug.Log(treasureCollected[5]);
-            Debug.Log(treasureCollected[6]);
-        }*/
         if (!isPaused)
         {
             if (isLocked)
@@ -344,6 +337,22 @@ public class Movement : MonoBehaviour
                         PlayerJumpSound();
                         StartCoroutine(JumpReset());
                     }
+                }
+
+                // stairs checker
+                if (isGrounded)
+                {
+                    newPosition = gameObject.transform.position.y;
+
+                    if (newPosition > originalPosition)
+                    {
+                        isStairs = true;
+                    }
+                    else
+                        isStairs = false;
+
+                    originalPosition = gameObject.transform.position.y;
+
                 }
             }
         }
