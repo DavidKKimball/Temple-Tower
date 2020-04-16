@@ -109,8 +109,22 @@ public class MenuManager : MonoBehaviour
     {
         areYouSureCanvas.GetComponent<Canvas>().enabled = false;
         noSaveDataCanvas.GetComponent<Canvas>().enabled = false;
+        string path1 = Application.persistentDataPath + "/player.snootysobyouare";
+        string path2 = Application.persistentDataPath + "/player.verysnooty";
+        if (File.Exists(path1) || File.Exists(path2))
+        {
+            loadGameCanvas.GetComponent<Canvas>().enabled = true;        
 
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(loadGameButton);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(loadGameButton);
+        }
+        else
+        {
+            newGameCanvas.GetComponent<Canvas>().enabled = true;        
+
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(newGameButton);
+        }
+
     }
 }
