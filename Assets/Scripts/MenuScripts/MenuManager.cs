@@ -69,10 +69,12 @@ public class MenuManager : MonoBehaviour
 
     public void DeleteButton()
     {
-        string path = Application.persistentDataPath + "/player.snootysobyouare";
-        if (File.Exists(path))
+        string path1 = Application.persistentDataPath + "/player.snootysobyouare";
+        string path2 = Application.persistentDataPath + "/player.verysnooty";
+        if (File.Exists(path1) || File.Exists(path2))
         {
-            File.Delete(path);
+            File.Delete(path1);
+            File.Delete(path2);
             SceneManager.LoadScene("MenuPostIntro");
         }
         else

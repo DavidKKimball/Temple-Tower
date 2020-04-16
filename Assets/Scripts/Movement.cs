@@ -8,6 +8,7 @@ using System.IO;
 
 public class Movement : MonoBehaviour
 {
+    private int i;
     private Animator anim;
     public Animator frontMiles;
     public Animator backMiles;
@@ -65,6 +66,11 @@ public class Movement : MonoBehaviour
     public bool playedOnce2 = false;
     public bool bigDropQuake = false;
     public bool fartJumpCooldown = false;
+    public GameObject treasure;
+    public treasureCounter treasureCounter;
+    public bool[] treasureCollected;
+    public GameObject checkpointText;
+    public Canvas checkpointCanvas;
 
     void Awake()
     {
@@ -73,19 +79,35 @@ public class Movement : MonoBehaviour
     }
 
     void Start()
-    {
-        LoadPlayerScore();
+    {   
         Time.timeScale = 1;
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody>();
         text = scoreText.GetComponent<TextMeshProUGUI>();
+        checkpointText = GameObject.Find("CheckpointCanvas");
+        checkpointCanvas = checkpointText.GetComponent<Canvas>();
         isGrounded = false;
         defaultScale = transform.localScale.x; // assuming this is facing right 
+        treasure = GameObject.Find("Treasure");
+        treasureCounter = treasure.GetComponent<treasureCounter>();
+        treasureCollected = new bool[treasureCounter.chestControllers.Length];
+        treasureCounter.anim.Play("TreasureHudSlideIn");
+        LoadPlayerScore();
         //distanceGround = GetComponent<Collider> ().bounds.extents.y; 
     }
 
     void Update()
     {
+        /*if (Input.GetKeyDown("l"))
+        {
+            Debug.Log(treasureCollected[0]);
+            Debug.Log(treasureCollected[1]);
+            Debug.Log(treasureCollected[2]);
+            Debug.Log(treasureCollected[3]);
+            Debug.Log(treasureCollected[4]);
+            Debug.Log(treasureCollected[5]);
+            Debug.Log(treasureCollected[6]);
+        }*/
         if (!isPaused)
         {
             if (isLocked)
@@ -408,6 +430,14 @@ public class Movement : MonoBehaviour
         {
             pumaName = collision.gameObject.name;
         }
+
+        if (collision.gameObject.tag == "Checkpoint" && this.gameObject.tag == "Player")
+        {
+            Checkpoint();
+            checkpointCanvas.enabled = true;
+            StartCoroutine(checkPointTextOff());
+            collision.gameObject.SetActive(false);
+        }
     }
 
     /*void FixedUpdate() //version of checking for isGrounded through raycasting
@@ -684,19 +714,61 @@ public class Movement : MonoBehaviour
         playedOnce = false;
     }
 
+    IEnumerator checkPointTextOff()
+    {
+        yield return new WaitForSeconds(3);
+        checkpointCanvas.enabled = false; 
+    }
+
     // as if this script isnt bloated enough lets add in some save functionality
     public void SavePlayer()
     {
+        string path = Application.persistentDataPath + "/player.verysnooty";
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
         SaveScript.SavePlayer(this);
+    }
+
+    public void Checkpoint()
+    {
+        SaveScript.SaveCheckPoint(this);
     }
 
     public void LoadPlayerScore()
     {
-        string path = Application.persistentDataPath + "/player.snootysobyouare";
-        if (File.Exists(path))
+
+        string path1 = Application.persistentDataPath + "/player.snootysobyouare";
+        string path2 = Application.persistentDataPath + "/player.verysnooty";
+        if (File.Exists(path2))
+        {
+            stayStill = false;
+            PlayerData data = SaveScript.LoadFromCheckPoint();
+            score = data.score;
+            ScoreDisplay();
+            text.text += score;
+            Vector3 position;
+            position.x = data.playerLocation[0];
+            position.y = data.playerLocation[1];
+            position.z = data.playerLocation[2];
+            gameObject.transform.position = position;
+            for (i = 0; i < treasureCounter.objects.Length; i++)
+            {
+                if (data.treasureCollected[i])
+                {
+                    treasureCounter.chestControllers[i].hasPlayed = true;
+                    treasureCounter.chestControllers[i].animChest.Play("ChestOpeningIdle");
+                    treasureCounter.treasureCollectedAmount++;
+                }
+            }
+        }
+        else if (File.Exists(path1))
         {
             PlayerData data = SaveScript.LoadPlayer();
             score = data.score;
+            ScoreDisplay();
+            text.text += score;
         }
         else
             score = 0;

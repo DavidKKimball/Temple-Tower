@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class treasureCounter : MonoBehaviour
 {
+    private int i;
     public GameObject[] objects;
     public TextMeshProUGUI treasureTextMesh;
-    private Animator anim;
+    public Animator anim;
     public int treasureCollectedAmount = 0;
     public bool triggerVoiceOver;
     public int voiceOverNumber;
@@ -16,11 +17,29 @@ public class treasureCounter : MonoBehaviour
     private GameObject voiceHolder;
     public bool levelOne =true;
     public bool levelFive;
+    public GameObject miles;
+    public Movement player;
+
+    public ChestController[] chestControllers;
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        objects = GameObject.FindGameObjectsWithTag("Treasure");
+        chestControllers = new ChestController[objects.Length];
+    }
     void Start()
     {
         anim = GetComponent<Animator>();
-        objects = GameObject.FindGameObjectsWithTag("Treasure");
+
+        miles = GameObject.Find("MilesNewWorking");
+        player = miles.GetComponent<Movement>();
+        
+        for (i = 0; i < objects.Length; i++)
+        {
+            chestControllers[i] = objects[i].GetComponent<ChestController>();
+        }
+
         treasureTextMesh  = treasureTextMesh.gameObject.GetComponent<TextMeshProUGUI>();
         voiceHolder = GameObject.Find("Voice Over Manager");
         if (levelOne)
@@ -38,10 +57,28 @@ public class treasureCounter : MonoBehaviour
     {
         //Debug.Log(objects.Length);
         treasureTextMesh.text = treasureCollectedAmount.ToString() + "/" + objects.Length.ToString();
+        if (Input.GetKeyDown("l"))
+        {
+            Debug.Log(chestControllers[0].hasPlayed);
+            Debug.Log(chestControllers[1].hasPlayed);
+            Debug.Log(chestControllers[2].hasPlayed);
+            Debug.Log(chestControllers[3].hasPlayed);
+            Debug.Log(chestControllers[4].hasPlayed);
+            Debug.Log(chestControllers[5].hasPlayed);
+            Debug.Log(chestControllers[6].hasPlayed);
+        }
     }
 
     public void collectTreasure()
     {
+        for (i = 0; i < chestControllers.Length; i++)
+        {
+            if (chestControllers[i].hasPlayed)
+            {
+                player.treasureCollected[i] = true;
+            }
+        }
+        Debug.Log("yo");
         if (triggerVoiceOver)
         {
             if (levelOne)

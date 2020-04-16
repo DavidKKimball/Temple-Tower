@@ -5,8 +5,8 @@ using TMPro;
 
 public class ChestController : MonoBehaviour
 {
-    private Animator animChest;
-    private bool hasPlayed;
+    public Animator animChest;
+    public bool hasPlayed;
     public treasureCounter treasures;
     public Movement player;
     public TextMeshProUGUI scoreText;
@@ -23,7 +23,7 @@ public class ChestController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isOpen)
+        if (isOpen && hasPlayed)
         {
             if (counter != chestValue)
             {
@@ -46,9 +46,9 @@ public class ChestController : MonoBehaviour
         if (other.gameObject.tag == "Player" && hasPlayed == false)
         {
             animChest.Play("ChestOpening");
-            treasures.collectTreasure();
             isOpen = true;
             hasPlayed = true;
+            treasures.collectTreasure();
 
         }
     }

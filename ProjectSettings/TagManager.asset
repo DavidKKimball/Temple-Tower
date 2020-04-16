@@ -23,6 +23,7 @@ TagManager:
   - Treasure
   - end
   - Health
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
