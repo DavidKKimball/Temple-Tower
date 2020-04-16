@@ -727,6 +727,7 @@ public class Movement : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
+            Debug.Log("File Deleted");
         }
         SaveScript.SavePlayer(this);
     }

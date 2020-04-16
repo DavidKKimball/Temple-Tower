@@ -10,6 +10,19 @@ public class LoadScript : MonoBehaviour
     {
         PlayerData data = SaveScript.LoadPlayer();
 
-        SceneManager.LoadScene(data.level);
+        if (data != null)
+            SceneManager.LoadScene(data.level + 1);
+        else
+            SceneManager.LoadScene(3);
+    }
+
+    public void LoadPlayerLevelFromCheckpoint()
+    {
+        PlayerData data = SaveScript.LoadFromCheckPoint();
+
+        if (data != null)
+            SceneManager.LoadScene(data.level);
+        else
+            LoadPlayerLevel();
     }
 }

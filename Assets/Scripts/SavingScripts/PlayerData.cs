@@ -16,7 +16,7 @@ public class PlayerData
     public PlayerData (Movement player)
     {
         score = player.score;
-        level = SceneManager.GetActiveScene().buildIndex + 1;
+        level = SceneManager.GetActiveScene().buildIndex;
         playerLocation = new float[3];
         treasureCollected = new bool[player.treasureCounter.objects.Length];
         playerLocation[0] = player.transform.position.x;

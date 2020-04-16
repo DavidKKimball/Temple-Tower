@@ -26,8 +26,9 @@ public class MenuManager : MonoBehaviour
 
     public void SaveChecker()
     {
-        string path = Application.persistentDataPath + "/player.snootysobyouare";
-        if (File.Exists(path))
+        string path1 = Application.persistentDataPath + "/player.snootysobyouare";
+        string path2 = Application.persistentDataPath + "/player.verysnooty";
+        if (File.Exists(path1) || File.Exists(path2))
         {
             loadGameCanvas.GetComponent<Canvas>().enabled = true;
             newGameCanvas.GetComponent<Canvas>().enabled = false;
@@ -44,6 +45,24 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(newGameButton);
             newGame = true;
+        }
+    }
+
+    public void ResumeButton()
+    {
+        string path1 = Application.persistentDataPath + "/player.snootysobyouare";
+        string path2 = Application.persistentDataPath + "/player.verysnooty";
+        if (File.Exists(path2))
+        {
+            PlayerData data = SaveScript.LoadFromCheckPoint();
+
+            SceneManager.LoadScene(data.level);
+        }
+        else if (File.Exists(path1))
+        {
+            PlayerData data = SaveScript.LoadPlayer();
+
+            SceneManager.LoadScene(data.level);
         }
     }
 
