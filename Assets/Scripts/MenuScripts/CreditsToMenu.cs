@@ -31,6 +31,5 @@ public class CreditsToMenu : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(loadGameButton);
         }
         credits.GetComponent<Canvas>().enabled = false;
-        gameObject.GetComponent<Canvas>().enabled = false;
     }
 }
