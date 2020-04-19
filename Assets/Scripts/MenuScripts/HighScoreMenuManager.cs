@@ -21,16 +21,20 @@ public class HighScoreMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadScore();
-        LoadHighScore();
         nameObjectArray = GameObject.FindGameObjectsWithTag("Name");
         scoreObjectArray = GameObject.FindGameObjectsWithTag("Score");
+        nameTMPArray = new TextMeshProUGUI[nameObjectArray.Length];
+        nameArray = new string[nameTMPArray.Length];
+        scoreArray = new int[scoreObjectArray.Length];
         for (i = 0; i < nameObjectArray.Length; i++)
         {
             nameTMPArray[i] = nameObjectArray[i].GetComponent<TextMeshProUGUI>();
             nameArray[i] = nameTMPArray[i].text;
             scoreArray[i] = int.Parse(scoreObjectArray[i].GetComponent<TextMeshProUGUI>().text);
         }
+        Save();
+        LoadScore();
+        LoadHighScore();
     }
 
     // Update is called once per frame
@@ -107,7 +111,7 @@ public class HighScoreMenuManager : MonoBehaviour
         
         Save();
         inputCanvas.GetComponent<Canvas>().enabled = false;
-        highScoreCanvas.GetComponent<Canvas>().enabled = false;
+        highScoreCanvas.GetComponent<Canvas>().enabled = true;
         StartCoroutine(MenuDelay());
     }
 
