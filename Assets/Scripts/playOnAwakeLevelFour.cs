@@ -7,12 +7,16 @@ public class playOnAwakeLevelFour : MonoBehaviour
     public Animator letterbox;
     public Animator hud;
     public Animator boulder;
+    private Animator cameraSwitch;
+    private GameObject MilesCameraController;
     // Start is called before the first frame update
     void Start()
     {
         letterbox.Play("FadeIn");
         hud.Play("HUDSlideInIdleForVoiceOver");
         boulder.Play("BoulderLevel4");
+        MilesCameraController = GameObject.Find("MilesAndCameraController");
+        cameraSwitch = MilesCameraController.GetComponent<Animator>();
     }
 
 
@@ -24,5 +28,6 @@ public class playOnAwakeLevelFour : MonoBehaviour
     void levelFourCheckpoint()
     {
         boulder.Play("BoulderLevel4Checkpoint");
+        cameraSwitch.play("FrontViewIdle");
     }
 }
