@@ -21,4 +21,8 @@ public class playOnAwakeLevelFour : MonoBehaviour
     {
         
     }
+    void levelFourCheckpoint()
+    {
+        boulder.Play("BoulderLevel4Checkpoint");
+    }
 }
