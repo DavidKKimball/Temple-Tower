@@ -49,7 +49,6 @@ public class ChestController : MonoBehaviour
             isOpen = true;
             hasPlayed = true;
             treasures.collectTreasure();
-
         }
     }
 
