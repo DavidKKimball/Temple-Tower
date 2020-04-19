@@ -27,6 +27,18 @@ public static class SaveScript
         
         formatter.Serialize(stream, data);
         stream.Close();   
+    }
+
+    public static void SaveHighScore (HighScoreMenuManager highScore)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/player.wow";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        HighScoreData data = new HighScoreData(highScore);
+        
+        formatter.Serialize(stream, data);
+        stream.Close(); 
     }    
 
     public static PlayerData LoadPlayer ()
@@ -67,5 +79,25 @@ public static class SaveScript
             Debug.LogError("Save file not found in " + path);
             return null;
         }
+    }
+
+    public static HighScoreData LoadHighScore ()
+    {
+        string path = Application.persistentDataPath + "/player.wow";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            HighScoreData data = formatter.Deserialize(stream) as HighScoreData;
+            stream.Close();
+
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in " + path);
+            return null;
+        } 
     }
 }

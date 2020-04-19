@@ -55,18 +55,7 @@ public class treasureCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(objects.Length);
-        treasureTextMesh.text = treasureCollectedAmount.ToString() + "/" + objects.Length.ToString();
-        if (Input.GetKeyDown("l"))
-        {
-            Debug.Log(chestControllers[0].hasPlayed);
-            Debug.Log(chestControllers[1].hasPlayed);
-            Debug.Log(chestControllers[2].hasPlayed);
-            Debug.Log(chestControllers[3].hasPlayed);
-            Debug.Log(chestControllers[4].hasPlayed);
-            Debug.Log(chestControllers[5].hasPlayed);
-            Debug.Log(chestControllers[6].hasPlayed);
-        }
+
     }
 
     public void collectTreasure()
@@ -78,7 +67,6 @@ public class treasureCounter : MonoBehaviour
                 player.treasureCollected[i] = true;
             }
         }
-        Debug.Log("yo");
         if (triggerVoiceOver)
         {
             if (levelOne)

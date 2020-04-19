@@ -72,6 +72,8 @@ public class Movement : MonoBehaviour
     public GameObject treasure;
     public treasureCounter treasureCounter;
     public bool[] treasureCollected;
+    public GameObject[] checkpoint;
+    public int checkpointMarker;
     public GameObject checkpointText;
     public Canvas checkpointCanvas;
 
@@ -87,6 +89,7 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody>();
         text = scoreText.GetComponent<TextMeshProUGUI>();
+        checkpoint = GameObject.FindGameObjectsWithTag("Checkpoint");
         checkpointText = GameObject.Find("CheckpointCanvas");
         checkpointCanvas = checkpointText.GetComponent<Canvas>();
         isGrounded = false;
@@ -442,6 +445,7 @@ public class Movement : MonoBehaviour
 
         if (collision.gameObject.tag == "Checkpoint" && this.gameObject.tag == "Player")
         {
+            checkpointMarker = collision.gameObject.GetComponent<CheckpointMarker>().checkpointMarker;
             Checkpoint();
             checkpointCanvas.enabled = true;
             StartCoroutine(checkPointTextOff());
@@ -758,11 +762,7 @@ public class Movement : MonoBehaviour
             score = data.score;
             ScoreDisplay();
             text.text += score;
-            Vector3 position;
-            position.x = data.playerLocation[0];
-            position.y = data.playerLocation[1];
-            position.z = data.playerLocation[2];
-            gameObject.transform.position = position;
+            gameObject.transform.position = checkpoint[data.playerLocation].transform.position;
             for (i = 0; i < treasureCounter.objects.Length; i++)
             {
                 if (data.treasureCollected[i])
