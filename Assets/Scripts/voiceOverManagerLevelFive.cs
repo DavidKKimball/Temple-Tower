@@ -87,7 +87,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 //StartCoroutine(HealthTalk());
                 break;
             case 3:
-            //miles picks up the phone
+                //miles picks up the phone
                 StartCoroutine(doorsSecondSetOpen());
                 //animName = "MilesAnswersPhone";
                 //levelMusic.musicVolume = 0.25f;
@@ -158,7 +158,7 @@ public void TriggerVoiceOver(int voiceOverType)
         //voiceOverDialogue.text = "Shelly: Oh thank goodness! I thought you were dead!";
         //audioData.clip=audioClipArray[2];
         //audioData.PlayOneShot(audioData.clip); 
-        yield return new WaitForSeconds(6.4f);
+        yield return new WaitForSeconds(4.5f);
         levelMusic.musicVolume = 0.85f;
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
