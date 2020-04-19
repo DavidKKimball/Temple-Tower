@@ -56,6 +56,9 @@ public class Movement : MonoBehaviour
     public GameObject cameraShake;
     private TextMeshProUGUI text;
     public ParticleSystem fartParticles;
+    public bool isLevel4;
+    public GameObject boulderObject;
+    public playOnAwakeLevelFour boulderAnim;
     private int greenValue = 5;
     private int goldValue = 10;
     private int silverValue = 25;
@@ -86,6 +89,7 @@ public class Movement : MonoBehaviour
     void Start()
     {   
         Time.timeScale = 1;
+
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody>();
         text = scoreText.GetComponent<TextMeshProUGUI>();
@@ -771,6 +775,13 @@ public class Movement : MonoBehaviour
                     treasureCounter.chestControllers[i].animChest.Play("ChestOpeningIdle");
                     treasureCounter.treasureCollectedAmount++;
                 }
+            }
+
+            if (isLevel4)
+            {
+                boulderObject = GameObject.Find("PlayOnAwake");
+                boulderAnim = boulderObject.GetComponent<playOnAwakeLevelFour>();
+                boulderAnim.levelFourCheckpoint();
             }
         }
         else if (File.Exists(path1))
