@@ -28,6 +28,6 @@ public class playOnAwakeLevelFour : MonoBehaviour
     void levelFourCheckpoint()
     {
         boulder.Play("BoulderLevel4Checkpoint");
-        cameraSwitch.play("FrontViewIdle");
+        cameraSwitch.Play("FrontViewIdle");
     }
 }
