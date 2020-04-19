@@ -55,7 +55,8 @@ public class treasureCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log(objects.Length);
+        treasureTextMesh.text = treasureCollectedAmount.ToString() + "/" + objects.Length.ToString();
     }
 
     public void collectTreasure()
