@@ -35,17 +35,17 @@ public class cameraShake : MonoBehaviour {
 	public void triggerShakeBig()
 	{
 		StartCoroutine(Shake(5f, 1.00f));
-		Debug.Log("Big Quake");
+		//Debug.Log("Big Quake");
 	}
 	public void triggerShakeMedium()
 	{
 		StartCoroutine(Shake(3f, 1.00f));
-		Debug.Log("Medium Quake");
+		//Debug.Log("Medium Quake");
 	}
 	public void triggerShakeSmall()
 	{
 		StartCoroutine(Shake(0.5f, 2.5f));
-		Debug.Log("Small Quake");
+		//Debug.Log("Small Quake");
 	}
 
 	//Camera shake function.

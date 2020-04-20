@@ -61,6 +61,7 @@ public class ScoreTally : MonoBehaviour
                     else
                     {
                         currentScore *= 5;
+                        currentScore += movement.previousScore;
                         taskIncrementer += 1;
                     }
                     break;

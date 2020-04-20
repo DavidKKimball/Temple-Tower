@@ -50,6 +50,7 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     private bool rollStop = false;
     public int score;
+    public int previousScore;
     public bool facingFront = false;
     public GameObject scoreText;
     public GameObject pauseMenu;
@@ -762,9 +763,9 @@ public class Movement : MonoBehaviour
         {
             stayStill = false;
             PlayerData data = SaveScript.LoadFromCheckPoint();
-            score = data.score;
-            ScoreDisplay();
-            text.text += score;
+            previousScore = data.score;
+            //ScoreDisplay();
+            //text.text += score;
             for (i = 0; i < treasureCounter.objects.Length; i++)
             {
                 if (data.treasureCollected[i])
@@ -788,11 +789,14 @@ public class Movement : MonoBehaviour
         else if (File.Exists(path1))
         {
             PlayerData data = SaveScript.LoadPlayer();
-            score = data.score;
-            ScoreDisplay();
-            text.text += score;
+            previousScore = data.score;
+            //ScoreDisplay();
+            //text.text += score;
         }
         else
+        {
             score = 0;
+            previousScore = 0;
+        }
     }
 }
