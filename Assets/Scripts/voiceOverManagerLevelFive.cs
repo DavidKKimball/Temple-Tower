@@ -231,7 +231,7 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
-        voiceOverDialogue.text = "Miles: Really?! Another explorer beat me down here?! I can't stand this!.";
+        voiceOverDialogue.text = "Miles: Really?! Another explorer beat me down here?! I can't stand this!";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
