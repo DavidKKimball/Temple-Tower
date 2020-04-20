@@ -29,6 +29,7 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     public string animName;
     //public boulderSpawner boulderEffector;
     public AudioClip[] audioClipArray;
+    public Animator musicChange;
     
 
        void Start()
@@ -54,6 +55,9 @@ public void TriggerVoiceOver(int voiceOverType)
     {
     switch (voiceOverType)
             {
+            case 8:
+                musicChange.Play("bossLevelMusicShift");
+            break;
             case 7:
             StartCoroutine(chains());
                 break;
