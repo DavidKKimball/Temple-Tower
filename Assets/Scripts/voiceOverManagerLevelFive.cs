@@ -12,6 +12,10 @@ public class voiceOverManagerLevelFive : MonoBehaviour
     public CinemachineVirtualCamera vcam2;
     public CinemachineVirtualCamera vcam3;
     public CinemachineVirtualCamera vcam4;
+    public CinemachineVirtualCamera vcam5;
+    public CinemachineVirtualCamera vcam6;
+    public CinemachineVirtualCamera vcam7;
+    public CinemachineVirtualCamera vcam8;
     private Movement movementScript;
     private Animator animPlayer;
     private GameObject animatorHolder;
@@ -46,8 +50,25 @@ public void TriggerVoiceOver(int voiceOverType)
     {
     switch (voiceOverType)
             {
+            case 6:
+            //camera pans area
+            StartCoroutine(strangeRituals());
+                //animName = "MilesIdle";
+                //levelMusic.musicVolume = 0.25f;
+                //audioData.clip=audioClipArray[12];//dead guy spiel
+                //audioData.PlayOneShot(audioData.clip);
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver");                ;                
+                //voiceOverDialogue.text = "Well that's a strange looking statue.";
+                //movementScript.playAnim(animName);
+               //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //vcam5.gameObject.SetActive(true);//turn on health vcam
+                //StartCoroutine(NormalVoiceOverReset(2.2f));
+                break;
             case 5:
-            //miles sees puma go round
+            //camera pans area
+            StartCoroutine(levelFiveStart());
                 //animName = "MilesIdle";
                 //levelMusic.musicVolume = 0.25f;
                 //audioData.clip=audioClipArray[12];//dead guy spiel
@@ -150,7 +171,58 @@ public void TriggerVoiceOver(int voiceOverType)
             default:
                 print ("");
                 break;
-        }        
+        }    
+
+
+    IEnumerator strangeRituals()
+    {
+        vcam7.gameObject.SetActive(true); 
+        audioData.clip=audioClipArray[5];
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
+        voiceOverDialogue.text = "Miles: Seems like this temple held some pretty weird rituals.";
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
+        animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
+        yield return new WaitForSeconds(2f);
+        vcam8.gameObject.SetActive(true); 
+        yield return new WaitForSeconds(2.4f);
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        vcam7.gameObject.SetActive(false);  
+        vcam8.gameObject.SetActive(false); 
+    } 
+
+    IEnumerator levelFiveStart()  
+    {
+        vcam5.gameObject.SetActive(true); 
+        yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[4];
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
+        voiceOverDialogue.text = "Miles: Hmm seems i need to find a way to move those barriers, they may be connected to this gear system.";
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
+        animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
+        yield return new WaitForSeconds(4f);
+        vcam6.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);  
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        vcam5.gameObject.SetActive(false);  
+        vcam6.gameObject.SetActive(false); 
+    }
+
     IEnumerator phoneConvoLevelStart()
     {
 
@@ -189,12 +261,14 @@ public void TriggerVoiceOver(int voiceOverType)
     {
         vcam3.gameObject.SetActive(true); 
         yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[1];
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Looks like I'm making progress.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
         yield return new WaitForSeconds(5.4f); 
         levelMusic.musicVolume = 0.85f;
@@ -209,12 +283,14 @@ public void TriggerVoiceOver(int voiceOverType)
     {
         vcam3.gameObject.SetActive(true); 
         yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[2];
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Aha! It's finally open! I hope this leads back to the Ultimate Artifact.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
         yield return new WaitForSeconds(5.4f); 
         levelMusic.musicVolume = 0.85f;
@@ -228,14 +304,16 @@ public void TriggerVoiceOver(int voiceOverType)
     {
         vcam4.gameObject.SetActive(true); 
         yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[3];
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Really?! Another explorer beat me down here?! I can't stand this!";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
-        yield return new WaitForSeconds(3.4f); 
+        yield return new WaitForSeconds(3.6f); 
         levelMusic.musicVolume = 0.85f;
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
