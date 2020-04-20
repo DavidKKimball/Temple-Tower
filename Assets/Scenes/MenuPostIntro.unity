@@ -8617,6 +8617,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003375215}
   m_CullTransparentMesh: 0
+--- !u!1 &2053540332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2053540333}
+  - component: {fileID: 2053540334}
+  m_Layer: 0
+  m_Name: BlobShadowProjector (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2053540333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053540332}
+  m_LocalRotation: {x: 0.7329238, y: 0.14605008, z: -0.16640428, w: 0.6432742}
+  m_LocalPosition: {x: -3.5146623, y: -12.802812, z: -27.597124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3383166473947800182}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 97.45398, y: 25.582993, z: 0}
+--- !u!119 &2053540334
+Projector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053540332}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.1
+  m_FarClipPlane: 50
+  m_FieldOfView: 29.8
+  m_AspectRatio: 0.43
+  m_Orthographic: 1
+  m_OrthographicSize: 0.51
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2083864836
 GameObject:
   m_ObjectHideFlags: 0
@@ -13656,6 +13706,7 @@ Transform:
   - {fileID: 3383166474961208271}
   - {fileID: 3383166474162384266}
   - {fileID: 3383166473892491960}
+  - {fileID: 2053540333}
   m_Father: {fileID: 5588615938171830238}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
