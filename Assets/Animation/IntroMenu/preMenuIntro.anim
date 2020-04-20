@@ -1985,6 +1985,8 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 0}
+    - time: 7.55
+      value: {fileID: 0}
     - time: 7.8
       value: {fileID: 0}
     attribute: m_Follow
@@ -2419,6 +2421,7 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
   m_AnimationClipSettings:
