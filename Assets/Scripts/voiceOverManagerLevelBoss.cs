@@ -10,8 +10,12 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     public Animator hudAnim;
     public CinemachineVirtualCamera vcam;
     public CinemachineVirtualCamera vcam2;
-    public CinemachineVirtualCamera vcam3;
-    public CinemachineVirtualCamera vcam4;
+    //public CinemachineVirtualCamera vcam3;
+    //public CinemachineVirtualCamera vcam4;
+    //public CinemachineVirtualCamera vcam5;
+    //public CinemachineVirtualCamera vcam6;
+    //public CinemachineVirtualCamera vcam7;
+    //public CinemachineVirtualCamera vcam8;
     private Movement movementScript;
     private Animator animPlayer;
     private GameObject animatorHolder;
@@ -20,13 +24,16 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     public TMP_Text voiceOverDialogue;
     public VolumeChanger levelMusic;
     private AudioSource audioData;
+    public GameObject treasure;
+    private Animator treasureAnim;
     public string animName;
-    public boulderSpawner boulderEffector;
+    //public boulderSpawner boulderEffector;
     public AudioClip[] audioClipArray;
     
 
        void Start()
     {
+        treasureAnim = treasure.GetComponent<Animator>();
         //vcam = GameObject.Find("CM vcam4");
         //regularCamera = GameObject.Find("CM vcam1");
         textHolder = GameObject.Find("VoiceOverText");
@@ -37,6 +44,7 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
         animTransitionController = animatorHolder.GetComponent<Animator>();
         voiceOverDialogue = textHolder.GetComponent<TMP_Text>();
         audioData = GetComponent<AudioSource>();
+        treasure.SetActive(false);
     }
     void Update()
     {
@@ -46,8 +54,28 @@ public void TriggerVoiceOver(int voiceOverType)
     {
     switch (voiceOverType)
             {
+            case 7:
+            StartCoroutine(chains());
+                break;
+            case 6:
+            //camera pans area
+            StartCoroutine(bossLevelStart());
+                //animName = "MilesIdle";
+                //levelMusic.musicVolume = 0.25f;
+                //audioData.clip=audioClipArray[12];//dead guy spiel
+                //audioData.PlayOneShot(audioData.clip);
+                //animTransitionController.Play("LetterboxVoiceOverFadeIn");
+                //hudAnim.Play("HUDSlideOutForVoiceOver");                ;                
+                //voiceOverDialogue.text = "Well that's a strange looking statue.";
+                //movementScript.playAnim(animName);
+               //movementScript.stayStill = true;
+                //movementScript.isHealing = true;
+                //vcam5.gameObject.SetActive(true);//turn on health vcam
+                //StartCoroutine(NormalVoiceOverReset(2.2f));
+                break;
             case 5:
-            //miles sees puma go round
+            //camera pans area
+            StartCoroutine(levelFiveStart());
                 //animName = "MilesIdle";
                 //levelMusic.musicVolume = 0.25f;
                 //audioData.clip=audioClipArray[12];//dead guy spiel
@@ -87,7 +115,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 //StartCoroutine(HealthTalk());
                 break;
             case 3:
-            //miles picks up the phone
+                //miles picks up the phone
                 StartCoroutine(doorsSecondSetOpen());
                 //animName = "MilesAnswersPhone";
                 //levelMusic.musicVolume = 0.25f;
@@ -150,7 +178,84 @@ public void TriggerVoiceOver(int voiceOverType)
             default:
                 print ("");
                 break;
-        }        
+        }    
+
+
+    IEnumerator bossLevelStart()
+    {
+        yield return new WaitForSeconds(2f);
+        treasure.SetActive(false);
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesAnswersPhone");
+        voiceOverDialogue.text = "Miles: I'm beginning to see daylight! Shelly! I’m close to the ultimate artifact I can feel it!";
+        audioData.clip=audioClipArray[0];
+        hudAnim.Play("HUDSlideOutIdleForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        animTransitionController.Play("LetterboxVoiceOverFadeIn");
+        yield return new WaitForSeconds(1f);
+        audioData.PlayOneShot(audioData.clip);
+        yield return new WaitForSeconds(1.5f);
+        vcam2.gameObject.SetActive(false); 
+        yield return new WaitForSeconds(4f); 
+        movementScript.playAnim("MilesPutsAwayPhone");
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");   
+        treasure.SetActive(true);   
+        treasureAnim.Play("TreasureHudSlideIn");       
+    }   
+
+    IEnumerator chains()
+    {
+        yield return new WaitForSeconds(2f);
+        treasure.SetActive(false);
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
+        voiceOverDialogue.text = "Miles: I can't seem to pass these very modern looking chains...";
+        audioData.clip=audioClipArray[1];
+        hudAnim.Play("HUDSlideOutIdleForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        animTransitionController.Play("LetterboxVoiceOverFadeIn");
+        audioData.PlayOneShot(audioData.clip);
+        yield return new WaitForSeconds(3.5f);
+        voiceOverDialogue.text = "Miles: It's like there's some sort of cursed placed on it.";
+        yield return new WaitForSeconds(3f); 
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");         
+    }  
+
+    IEnumerator levelFiveStart()  
+    {
+        //vcam5.gameObject.SetActive(true); 
+        yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[4];
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
+        voiceOverDialogue.text = "Miles: Hmm seems I need to find a way to move those barriers, they may be connected to this gear system.";
+        hudAnim.Play("HUDSlideOutForVoiceOver");
+        levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
+        animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
+        yield return new WaitForSeconds(4f);
+        //vcam6.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);  
+        levelMusic.musicVolume = 0.85f;
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        //vcam5.gameObject.SetActive(false);  
+        //vcam6.gameObject.SetActive(false); 
+    }
+
     IEnumerator phoneConvoLevelStart()
     {
 
@@ -158,7 +263,7 @@ public void TriggerVoiceOver(int voiceOverType)
         //voiceOverDialogue.text = "Shelly: Oh thank goodness! I thought you were dead!";
         //audioData.clip=audioClipArray[2];
         //audioData.PlayOneShot(audioData.clip); 
-        yield return new WaitForSeconds(6.4f);
+        yield return new WaitForSeconds(4.5f);
         levelMusic.musicVolume = 0.85f;
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
@@ -170,7 +275,7 @@ public void TriggerVoiceOver(int voiceOverType)
     }
     IEnumerator boulderRumbleLevelStart()
     {
-        boulderEffector.GetComponent<boulderSpawner>().spawnBoulderSoundRumbleOnly();
+        //boulderEffector.GetComponent<boulderSpawner>().spawnBoulderSoundRumbleOnly();
         Debug.Log("it fired");
         yield return new WaitForSeconds(2.3f);
         audioData.clip=audioClipArray[0];
@@ -187,14 +292,16 @@ public void TriggerVoiceOver(int voiceOverType)
 
     IEnumerator doorsFirstSetOpen()
     {
-        vcam3.gameObject.SetActive(true); 
+        //vcam3.gameObject.SetActive(true); 
         yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[1];
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Looks like I'm making progress.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
         yield return new WaitForSeconds(5.4f); 
         levelMusic.musicVolume = 0.85f;
@@ -202,19 +309,21 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.stayStill = false;   
         movementScript.isHealing = false;
         hudAnim.Play("HUDSlideInForVoiceOver");  
-        vcam3.gameObject.SetActive(false);   
+        //vcam3.gameObject.SetActive(false);   
     }
 
     IEnumerator doorsSecondSetOpen()
     {
-        vcam3.gameObject.SetActive(true); 
+        //vcam3.gameObject.SetActive(true); 
         yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[2];
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: Aha! It's finally open! I hope this leads back to the Ultimate Artifact.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
         yield return new WaitForSeconds(5.4f); 
         levelMusic.musicVolume = 0.85f;
@@ -222,26 +331,28 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.stayStill = false;   
         movementScript.isHealing = false;
         hudAnim.Play("HUDSlideInForVoiceOver");  
-        vcam3.gameObject.SetActive(false);   
+        //vcam3.gameObject.SetActive(false);   
     }
     IEnumerator deadExplorer()
     {
-        vcam4.gameObject.SetActive(true); 
+        //vcam4.gameObject.SetActive(true); 
         yield return new WaitForSeconds(1f);
+        audioData.clip=audioClipArray[3];
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
-        voiceOverDialogue.text = "Miles: Really?! Another explorer beat me down here?! I can't stand this!.";
+        voiceOverDialogue.text = "Miles: Really?! Another explorer beat me down here?! I can't stand this!";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        audioData.PlayOneShot(audioData.clip);
         animTransitionController.Play("LetterboxVoiceOverFadeIn"); 
-        yield return new WaitForSeconds(3.4f); 
+        yield return new WaitForSeconds(3.6f); 
         levelMusic.musicVolume = 0.85f;
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
         movementScript.isHealing = false;
         hudAnim.Play("HUDSlideInForVoiceOver");  
-        vcam4.gameObject.SetActive(false);   
+        //vcam4.gameObject.SetActive(false);   
     }
     /*
 

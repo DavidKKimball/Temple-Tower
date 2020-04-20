@@ -206,7 +206,7 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
-        voiceOverDialogue.text = "Miles: Hmm seems i need to find a way to move those barriers, they may be connected to this gear system.";
+        voiceOverDialogue.text = "Miles: Hmm seems I need to find a way to move those barriers, they may be connected to this gear system.";
         hudAnim.Play("HUDSlideOutForVoiceOver");
         levelMusic.musicVolume = 0.25f;
         audioData.PlayOneShot(audioData.clip);

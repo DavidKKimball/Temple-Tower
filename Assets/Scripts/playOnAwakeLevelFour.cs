@@ -13,7 +13,7 @@ public class playOnAwakeLevelFour : MonoBehaviour
     void Start()
     {
         letterbox.Play("FadeIn");
-        hud.Play("HUDSlideInIdleForVoiceOver");
+        hud.Play("HUDSlideInForVoiceOver");
         boulder.Play("BoulderLevel4");
         milesCameraController = GameObject.Find("MilesAndCameraController");
         cameraSwitch = milesCameraController.GetComponent<Animator>();
