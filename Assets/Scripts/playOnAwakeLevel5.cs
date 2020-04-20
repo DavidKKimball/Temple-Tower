@@ -10,7 +10,7 @@ public class playOnAwakeLevel5 : MonoBehaviour
     void Start()
     {
         letterbox.Play("FadeIn");
-        hud.Play("HUDSlideInIdleForVoiceOver");
+        hud.Play("HUDSlideInForVoiceOver");
     }
 
     // Update is called once per frame
