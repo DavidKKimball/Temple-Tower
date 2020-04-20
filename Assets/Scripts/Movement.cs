@@ -93,7 +93,6 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody>();
         text = scoreText.GetComponent<TextMeshProUGUI>();
-        checkpoint = GameObject.FindGameObjectsWithTag("Checkpoint");
         checkpointText = GameObject.Find("CheckpointCanvas");
         checkpointCanvas = checkpointText.GetComponent<Canvas>();
         isGrounded = false;
@@ -766,16 +765,18 @@ public class Movement : MonoBehaviour
             score = data.score;
             ScoreDisplay();
             text.text += score;
-            gameObject.transform.position = checkpoint[data.playerLocation].transform.position;
             for (i = 0; i < treasureCounter.objects.Length; i++)
             {
                 if (data.treasureCollected[i])
                 {
                     treasureCounter.chestControllers[i].hasPlayed = true;
+                    treasureCounter.OpenTreasure();
                     treasureCounter.chestControllers[i].animChest.Play("ChestOpeningIdle");
                     treasureCounter.treasureCollectedAmount++;
                 }
             }
+            gameObject.transform.position = checkpoint[data.playerLocation].transform.position;
+            //gameObject.transform.position = new Vector3(checkpoint[data.playerLocation].transform.position.x - 2, checkpoint[data.playerLocation].transform.position.y, checkpoint[data.playerLocation].transform.position.z);
 
             if (isLevel4)
             {

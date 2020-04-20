@@ -7,6 +7,6 @@ public class Quit : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
     }
 }

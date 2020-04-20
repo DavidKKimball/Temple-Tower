@@ -61,13 +61,7 @@ public class treasureCounter : MonoBehaviour
 
     public void collectTreasure()
     {
-        for (i = 0; i < chestControllers.Length; i++)
-        {
-            if (chestControllers[i].hasPlayed)
-            {
-                player.treasureCollected[i] = true;
-            }
-        }
+        OpenTreasure();
         if (triggerVoiceOver)
         {
             if (levelOne)
@@ -85,6 +79,17 @@ public class treasureCounter : MonoBehaviour
         }
         anim.Play("TreasureHudSlideIn");
         StartCoroutine(treasureDelay());
+    }
+
+    public void OpenTreasure()
+    {
+        for (i = 0; i < chestControllers.Length; i++)
+        {
+            if (chestControllers[i].hasPlayed)
+            {
+                player.treasureCollected[i] = true;
+            }
+        }
     }
 
     IEnumerator treasureDelay()
