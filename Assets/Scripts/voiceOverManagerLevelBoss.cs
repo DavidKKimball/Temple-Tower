@@ -26,12 +26,16 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     private AudioSource audioData;
     public GameObject treasure;
     private Animator treasureAnim;
+    public Animator musicAnim;
     public string animName;
     //public boulderSpawner boulderEffector;
     public AudioClip[] audioClipArray;
     public Animator musicChange;
     
-
+        void Awake()
+    {
+        treasure.SetActive(true);
+    }
        void Start()
     {
         treasureAnim = treasure.GetComponent<Animator>();
@@ -188,7 +192,7 @@ public void TriggerVoiceOver(int voiceOverType)
     IEnumerator bossLevelStart()
     {
         yield return new WaitForSeconds(2f);
-        treasure.SetActive(false);
+        //treasure.SetActive(false);
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesAnswersPhone");
@@ -214,21 +218,23 @@ public void TriggerVoiceOver(int voiceOverType)
 
     IEnumerator chains()
     {
-        yield return new WaitForSeconds(2f);
-        treasure.SetActive(false);
+        levelMusic.musicVolume = 0.25f;
+        musicAnim.Play("bossLevelMusicVoiceOver");
+        yield return new WaitForSeconds(0.5f);
+        //treasure.SetActive(false);
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
         voiceOverDialogue.text = "Miles: I can't seem to pass these very modern looking chains...";
         audioData.clip=audioClipArray[1];
         hudAnim.Play("HUDSlideOutIdleForVoiceOver");
-        levelMusic.musicVolume = 0.25f;
         animTransitionController.Play("LetterboxVoiceOverFadeIn");
         audioData.PlayOneShot(audioData.clip);
         yield return new WaitForSeconds(3.5f);
         voiceOverDialogue.text = "Miles: It's like there's some sort of cursed placed on it.";
         yield return new WaitForSeconds(3f); 
         levelMusic.musicVolume = 0.85f;
+        musicAnim.Play("bossLevelMusicIdleBeforeChange");
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
         movementScript.isHealing = false;
