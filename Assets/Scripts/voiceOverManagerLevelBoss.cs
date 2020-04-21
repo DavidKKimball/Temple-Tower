@@ -206,8 +206,8 @@ public void TriggerVoiceOver(int voiceOverType)
         hudAnim.Play("HUDSlideOutForVoiceOver"); 
         turnOffBarrier.SetActive(true);
         vcam6.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
         bridgeFall.Play("bossLevelBridgeFall");
-        yield return new WaitForSeconds(0.2f);
         movementScript.stayStill = true;   
         movementScript.isHealing = true;   
         audioData.clip=audioClipArray[4]; 
@@ -216,6 +216,7 @@ public void TriggerVoiceOver(int voiceOverType)
         //vcam5.gameObject.SetActive(false);
         levelMusic.musicVolume = 0.85f;
         //musicAnim.Play("bossLevelMusicBoss");
+        yield return new WaitForSeconds(2.7f);
         animTransitionController.Play("FadeOut");      
     }
     IEnumerator postBattle()
