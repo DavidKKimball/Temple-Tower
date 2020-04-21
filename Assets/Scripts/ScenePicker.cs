@@ -38,5 +38,9 @@ public class ScenePicker : MonoBehaviour
         {
             SceneManager.LoadScene("levelFiveSprint4");
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SceneManager.LoadScene("levelBoss");
+        }
     }
 }
