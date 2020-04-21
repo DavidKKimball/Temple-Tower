@@ -112,12 +112,10 @@ public class HighScoreMenuManager : MonoBehaviour
         Save();
         inputCanvas.GetComponent<Canvas>().enabled = false;
         highScoreCanvas.GetComponent<Canvas>().enabled = true;
-        StartCoroutine(MenuDelay());
     }
 
-    IEnumerator MenuDelay()
+    public void MenuButton()
     {
-        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("MenuPostIntro");
     }
 }
