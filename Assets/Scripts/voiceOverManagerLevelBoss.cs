@@ -6,14 +6,16 @@ using Cinemachine;
 
 public class voiceOverManagerLevelBoss : MonoBehaviour
 {
+    public GameObject turnOffBarrier;
+    public GameObject turnOnBarrier;
     private GameObject scriptHolder;
     public Animator hudAnim;
     public CinemachineVirtualCamera vcam;
     public CinemachineVirtualCamera vcam2;
     public CinemachineVirtualCamera vcam3;
     public CinemachineVirtualCamera vcam4;
-    //public CinemachineVirtualCamera vcam5;
-    //public CinemachineVirtualCamera vcam6;
+    public CinemachineVirtualCamera vcam5;
+    public CinemachineVirtualCamera vcam6;
     //public CinemachineVirtualCamera vcam7;
     //public CinemachineVirtualCamera vcam8;
     private Movement movementScript;
@@ -31,6 +33,8 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     //public boulderSpawner boulderEffector;
     public AudioClip[] audioClipArray;
     public Animator musicChange;
+    public Animator bridgeFall;
+    public GameObject endMusic;
     
         void Awake()
     {
@@ -59,6 +63,12 @@ public void TriggerVoiceOver(int voiceOverType)
     {
     switch (voiceOverType)
             {
+            case 11:
+                StartCoroutine(postBattle2());
+            break;
+            case 10:
+                StartCoroutine(postBattle());
+            break;
             case 9:
                 StartCoroutine(pumaBoss());
             break;
@@ -191,6 +201,46 @@ public void TriggerVoiceOver(int voiceOverType)
                 break;
         }    
 
+    IEnumerator postBattle2()
+    {
+        hudAnim.Play("HUDSlideOutForVoiceOver"); 
+        turnOffBarrier.SetActive(true);
+        vcam6.gameObject.SetActive(true);
+        bridgeFall.Play("bossLevelBridgeFall");
+        yield return new WaitForSeconds(0.2f);
+        movementScript.stayStill = true;   
+        movementScript.isHealing = true;   
+        audioData.clip=audioClipArray[4]; 
+        audioData.PlayOneShot(audioData.clip); 
+        yield return new WaitForSeconds(0.7f);
+        //vcam5.gameObject.SetActive(false);
+        levelMusic.musicVolume = 0.85f;
+        //musicAnim.Play("bossLevelMusicBoss");
+        animTransitionController.Play("FadeOut");      
+    }
+    IEnumerator postBattle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("It WorkedBro");
+        vcam5.gameObject.SetActive(true);
+        audioData.clip=audioClipArray[3];
+        hudAnim.Play("HUDSlideOutIdleForVoiceOver");
+        animTransitionController.Play("LetterboxVoiceOverFadeIn");
+        voiceOverDialogue.text = "Miles: Finally! The Ultimate Artifact is mine!";
+        yield return new WaitForSeconds(0.2f);
+        audioData.PlayOneShot(audioData.clip); 
+        yield return new WaitForSeconds(2.5f);
+        endMusic.SetActive(true);
+        //vcam5.gameObject.SetActive(false);
+        levelMusic.musicVolume = 0.85f;
+        //musicAnim.Play("bossLevelMusicBoss");
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        //movementScript.stayStill = false;   
+        //movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
+        turnOffBarrier.SetActive(false);
+        turnOnBarrier.SetActive(true);
+    }
     IEnumerator pumaBoss()
     {
         vcam3.gameObject.SetActive(true);
@@ -205,10 +255,10 @@ public void TriggerVoiceOver(int voiceOverType)
         animTransitionController.Play("LetterboxVoiceOverFadeIn");
         audioData.PlayOneShot(audioData.clip);        
         voiceOverDialogue.text = "Miles: I can see the ultimate Artifact from here!"; 
-        yield return new WaitForSeconds(4.6f);       
+        yield return new WaitForSeconds(4.0f);       
         voiceOverDialogue.text = "Miles: Hmm another big cat in my way, he seems stronger than your typical puma too.";
         vcam4.gameObject.SetActive(true);
-        yield return new WaitForSeconds(5.2f);
+        yield return new WaitForSeconds(5.4f);
         voiceOverDialogue.text = "Miles: I 'ought to be careful.";
         yield return new WaitForSeconds(1.5f);
         vcam3.gameObject.SetActive(false);
