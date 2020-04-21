@@ -10,8 +10,8 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     public Animator hudAnim;
     public CinemachineVirtualCamera vcam;
     public CinemachineVirtualCamera vcam2;
-    //public CinemachineVirtualCamera vcam3;
-    //public CinemachineVirtualCamera vcam4;
+    public CinemachineVirtualCamera vcam3;
+    public CinemachineVirtualCamera vcam4;
     //public CinemachineVirtualCamera vcam5;
     //public CinemachineVirtualCamera vcam6;
     //public CinemachineVirtualCamera vcam7;
@@ -59,6 +59,9 @@ public void TriggerVoiceOver(int voiceOverType)
     {
     switch (voiceOverType)
             {
+            case 9:
+                StartCoroutine(pumaBoss());
+            break;
             case 8:
                 musicChange.Play("bossLevelMusicShift");
             break;
@@ -188,7 +191,37 @@ public void TriggerVoiceOver(int voiceOverType)
                 break;
         }    
 
+    IEnumerator pumaBoss()
+    {
+        vcam3.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        movementScript.stayStill = true;
+        movementScript.isHealing = true;
+        animPlayer.Play("MilesIdle");
+        audioData.clip=audioClipArray[2];
+        levelMusic.musicVolume = 0.25f;
+        musicAnim.Play("bossLevelMusicVoiceOverCarn");
+        hudAnim.Play("HUDSlideOutIdleForVoiceOver");
+        animTransitionController.Play("LetterboxVoiceOverFadeIn");
+        audioData.PlayOneShot(audioData.clip);        
+        voiceOverDialogue.text = "Miles: I can see the ultimate Artifact from here!"; 
+        yield return new WaitForSeconds(4.6f);       
+        voiceOverDialogue.text = "Miles: Hmm another big cat in my way, he seems stronger than your typical puma too.";
+        vcam4.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5.2f);
+        voiceOverDialogue.text = "Miles: I 'ought to be careful.";
+        yield return new WaitForSeconds(1.5f);
+        vcam3.gameObject.SetActive(false);
+        vcam4.gameObject.SetActive(false);
+        levelMusic.musicVolume = 0.85f;
+        musicAnim.Play("bossLevelMusicBoss");
+        animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
+        movementScript.stayStill = false;   
+        movementScript.isHealing = false;
+        hudAnim.Play("HUDSlideInForVoiceOver");  
 
+
+    }
     IEnumerator bossLevelStart()
     {
         yield return new WaitForSeconds(2f);
@@ -200,6 +233,7 @@ public void TriggerVoiceOver(int voiceOverType)
         audioData.clip=audioClipArray[0];
         hudAnim.Play("HUDSlideOutIdleForVoiceOver");
         levelMusic.musicVolume = 0.25f;
+        musicAnim.Play("bossLevelMusicVoiceOver");
         animTransitionController.Play("LetterboxVoiceOverFadeIn");
         yield return new WaitForSeconds(1f);
         audioData.PlayOneShot(audioData.clip);
@@ -208,6 +242,7 @@ public void TriggerVoiceOver(int voiceOverType)
         yield return new WaitForSeconds(4f); 
         movementScript.playAnim("MilesPutsAwayPhone");
         levelMusic.musicVolume = 0.85f;
+        musicAnim.Play("bossLevelMusicIdleBeforeChange");
         animTransitionController.Play("LetterboxVoiceOverFadeOut"); 
         movementScript.stayStill = false;   
         movementScript.isHealing = false;
@@ -218,6 +253,7 @@ public void TriggerVoiceOver(int voiceOverType)
 
     IEnumerator chains()
     {
+        yield return new WaitForSeconds(0.8f);
         levelMusic.musicVolume = 0.25f;
         musicAnim.Play("bossLevelMusicVoiceOver");
         yield return new WaitForSeconds(0.5f);
