@@ -2041,6 +2041,7 @@ GameObject:
   - component: {fileID: 6492020605289592324}
   - component: {fileID: 6492020605289592327}
   - component: {fileID: 6492020605289592346}
+  - component: {fileID: 3750991459075246087}
   - component: {fileID: 6492020605289592347}
   m_Layer: 0
   m_Name: Main Camera
@@ -2057,7 +2058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6492020605289592326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.65131, y: -38.13412, z: -11.292185}
+  m_LocalPosition: {x: -49.63, y: -86.41603, z: -9.45}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children:
   - {fileID: 6492020604842822924}
@@ -2154,6 +2155,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3750991459075246087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492020605289592326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adcdff9744778d64f8a9d2f84e99aeae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
 --- !u!114 &6492020605289592347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2699,7 +2713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6492020605985509012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 27.978691, y: -48.28191, z: -1.842185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6492020605885174867}
@@ -8441,6 +8455,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b56c66c6b3238d344946fe4836df487c, type: 3}
   shake: {fileID: 6492020604755719641}
   distanceGround: 0
+  originalPosition: 0
+  newPosition: 0
+  isStairs: 0
   speed: 3.7
   rollSpeed: 2.9
   rollLength: 0.7
@@ -8478,15 +8495,26 @@ MonoBehaviour:
   MilesFrontWalk: {fileID: 2947620362451255072}
   MilesBackWalk: {fileID: 6492020605312679705}
   score: 0
+  previousScore: 0
   facingFront: 0
   scoreText: {fileID: 0}
   pauseMenu: {fileID: 0}
   cameraShake: {fileID: 6492020604755719643}
   fartParticles: {fileID: 1810428557689674228}
+  isLevel4: 0
+  boulderObject: {fileID: 0}
+  boulderAnim: {fileID: 0}
   playedOnce: 0
   playedOnce2: 0
   bigDropQuake: 1
   fartJumpCooldown: 0
+  treasure: {fileID: 0}
+  treasureCounter: {fileID: 0}
+  treasureCollected: 
+  checkpoint: []
+  checkpointMarker: 0
+  checkpointText: {fileID: 0}
+  checkpointCanvas: {fileID: 0}
 --- !u!114 &9001747659125370407
 MonoBehaviour:
   m_ObjectHideFlags: 0
