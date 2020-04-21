@@ -261,7 +261,7 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.stayStill = true;
         movementScript.isHealing = true;
         animPlayer.Play("MilesIdle");
-        voiceOverDialogue.text = "Miles: I can't seem to pass these very modern looking chains...";
+        voiceOverDialogue.text = "Miles: I can't seem to cross these very modern looking chains...";
         audioData.clip=audioClipArray[1];
         hudAnim.Play("HUDSlideOutIdleForVoiceOver");
         animTransitionController.Play("LetterboxVoiceOverFadeIn");
