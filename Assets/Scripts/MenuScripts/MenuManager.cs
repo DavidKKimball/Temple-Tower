@@ -32,8 +32,8 @@ public class MenuManager : MonoBehaviour
     // high score stuff
     private bool hasHighScoreData;
     private List<HighScoreEntry> highScoreEntries;
-    public GameObject[] nameObjectArray;
-    public GameObject[] scoreObjectArray;
+    public GameObject[] nameObjectArray; // assign in engine
+    public GameObject[] scoreObjectArray; // assign in engine
     public TextMeshProUGUI[] nameTMPArray;
     public string[] nameArray;
     public int[] scoreArray;
@@ -44,8 +44,6 @@ public class MenuManager : MonoBehaviour
 
         if (hasHighScoreData)
         {
-            nameObjectArray = GameObject.FindGameObjectsWithTag("Name");
-            scoreObjectArray = GameObject.FindGameObjectsWithTag("Score");
             nameTMPArray = new TextMeshProUGUI[nameObjectArray.Length];
             nameArray = new string[nameTMPArray.Length];
             scoreArray = new int[scoreObjectArray.Length];
@@ -57,6 +55,15 @@ public class MenuManager : MonoBehaviour
             }
 
             LoadHighScore();
+
+            for (i = 0; i < highScoreEntries.Count; i++)
+            {
+                nameArray[i] = highScoreEntries[i].entryName;
+                nameObjectArray[i].GetComponent<TextMeshProUGUI>().text = nameArray[i];
+                int entryScore = highScoreEntries[i].entryScore;
+                scoreArray[i] = entryScore;
+                scoreObjectArray[i].GetComponent<TextMeshProUGUI>().text = scoreArray[i].ToString();
+            }
         }
     }
 

@@ -13,16 +13,16 @@ public class HighScoreMenuManager : MonoBehaviour
     public GameObject highScoreCanvas;
     public TextMeshProUGUI inputField;
     private List<HighScoreEntry> highScoreEntries;
-    public GameObject[] nameObjectArray;
-    public GameObject[] scoreObjectArray;
+    public GameObject[] nameObjectArray; // assign in engine
+    public GameObject[] scoreObjectArray; // assign in engine
     public TextMeshProUGUI[] nameTMPArray;
     public string[] nameArray;
     public int[] scoreArray;
+
+    public bool playedOnce = false;
     // Start is called before the first frame update
     void Start()
     {
-        nameObjectArray = GameObject.FindGameObjectsWithTag("Name");
-        scoreObjectArray = GameObject.FindGameObjectsWithTag("Score");
         nameTMPArray = new TextMeshProUGUI[nameObjectArray.Length];
         nameArray = new string[nameTMPArray.Length];
         scoreArray = new int[scoreObjectArray.Length];
@@ -32,7 +32,7 @@ public class HighScoreMenuManager : MonoBehaviour
             nameArray[i] = nameTMPArray[i].text;
             scoreArray[i] = int.Parse(scoreObjectArray[i].GetComponent<TextMeshProUGUI>().text);
         }
-        Save();
+        //Save();
         LoadScore();
         LoadHighScore();
     }
@@ -40,9 +40,10 @@ public class HighScoreMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputField.text.Length == 3)
+        if (inputField.text.Length == 3 && playedOnce == false)
         {
             Continue();
+            playedOnce = true;
         }
     }
     private class HighScoreEntry
@@ -83,7 +84,7 @@ public class HighScoreMenuManager : MonoBehaviour
 
     public void Continue ()
     {
-        highScoreEntries.Add(new HighScoreEntry{ entryScore = score, entryName = inputField.text });
+        highScoreEntries.Add(new HighScoreEntry{ entryScore = 20000, entryName = inputField.text });
 
         // sort
         for (i = 0; i < highScoreEntries.Count; i++)
@@ -106,7 +107,7 @@ public class HighScoreMenuManager : MonoBehaviour
             nameArray[i] = highScoreEntries[i].entryName;
             nameTMPArray[i].text = nameArray[i];
             scoreArray[i] = highScoreEntries[i].entryScore;
-            scoreObjectArray[i].GetComponent<TextMeshProUGUI>().text = scoreArray[i].ToString(); 
+            scoreObjectArray[i].GetComponent<TextMeshProUGUI>().text = scoreArray[i].ToString();
         }
         
         Save();

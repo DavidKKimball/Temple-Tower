@@ -4500,7 +4500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &349481028
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7165,11 +7165,32 @@ MonoBehaviour:
   inputCanvas: {fileID: 1911448951}
   highScoreCanvas: {fileID: 531592784}
   inputField: {fileID: 1023250178}
-  nameObjectArray: []
-  scoreObjectArray: []
+  nameObjectArray:
+  - {fileID: 999657488}
+  - {fileID: 596605709}
+  - {fileID: 389237619}
+  - {fileID: 610164285}
+  - {fileID: 1814054527}
+  - {fileID: 885064791}
+  - {fileID: 62865391}
+  - {fileID: 104404894}
+  - {fileID: 1031954085}
+  - {fileID: 506393323}
+  scoreObjectArray:
+  - {fileID: 1277755222}
+  - {fileID: 168721873}
+  - {fileID: 1831502265}
+  - {fileID: 335195980}
+  - {fileID: 521768542}
+  - {fileID: 544049977}
+  - {fileID: 1816240400}
+  - {fileID: 360433949}
+  - {fileID: 868316820}
+  - {fileID: 458279312}
   nameTMPArray: []
   nameArray: []
   scoreArray: 
+  playedOnce: 0
 --- !u!1 &595848867
 GameObject:
   m_ObjectHideFlags: 0
@@ -12960,6 +12981,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3128827344792495662, guid: 40dfcede7b178654fb45b446fd03e0e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128827345956447513, guid: 40dfcede7b178654fb45b446fd03e0e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3128827344701221635, guid: 40dfcede7b178654fb45b446fd03e0e3,
         type: 3}
       propertyPath: m_IsActive
@@ -18355,7 +18386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1383410549
 SpriteRenderer:
   m_ObjectHideFlags: 0
