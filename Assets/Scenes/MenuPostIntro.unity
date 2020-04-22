@@ -5990,8 +5990,28 @@ MonoBehaviour:
   controlCanvas: {fileID: 695430994}
   areYouSureCanvas: {fileID: 1656035312}
   noSaveDataCanvas: {fileID: 521531771}
-  nameObjectArray: []
-  scoreObjectArray: []
+  nameObjectArray:
+  - {fileID: 966384210}
+  - {fileID: 811524368}
+  - {fileID: 858032871}
+  - {fileID: 1614889754}
+  - {fileID: 63119636}
+  - {fileID: 1130569134}
+  - {fileID: 409029500}
+  - {fileID: 126540578}
+  - {fileID: 1859146683}
+  - {fileID: 2087209257}
+  scoreObjectArray:
+  - {fileID: 1706105120}
+  - {fileID: 1551349384}
+  - {fileID: 718345322}
+  - {fileID: 1187979587}
+  - {fileID: 180712564}
+  - {fileID: 1736226761}
+  - {fileID: 1004727112}
+  - {fileID: 582246656}
+  - {fileID: 1968549814}
+  - {fileID: 927555138}
   nameTMPArray: []
   nameArray: []
   scoreArray: 
