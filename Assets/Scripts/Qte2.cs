@@ -81,7 +81,7 @@ public class Qte2 : MonoBehaviour
     {
         qteBar.fillAmount = barHealth / startBarHealth;
 
-        barHealth--;
+        barHealth -= Time.deltaTime * 80;
 
         ButtonMash(buttonNumber);
         StartCoroutine(QteEnd());
@@ -112,6 +112,7 @@ public class Qte2 : MonoBehaviour
             if (isSafe == true)
             {
                 pumaController.pumaHealth--;
+                puma.GetComponent<Rigidbody>().isKinematic = false;
                 if (pumaController.pumaHealth <= 0)
                 {
                     //Destroy(puma); destroying the puma makes his audio growl disapear which is used in an audioSource array to turn off all sound at the end of the level. If its destroyed mid-game, the tally screen script fails because the audioSource in one of the array slots is missing.
@@ -128,6 +129,7 @@ public class Qte2 : MonoBehaviour
             {
                 puma.transform.position = pumaSpawn.transform.position;
                 puma.GetComponent<PumaController>().speed = 2;
+                puma.GetComponent<Rigidbody>().isKinematic = false;
                 playerHealth.GetComponent<RedHealthBar>().AdjustCurrentHealth(20);
             }
 

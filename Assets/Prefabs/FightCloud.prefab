@@ -256,6 +256,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a677b3d2e9e0de945a64d675c939e322, type: 3}
   - {fileID: 8300000, guid: b4427063bd646404ca664ccdf58c09ae, type: 3}
   - {fileID: 8300000, guid: 799de7817b1540548968ca6c5a5db785, type: 3}
+  pumaController: {fileID: 0}
 --- !u!95 &7640147632168421378
 Animator:
   serializedVersion: 3
@@ -395,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6292488132426228546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.81, y: 0.83, z: 0}
+  m_LocalPosition: {x: 2.81, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 822222395160461956}
@@ -726,6 +727,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: ShapeModule.arc.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9201167533348171552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -780,41 +816,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: stopAction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: ShapeModule.arc.mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8713664341946404552, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
-        type: 3}
-      propertyPath: prewarm
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7287302433931623528, guid: 4f9d6a7ef7022bb48a2729dfda9ecf50,
         type: 3}

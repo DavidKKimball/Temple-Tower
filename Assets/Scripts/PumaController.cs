@@ -87,6 +87,7 @@ public class PumaController : MonoBehaviour {
             gameObject.transform.position = new Vector3(startingPosition.position.x, startingPosition.position.y + 500, startingPosition.position.z);
             pumaGrowl.Play();
             transition.QTEtrigger(); //triggers the into animation, can also put this in a coroutine to have the dust cloud instantiate after the animation plays.
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
             speed = 0;
         }
     }

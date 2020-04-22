@@ -68,7 +68,7 @@ public class Qte : MonoBehaviour
     {
         qteBar.fillAmount = barHealth / startBarHealth;
 
-        barHealth--;
+        barHealth -= Time.deltaTime * 75;
 
         ButtonMash(buttonNumber);
         StartCoroutine(QteEnd());
@@ -106,12 +106,16 @@ public class Qte : MonoBehaviour
                     Instantiate(sleepingPuma, miles.transform.position, Quaternion.identity);
                 }
                 else
+                {
                     puma.transform.position = pumaSpawn.transform.position;
+                    puma.GetComponent<Rigidbody>().isKinematic = false;
+                }
             }
             else if (isSafe == false)
             {
                 puma.transform.position = pumaSpawn.transform.position;
                 puma.GetComponent<PumaController>().speed = 2;
+                puma.GetComponent<Rigidbody>().isKinematic = false;
                 playerHealth.GetComponent<RedHealthBar>().AdjustCurrentHealth(20);
             }
 
