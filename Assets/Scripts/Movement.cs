@@ -763,8 +763,9 @@ public class Movement : MonoBehaviour
             stayStill = false;
             PlayerData data = SaveScript.LoadFromCheckPoint();
             previousScore = data.score;
-            //ScoreDisplay();
-            //text.text += score;
+            score = previousScore;
+            ScoreDisplay();
+            text.text += previousScore;
             for (i = 0; i < treasureCounter.objects.Length; i++)
             {
                 if (data.treasureCollected[i])
@@ -790,7 +791,7 @@ public class Movement : MonoBehaviour
             PlayerData data = SaveScript.LoadPlayer();
             previousScore = data.score;
             //ScoreDisplay();
-            //text.text += score;
+            //text.text += previousScore;
         }
         else
         {
