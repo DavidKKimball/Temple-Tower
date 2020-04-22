@@ -16,7 +16,7 @@ public class voiceOverManagerLevelBoss : MonoBehaviour
     public CinemachineVirtualCamera vcam4;
     public CinemachineVirtualCamera vcam5;
     public CinemachineVirtualCamera vcam6;
-    //public CinemachineVirtualCamera vcam7;
+    public CinemachineVirtualCamera vcam7;
     //public CinemachineVirtualCamera vcam8;
     private Movement movementScript;
     private Animator animPlayer;
@@ -212,8 +212,8 @@ public void TriggerVoiceOver(int voiceOverType)
         movementScript.isHealing = true;   
         audioData.clip=audioClipArray[4]; 
         audioData.PlayOneShot(audioData.clip); 
-        yield return new WaitForSeconds(0.7f);
-        //vcam5.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        vcam7.gameObject.SetActive(true);
         levelMusic.musicVolume = 0.85f;
         //musicAnim.Play("bossLevelMusicBoss");
         yield return new WaitForSeconds(2.7f);
