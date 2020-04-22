@@ -4067,7 +4067,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583668502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -4115,7 +4115,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583668502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05f6a65a0a6c8845b843cae16ae8028, type: 3}
   m_Name: 
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583668502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b65f88cf7dce01e4796c8ad76e477097, type: 3}
   m_Name: 
@@ -4239,11 +4239,24 @@ MonoBehaviour:
   loadGameButton: {fileID: 501755654}
   yesButton: {fileID: 1683032196}
   backButton: {fileID: 301041610}
+  audioOptionsButton: {fileID: 0}
   controlBackButton: {fileID: 0}
+  creditBackButton: {fileID: 0}
+  gammaSlider: {fileID: 0}
+  highScoreBackButton: {fileID: 0}
   newGame: 0
+  creditsCanvas: {fileID: 0}
+  settingsCanvas: {fileID: 0}
+  audioOptionsCanvas: {fileID: 0}
+  highScoreCanvas: {fileID: 0}
   controlCanvas: {fileID: 0}
   areYouSureCanvas: {fileID: 1656035309}
   noSaveDataCanvas: {fileID: 521531768}
+  nameObjectArray: []
+  scoreObjectArray: []
+  nameTMPArray: []
+  nameArray: []
+  scoreArray: 
 --- !u!114 &583668509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14094,6 +14107,7 @@ MonoBehaviour:
   MilesFrontWalk: {fileID: 6630192252584413776}
   MilesBackWalk: {fileID: 3383166473775581801}
   score: 0
+  previousScore: 0
   facingFront: 0
   scoreText: {fileID: 0}
   pauseMenu: {fileID: 0}
@@ -19494,23 +19508,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3764f4cb440b1d4da3575bbfd6c0d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsButton: {fileID: 0}
-  controlsButton: {fileID: 0}
-  resumeButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  backButton: {fileID: 0}
-  gammaSlider: {fileID: 0}
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
-  slider3: {fileID: 0}
-  gammaText: {fileID: 0}
-  masterText: {fileID: 0}
-  musicText: {fileID: 0}
-  sfxText: {fileID: 0}
-  firstObject: {fileID: 0}
-  secondObject: {fileID: 0}
-  thirdObject: {fileID: 0}
+  firstMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
   controlsMenu: {fileID: 0}
+  resumeButton: {fileID: 0}
+  gammaSlider: {fileID: 0}
+  controlsBackButton: {fileID: 0}
   myFX: {fileID: 3383166474418846772}
   clickForwardFx: {fileID: 8300000, guid: 59e6ee00a3b81944997738e19892e8ad, type: 3}
   clickBackwardFx: {fileID: 8300000, guid: c35f1244c2e7a1641ad58b9fd8f80a51, type: 3}
