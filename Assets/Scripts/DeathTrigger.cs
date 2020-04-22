@@ -10,8 +10,6 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.isDead = true;
-            Debug.Log("You died!");
-        }
+            player.isDead = true;        }
     }
 }

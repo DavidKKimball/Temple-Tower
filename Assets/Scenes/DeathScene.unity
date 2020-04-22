@@ -1249,7 +1249,6 @@ GameObject:
   - component: {fileID: 439883446}
   - component: {fileID: 439883445}
   - component: {fileID: 439883444}
-  - component: {fileID: 439883443}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1277,18 +1276,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: -166.7}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &439883443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439883441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 151a2750586d2da4cac8cd47d603672c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &439883444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,7 +2523,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1287622436}
   - component: {fileID: 1287622435}
-  - component: {fileID: 1287622437}
   m_Layer: 0
   m_Name: End Game Controller
   m_TagString: Untagged
@@ -2582,19 +2568,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1287622437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287622434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f2f67785963dec4a9a95bd6ef59d985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuButton: {fileID: 1044553549}
 --- !u!1 &1361990587
 GameObject:
   m_ObjectHideFlags: 0
