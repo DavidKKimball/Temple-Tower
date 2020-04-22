@@ -84,7 +84,7 @@ public class HighScoreMenuManager : MonoBehaviour
 
     public void Continue ()
     {
-        highScoreEntries.Add(new HighScoreEntry{ entryScore = 20000, entryName = inputField.text });
+        highScoreEntries.Add(new HighScoreEntry{ entryScore = score, entryName = inputField.text });
 
         // sort
         for (i = 0; i < highScoreEntries.Count; i++)
