@@ -17,7 +17,7 @@ public class BoulderLevelCameraAndMilesController : MonoBehaviour
     {
         if(Input.GetKeyDown("b"))
         {
-            SwitchViews();
+            //SwitchViews();
         }
     }
 

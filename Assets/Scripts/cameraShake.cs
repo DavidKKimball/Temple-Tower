@@ -29,7 +29,7 @@ public class cameraShake : MonoBehaviour {
 	{
         if (Input.GetKeyDown("p"))
         {
-            StartCoroutine(Shake(5f, 1.00f));
+            //StartCoroutine(Shake(5f, 1.00f));
         }
 	}
 	public void triggerShakeBig()

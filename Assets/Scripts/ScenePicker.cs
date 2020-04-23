@@ -7,7 +7,7 @@ public class ScenePicker : MonoBehaviour
 {
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -42,5 +42,5 @@ public class ScenePicker : MonoBehaviour
         {
             SceneManager.LoadScene("levelBoss");
         }
-    }
+    }*/
 }

@@ -299,8 +299,8 @@ public class Movement : MonoBehaviour
 
                     if(!isGrounded  && !fartJumpCooldown) 
                     {
-                        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-                        //fartJumpCooldown = true;
+                        //rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+                        fartJumpCooldown = true;
                         fartParticles.Play();
                     }               
                 }
