@@ -120,6 +120,6 @@ public class HighScoreMenuManager : MonoBehaviour
 
     public void MenuButton()
     {
-        SceneManager.LoadScene("MenuPostIntro");
+        SceneManager.LoadScene("Credits");
     }
 }
