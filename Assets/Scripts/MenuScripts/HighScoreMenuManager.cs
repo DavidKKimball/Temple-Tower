@@ -11,6 +11,7 @@ public class HighScoreMenuManager : MonoBehaviour
     public int score;
     public GameObject inputCanvas;
     public GameObject highScoreCanvas;
+    public GameObject scoreCanvas;
     public TextMeshProUGUI inputField;
     private List<HighScoreEntry> highScoreEntries;
     public GameObject[] nameObjectArray; // assign in engine
@@ -32,9 +33,11 @@ public class HighScoreMenuManager : MonoBehaviour
             nameArray[i] = nameTMPArray[i].text;
             scoreArray[i] = int.Parse(scoreObjectArray[i].GetComponent<TextMeshProUGUI>().text);
         }
-        //Save();
-        LoadScore();
+        Save();
+        score = LoadScore();
         LoadHighScore();
+
+        scoreCanvas.GetComponent<TextMeshProUGUI>().text = score.ToString();
     }
 
     // Update is called once per frame
@@ -52,10 +55,10 @@ public class HighScoreMenuManager : MonoBehaviour
         public string entryName;
     }
 
-    public void LoadScore ()
+    public int LoadScore ()
     {
         PlayerData data = SaveScript.LoadPlayer();
-        score = data.score;
+        return data.score;
     }
 
     public void Save ()
@@ -84,6 +87,7 @@ public class HighScoreMenuManager : MonoBehaviour
 
     public void Continue ()
     {
+        Debug.Log(score);
         highScoreEntries.Add(new HighScoreEntry{ entryScore = score, entryName = inputField.text });
 
         // sort
