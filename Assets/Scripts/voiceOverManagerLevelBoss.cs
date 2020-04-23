@@ -255,7 +255,7 @@ public void TriggerVoiceOver(int voiceOverType)
         hudAnim.Play("HUDSlideOutIdleForVoiceOver");
         animTransitionController.Play("LetterboxVoiceOverFadeIn");
         audioData.PlayOneShot(audioData.clip);        
-        voiceOverDialogue.text = "Miles: I can see the ultimate Artifact from here!"; 
+        voiceOverDialogue.text = "Miles: I can see the Ultimate Artifact from here!"; 
         yield return new WaitForSeconds(4.0f);       
         voiceOverDialogue.text = "Miles: Hmm another big cat in my way, he seems stronger than your typical puma too.";
         vcam4.gameObject.SetActive(true);
