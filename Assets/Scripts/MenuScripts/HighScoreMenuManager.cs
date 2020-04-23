@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class HighScoreMenuManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class HighScoreMenuManager : MonoBehaviour
     public GameObject highScoreCanvas;
     public GameObject scoreCanvas;
     public TextMeshProUGUI inputField;
+    public GameObject backButton;
     private List<HighScoreEntry> highScoreEntries;
     public GameObject[] nameObjectArray; // assign in engine
     public GameObject[] scoreObjectArray; // assign in engine
@@ -47,6 +49,9 @@ public class HighScoreMenuManager : MonoBehaviour
         {
             Continue();
             playedOnce = true;
+
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(backButton);
         }
     }
     private class HighScoreEntry

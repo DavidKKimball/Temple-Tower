@@ -7324,6 +7324,7 @@ MonoBehaviour:
   highScoreCanvas: {fileID: 531592784}
   scoreCanvas: {fileID: 471696538}
   inputField: {fileID: 1023250178}
+  backButton: {fileID: 47486753}
   nameObjectArray:
   - {fileID: 999657488}
   - {fileID: 596605709}
