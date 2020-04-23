@@ -12,7 +12,7 @@ public class PauseGame : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if(Input.GetButtonDown("Cancel") || Input.GetKeyDown("p"))
         {
             if (gamePaused == false)
             {
