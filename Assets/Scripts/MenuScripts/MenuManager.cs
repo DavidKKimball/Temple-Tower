@@ -206,10 +206,12 @@ public class MenuManager : MonoBehaviour
     {
         string path1 = Application.persistentDataPath + "/player.snootysobyouare";
         string path2 = Application.persistentDataPath + "/player.verysnooty";
-        if (File.Exists(path1) || File.Exists(path2))
+        string path3 = Application.persistentDataPath + "/player.wow";
+        if (File.Exists(path1) || File.Exists(path2) || File.Exists(path3))
         {
             File.Delete(path1);
             File.Delete(path2);
+            File.Delete(path3);
             SceneManager.LoadScene("MenuPostIntro");
         }
         else

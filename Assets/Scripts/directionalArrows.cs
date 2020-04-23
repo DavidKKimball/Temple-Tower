@@ -72,7 +72,7 @@ public class directionalArrows : MonoBehaviour
 
     public void ResetAndDestroy()
     {
-        cameraFollowObject.transform.localPosition = new Vector3 (0, 0, 0);
+        cameraFollowObject.transform.localPosition = new Vector3(originalPosition.position.x, originalPosition.position.y, originalPosition.position.z);
         gameObject.SetActive(false);
     }
 
