@@ -133,7 +133,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 break;
             case 2:
             //doors first set opens
-            Debug.Log("case 2");
+            //Debug.Log("case 2");
                 StartCoroutine(doorsFirstSetOpen());
                 //movementScript.stayStill = true;
                 //movementScript.isHealing = true;
@@ -243,7 +243,7 @@ public void TriggerVoiceOver(int voiceOverType)
     IEnumerator boulderRumbleLevelStart()
     {
         boulderEffector.GetComponent<boulderSpawner>().spawnBoulderSoundRumbleOnly();
-        Debug.Log("it fired");
+        //Debug.Log("it fired");
         yield return new WaitForSeconds(2.3f);
         audioData.clip=audioClipArray[0];
         movementScript.stayStill = true;

@@ -169,8 +169,8 @@ public void MoveAnim()
         {
             moveNumber = 4;
         }
-        Debug.Log("previous state is " + previousState);
-        Debug.Log("movement number is " + moveNumber);
+        //Debug.Log("previous state is " + previousState);
+        //Debug.Log("movement number is " + moveNumber);
         /*switch (moveNumber)
             {
             case 4:

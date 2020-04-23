@@ -161,7 +161,7 @@ public void TriggerVoiceOver(int voiceOverType)
                 break;
             case 2:
             //doors first set opens
-            Debug.Log("case 2");
+            //Debug.Log("case 2");
                 StartCoroutine(doorsFirstSetOpen());
                 //movementScript.stayStill = true;
                 //movementScript.isHealing = true;
@@ -222,7 +222,7 @@ public void TriggerVoiceOver(int voiceOverType)
     IEnumerator postBattle()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("It WorkedBro");
+        //Debug.Log("It WorkedBro");
         vcam5.gameObject.SetActive(true);
         audioData.clip=audioClipArray[3];
         hudAnim.Play("HUDSlideOutIdleForVoiceOver");
@@ -373,7 +373,7 @@ public void TriggerVoiceOver(int voiceOverType)
     IEnumerator boulderRumbleLevelStart()
     {
         //boulderEffector.GetComponent<boulderSpawner>().spawnBoulderSoundRumbleOnly();
-        Debug.Log("it fired");
+        //("it fired");
         yield return new WaitForSeconds(2.3f);
         audioData.clip=audioClipArray[0];
         movementScript.stayStill = true;

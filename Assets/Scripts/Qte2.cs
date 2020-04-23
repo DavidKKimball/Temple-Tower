@@ -146,7 +146,7 @@ public class Qte2 : MonoBehaviour
                 if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("s"))
                 {
                     //system.Stop();
-                    Debug.Log("pressed");
+                    //Debug.Log("pressed");
                     barHealth += addValue;
                     buttonPresses++;
                     audioData.PlayOneShot(audioData.clip);

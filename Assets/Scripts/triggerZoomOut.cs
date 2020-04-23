@@ -21,7 +21,7 @@ public class triggerZoomOut : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             zoom.ZoomOut();
-            Debug.Log("working");
+            //Debug.Log("working");
         }
     }
     void OnTriggerExit(Collider other)
@@ -29,7 +29,7 @@ public class triggerZoomOut : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             zoom.ZoomIn();
-            Debug.Log("working2");
+            //Debug.Log("working2");
         }
     }
 }

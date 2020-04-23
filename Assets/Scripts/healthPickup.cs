@@ -25,8 +25,8 @@ public class healthPickup : MonoBehaviour
         {
             healthBar.AdjustCurrentHealth(health);
             milesScript.MilesDrinkHealth();
-            Debug.Log("You gained health");
-            Debug.Log("This is a " + this.gameObject.tag);
+            //Debug.Log("You gained health");
+            //Debug.Log("This is a " + this.gameObject.tag);
             Destroy(gameObject);
         }
     }

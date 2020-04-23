@@ -180,8 +180,8 @@ public void MoveAnim()
         {
             moveNumber = 4;
         }
-        Debug.Log("previous state is " + previousState);
-        Debug.Log("movement number is " + moveNumber);
+        //Debug.Log("previous state is " + previousState);
+        //Debug.Log("movement number is " + moveNumber);
 if(levelOne == true)
 {
         switch (moveNumber)
@@ -211,21 +211,21 @@ if(levelOne == true)
                 StartCoroutine(setPieceMover());
                 previousState = moveNumber;
                 //turn off waterfall stream
-                Debug.Log("2");
+                //Debug.Log("2");
                 break;
             case 1:
                 scriptManager.disableGears();
                 //scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
                 previousState = moveNumber;
-                Debug.Log("1");
+                //Debug.Log("1");
                 break;
             case 0:
                 //scriptManager.disableGears();
                 scriptManager.disableGearsAndGearBox();
                 waterfallAssets.SetActive(false);
                 previousState = moveNumber;
-                Debug.Log("0");
+                //Debug.Log("0");
                 break;
             default:
                 
@@ -238,26 +238,26 @@ if(levelOne == true)
                 {
                 case 4:
 
-                    Debug.Log("Should be working4");
+                    //Debug.Log("Should be working4");
                     previousState = moveNumber;          
                     break;
                 case 3:
 
-                    Debug.Log("Should be working3");
+                    //Debug.Log("Should be working3");
                     previousState = moveNumber;               
                     break;
                 case 2:
                     trapController.switchThis();
-                    Debug.Log("Should be working2");
+                    //Debug.Log("Should be working2");
                     previousState = moveNumber;
                     break;
                 case 1:
 
-                    Debug.Log("Should be working1");
+                    //Debug.Log("Should be working1");
                     previousState = moveNumber;
                     break;
                 case 0:
-                    Debug.Log("Should be working0");
+                    //Debug.Log("Should be working0");
                     previousState = moveNumber;
                     break;
                 default:

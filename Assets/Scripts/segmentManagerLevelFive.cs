@@ -106,7 +106,7 @@ public class segmentManagerLevelFive : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         doorGears.Play("doorOpenFirstSet");
         playedOnce = true;
-        Debug.Log("first");
+        //Debug.Log("first");
     }
    IEnumerator secondSetOpen()
     {
@@ -114,11 +114,11 @@ public class segmentManagerLevelFive : MonoBehaviour
         yield return new WaitForSeconds(1f);  
         doorGears.Play("doorOpenSecondSet");
         playedOnceSet2 = true;   
-        Debug.Log("second");   
+        //Debug.Log("second");   
     }
     public void gearCounterAdder()
     {
         gearCounter++;
-        Debug.Log(gearCounter);
+        //Debug.Log(gearCounter);
     }
 }

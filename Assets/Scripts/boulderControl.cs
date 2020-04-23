@@ -40,7 +40,6 @@ public class boulderControl : MonoBehaviour
         {
             //something happens
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -12f);
-            Debug.Log("yup");
         }
     }
     IEnumerator selfDestruct()
